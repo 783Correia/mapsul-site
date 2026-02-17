@@ -17,10 +17,10 @@ import {
   FaChevronRight,
   FaDna,
   FaAppleAlt,
-
   FaBug,
   FaSeedling,
   FaHandSparkles,
+  FaTruck,
 } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
@@ -38,7 +38,7 @@ const heroBrands = [
   { name: "ATTO", logo: "/logos/atto.png" },
   { name: "Luxembourg", logo: "/logos/luxembourg.jpg" },
 ];
-const carouselBrands = [...heroBrands, ...heroBrands, ...heroBrands, ...heroBrands];
+
 
 function Hero() {
   const ref = useRef(null);
@@ -52,7 +52,7 @@ function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[95vh] flex flex-col justify-start overflow-hidden bg-forest"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-forest"
     >
       {/* Background Parallax */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
@@ -63,110 +63,136 @@ function Hero() {
               "url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80')",
           }}
         />
-        <div className="absolute inset-0 bg-forest/30 bg-gradient-to-t from-forest via-transparent to-forest/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest via-transparent to-forest/30" />
       </motion.div>
 
       {/* Decorative Orbs */}
-      <div className="absolute top-20 left-20 w-96 h-96 bg-lime/20 rounded-full blur-[100px] z-10 opacity-60 mix-blend-screen" />
-      <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] z-10 opacity-50 mix-blend-screen" />
+      <div className="absolute top-20 left-[15%] w-[500px] h-[500px] bg-lime/15 rounded-full blur-[150px] z-[1]" />
+      <div className="absolute bottom-40 right-[10%] w-[400px] h-[400px] bg-primary/10 rounded-full blur-[120px] z-[1]" />
 
-      <div className="container-main relative z-20 text-center pt-32 pb-52">
-        <motion.div
-          style={{ y: textY }}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-4xl mx-auto"
-        >
-          {/* Tag */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
-            <div className="w-2 h-2 rounded-full bg-lime animate-pulse" />
-            <span className="text-xs font-bold uppercase tracking-widest text-white">Distribuidora referência no RS desde 2007</span>
-          </div>
+      <div className="container-main relative z-20 pt-28 lg:pt-36 pb-32 lg:pb-24">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          {/* Headline */}
-          <h1 className="text-[clamp(3.5rem,6vw,6rem)] font-bold text-white leading-[1.1] tracking-tight mb-8 drop-shadow-lg">
-            Produtos veterinários e<br />
-            <span className="text-lime inline-block relative">
-              nutrição animal no RS.
-              <svg className="absolute w-full h-3 -bottom-1 left-0 text-lime opacity-40" viewBox="0 0 100 10" preserveAspectRatio="none">
-                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
-              </svg>
-            </span>
-          </h1>
+          {/* Left — Text Content */}
+          <motion.div
+            style={{ y: textY }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-center lg:text-left"
+          >
+            {/* Tag */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
+              <div className="w-2 h-2 rounded-full bg-lime animate-pulse" />
+              <span className="text-xs font-bold uppercase tracking-widest text-white">Distribuidora referência no RS desde 2007</span>
+            </div>
 
-          {/* Subheadline */}
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed mb-10 font-normal shadow-black/10 drop-shadow-md">
-            Medicamentos, sementes de pastagem e suplementação para pecuaristas de todo o Rio Grande do Sul. Consultoria técnica especializada e entrega em todas as regiões.
-          </p>
+            {/* Headline */}
+            <h1 className="text-[clamp(2.8rem,5vw,5.5rem)] font-bold text-white leading-[1.05] tracking-tight mb-6 drop-shadow-lg">
+              Produtos veterinários e{" "}
+              <span className="text-lime inline-block relative">
+                nutrição animal
+                <svg className="absolute w-full h-3 -bottom-1 left-0 text-lime opacity-40" viewBox="0 0 100 10" preserveAspectRatio="none">
+                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
+                </svg>
+              </span>{" "}
+              no RS.
+            </h1>
 
-          {/* CTA */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <a
-              href="https://wa.me/5554996356819"
-              target="_blank"
-              className="group bg-lime text-forest-dark px-8 py-4 rounded-full font-bold text-lg transition-all hover:scale-105 hover:bg-lime/90 flex items-center gap-3 shadow-xl shadow-lime/20"
-            >
-              Fale com nosso Veterinário
-              <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <Link
-              href="/produtos"
-              className="px-8 py-4 rounded-full font-bold text-lg text-white border border-white/20 hover:bg-white/10 transition-all backdrop-blur-sm"
-            >
-              Ver todos os Produtos
-            </Link>
-          </div>
-        </motion.div>
-      </div>
+            {/* Subheadline */}
+            <p className="text-base md:text-lg text-white/80 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
+              Medicamentos, sementes de pastagem e suplementação para pecuaristas de todo o Rio Grande do Sul. Consultoria técnica especializada e entrega em todas as regiões.
+            </p>
 
-      {/* Floating Stats Bar */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.8 }}
-        className="absolute bottom-12 left-0 right-0 z-30 px-4"
-      >
-        <div className="container-main">
-          <div className="bg-white rounded-3xl p-6 md:p-8 flex flex-wrap md:flex-nowrap justify-between items-center gap-8 shadow-2xl mx-auto max-w-5xl">
-            {[
-              { number: "19+", label: "Anos de Experiência" },
-              { number: "1000+", label: "Produtores Atendidos" },
-              { number: "100%", label: "Cobertura no RS" },
-            ].map((stat, i) => (
-              <div key={i} className="flex-1 text-center md:text-left border-r last:border-0 border-gray-200 pr-8 last:pr-0">
-                <div className="text-3xl font-extrabold text-primary mb-1">{stat.number}</div>
-                <div className="text-sm text-gray-500 font-medium uppercase tracking-wide">{stat.label}</div>
-              </div>
-            ))}
+            {/* CTA */}
+            <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
+              <a
+                href="https://wa.me/5554996356819"
+                target="_blank"
+                className="group bg-lime text-forest-dark px-8 py-4 rounded-full font-bold text-lg transition-all hover:scale-105 hover:bg-lime/90 flex items-center gap-3 shadow-xl shadow-lime/20"
+              >
+                Fale com nosso Veterinário
+                <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+              </a>
+              <Link
+                href="/produtos"
+                className="px-8 py-4 rounded-full font-bold text-lg text-white border border-white/20 hover:bg-white/10 transition-all backdrop-blur-sm"
+              >
+                Ver todos os Produtos
+              </Link>
+            </div>
 
-            {/* Brand Carousel in the 4th Slot */}
-            <div className="flex-[1.5] md:w-80 overflow-hidden relative group h-20 flex items-center">
-              {/* Gradient Masks for fade effect */}
-              <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+            {/* Stats — inline */}
+            <div className="mt-12 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
+              {[
+                { number: `${new Date().getFullYear() - 2007}+`, label: "Anos no Mercado" },
+                { number: "1000+", label: "Produtores Atendidos" },
+                { number: "100%", label: "Cobertura do RS" },
+              ].map((stat, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 + i * 0.1 }}
+                  className="text-center lg:text-left"
+                >
+                  <div className="text-2xl md:text-3xl font-extrabold text-lime mb-0.5">{stat.number}</div>
+                  <div className="text-[11px] text-white/50 font-medium uppercase tracking-wider leading-tight">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
-              <div className="flex animate-infinite-scroll w-max hover:[animation-play-state:paused] items-center">
-                {carouselBrands.map((brand, index) => (
-                  <div key={`${brand.name}-${index}`} className="flex items-center justify-center mx-8 shrink-0 opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
+          {/* Right — Brand Grid + Highlights (Desktop only) */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="hidden lg:flex flex-col gap-5"
+          >
+            {/* Brands glass card */}
+            <div className="bg-white/[0.08] backdrop-blur-xl rounded-3xl border border-white/[0.12] p-8 shadow-2xl">
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/40 mb-6">Marcas que distribuímos</p>
+              <div className="grid grid-cols-3 gap-4">
+                {heroBrands.map((brand) => (
+                  <div key={brand.name} className="bg-white/[0.07] rounded-2xl p-4 flex items-center justify-center hover:bg-white/[0.14] transition-all duration-300 group aspect-[2.5/1]">
                     {brand.component ? (
-                      <brand.component className="h-10 w-auto" />
+                      <brand.component className="h-8 w-auto opacity-60 group-hover:opacity-100 transition-opacity invert brightness-200" />
                     ) : (
                       <Image
                         src={brand.logo ?? ""}
                         alt={brand.name}
-                        width={120}
-                        height={40}
-                        className="h-10 w-auto object-contain mix-blend-multiply"
+                        width={100}
+                        height={36}
+                        className="h-8 w-auto object-contain invert brightness-200 opacity-60 group-hover:opacity-100 transition-opacity"
                       />
                     )}
                   </div>
                 ))}
               </div>
             </div>
-          </div>
+
+            {/* Highlight cards */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-white/[0.06] backdrop-blur-xl rounded-2xl border border-white/[0.1] p-5">
+                <FaHandshake className="text-lime text-xl mb-3" />
+                <p className="text-white font-bold text-sm">Consultoria técnica</p>
+                <p className="text-white/40 text-xs mt-1">ATCs visitam sua propriedade</p>
+              </div>
+              <div className="bg-white/[0.06] backdrop-blur-xl rounded-2xl border border-white/[0.1] p-5">
+                <FaTruck className="text-lime text-xl mb-3" />
+                <p className="text-white font-bold text-sm">Entrega em todo RS</p>
+                <p className="text-white/40 text-xs mt-1">Campos de Cima à Campanha</p>
+              </div>
+            </div>
+          </motion.div>
+
         </div>
-      </motion.div>
+      </div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0f1f0f] to-transparent z-20 pointer-events-none" />
     </section>
   );
 }
