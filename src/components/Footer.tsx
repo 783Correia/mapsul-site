@@ -27,42 +27,45 @@ export default function Footer() {
   return (
     <footer>
       {/* ─── Hero CTA with background image ─── */}
-      <section className="relative overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&q=80')",
-          }}
-        />
-        <div className="absolute inset-0 bg-forest/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/60" />
+      {/* ─── Newsletter / Mission Style (Redesign) ─── */}
+      <section className="bg-white py-24 border-b border-gray-100 relative overflow-hidden">
+        <div className="container-main relative">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
-        <div className="relative container-main py-24 md:py-32">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Newsletter */}
-            <div>
-              <span className="inline-flex items-center gap-2.5 glass-light rounded-full px-5 py-2 text-xs font-bold uppercase tracking-[0.15em] text-lime mb-6">
-                <FaPaperPlane className="text-[10px]" />
-                Newsletter
-              </span>
-              <h2 className="text-display-sm text-white">
-                Fique por Dentro das Novidades
+            {/* Left Image (Small Pill) */}
+            <div className="hidden lg:block w-48 shrink-0">
+              <div className="aspect-[3/4] rounded-[3rem] overflow-hidden relative shadow-lg rotate-[-6deg] hover:rotate-0 transition-all duration-500">
+                <Image
+                  src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80"
+                  alt="Pastagem"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Center Content */}
+            <div className="flex-1 text-center">
+              <div className="flex justify-center mb-6">
+                <Image src="/logos/mapsul.png" alt="Mapsul" width={100} height={60} className="h-12 w-auto" />
+              </div>
+
+              <h2 className="text-display-sm text-dark max-w-2xl mx-auto tracking-tight">
+                Tecnologia e inovação para o campo.
               </h2>
-              <p className="text-white/50 mt-4 max-w-md leading-relaxed">
-                Receba dicas, novos produtos e ofertas exclusivas diretamente no
-                seu e-mail.
+              <p className="text-gray-500 mt-6 max-w-lg mx-auto leading-relaxed text-lg">
+                Receba novidades, dicas técnicas e ofertas exclusivas da Mapsul diretamente no seu e-mail.
               </p>
 
               {subscribed ? (
-                <div className="mt-8 glass-light rounded-full px-6 py-4 inline-flex items-center gap-3 text-lime font-medium text-sm">
+                <div className="mt-8 bg-lime/10 rounded-full px-8 py-4 inline-flex items-center gap-3 text-forest font-bold mx-auto">
                   <FaPaperPlane />
-                  Obrigado! Você será notificado.
+                  Inscrição confirmada!
                 </div>
               ) : (
                 <form
                   onSubmit={handleNewsletter}
-                  className="mt-8 flex gap-3 max-w-md"
+                  className="mt-10 flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
                 >
                   <input
                     type="email"
@@ -70,34 +73,30 @@ export default function Footer() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Seu melhor e-mail"
-                    className="flex-1 bg-white/[0.08] backdrop-blur-xl border border-white/[0.12] rounded-full px-6 py-4 text-white text-sm placeholder:text-white/30 outline-none focus:border-lime/40 transition-colors"
+                    className="flex-1 bg-gray-50 border border-gray-200 rounded-full px-6 py-4 text-dark text-sm placeholder:text-gray-400 outline-none focus:border-lime focus:ring-2 focus:ring-lime/20 transition-all"
                   />
                   <button
                     type="submit"
-                    className="bg-lime text-forest font-bold px-6 py-4 rounded-full hover:shadow-glow-lime hover:scale-[1.03] transition-all duration-300 shrink-0"
+                    className="bg-lime text-forest font-bold px-8 py-4 rounded-full hover:shadow-glow-lime hover:scale-[1.03] transition-all duration-300 shadow-lg shadow-lime/20"
                   >
-                    <FaArrowRight size={14} />
+                    Inscrever
                   </button>
                 </form>
               )}
             </div>
 
-            {/* CTA */}
-            <div className="text-right hidden md:block">
-              <a
-                href="https://wa.me/5554996356819?text=Olá! Gostaria de saber mais sobre os produtos MAPSUL."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-lime shadow-glow-lime"
-              >
-                <FaWhatsapp className="text-lg" />
-                Fale Conosco
-                <FaArrowRight className="text-xs" />
-              </a>
-              <p className="text-white/30 text-sm mt-4">
-                Atendimento Seg–Sex, 8h às 18h
-              </p>
+            {/* Right Image (Large Pill) */}
+            <div className="hidden lg:block w-72 shrink-0">
+              <div className="aspect-[4/3] rounded-[4rem] overflow-hidden relative shadow-2xl rotate-[3deg] hover:rotate-0 transition-all duration-500 transform translate-x-8">
+                <Image
+                  src="https://images.unsplash.com/photo-1596733430284-f74377bc21a6?w=800&q=80"
+                  alt="Tecnologia"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
+
           </div>
         </div>
       </section>
