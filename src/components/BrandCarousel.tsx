@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const brands = [
     { name: "Agrifirm", logo: "https://logo.clearbit.com/agrifirm.com" },
     { name: "Biscayart", logo: "https://logo.clearbit.com/biscayart.com" },
@@ -23,12 +21,12 @@ export default function BrandCarousel() {
                 {carouselBrands.map((brand, index) => (
                     <div
                         key={`${brand.name}-${index}`}
-                        className="flex items-center justify-center mx-12 w-48 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer"
+                        className="flex items-center justify-center mx-12 shrink-0 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer"
                     >
                         <img
                             src={brand.logo}
                             alt={`${brand.name} logo`}
-                            className="max-h-16 w-auto object-contain mix-blend-multiply"
+                            className="max-h-16 w-auto object-contain"
                         />
                     </div>
                 ))}

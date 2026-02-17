@@ -54,7 +54,7 @@ function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-forest"
+      className="relative min-h-[95vh] flex flex-col justify-start overflow-hidden bg-forest"
     >
       {/* Background Parallax */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
@@ -72,7 +72,7 @@ function Hero() {
       <div className="absolute top-20 left-20 w-96 h-96 bg-lime/20 rounded-full blur-[100px] z-10 opacity-60 mix-blend-screen" />
       <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] z-10 opacity-50 mix-blend-screen" />
 
-      <div className="container-main relative z-20 text-center">
+      <div className="container-main relative z-20 text-center pt-32 pb-52">
         <motion.div
           style={{ y: textY }}
           initial={{ opacity: 0, y: 30 }}
@@ -103,7 +103,7 @@ function Hero() {
           </p>
 
           {/* CTA */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a
               href="https://wa.me/5554996356819"
               target="_blank"
@@ -130,7 +130,7 @@ function Hero() {
         className="absolute bottom-12 left-0 right-0 z-30 px-4"
       >
         <div className="container-main">
-          <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-6 md:p-8 flex flex-wrap md:flex-nowrap justify-between items-center gap-8 shadow-2xl border border-white/20 mx-auto max-w-5xl">
+          <div className="bg-white rounded-3xl p-6 md:p-8 flex flex-wrap md:flex-nowrap justify-between items-center gap-8 shadow-2xl mx-auto max-w-5xl">
             {[
               { number: "19+", label: "Anos de Experiência" },
               { number: "1000+", label: "Produtores Atendidos" },
@@ -145,13 +145,13 @@ function Hero() {
             {/* Brand Carousel in the 4th Slot */}
             <div className="flex-[1.5] md:w-80 overflow-hidden relative group h-20 flex items-center">
               {/* Gradient Masks for fade effect */}
-              <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white/90 to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white/90 to-transparent z-10 pointer-events-none" />
+              <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
               <div className="flex animate-infinite-scroll w-max hover:[animation-play-state:paused] items-center">
                 {carouselBrands.map((brand, index) => (
-                  <div key={`${brand.name}-${index}`} className="flex items-center justify-center mx-8 w-36 opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
-                    <brand.Component className="h-12 w-auto max-w-full" />
+                  <div key={`${brand.name}-${index}`} className="flex items-center justify-center mx-8 shrink-0 opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
+                    <brand.Component className="h-10 w-auto" />
                   </div>
                 ))}
               </div>
@@ -167,54 +167,9 @@ function Hero() {
 // Note: Removed the "Stats" function entirely as requested to avoid duplication.
 
 /* ═══════════════════════════════════════════════
-   SOLUÇÕES — 6 categorias com ícones
+   SOLUÇÕES — Bento Grid (Apple/Agriplot style)
    ═══════════════════════════════════════════════ */
 function Solucoes() {
-  const solucoes = [
-    {
-      icon: FaDna,
-      title: "Reprodução e IATF",
-      description: "Linha hormonal completa Boehringer Ingelheim. Protocolos para máxima eficiência reprodutiva.",
-      href: "/solucoes/reproducao-iatf",
-      image: "https://images.unsplash.com/photo-1545465175-9c5957385e05?w=800&q=80", // Black calf / cattle
-    },
-    {
-      icon: FaHandSparkles,
-      title: "Higiene de Ordenha",
-      description: "Soluções Kersia para qualidade do leite. Detergentes, desinfetantes e pós-dipping.",
-      href: "/solucoes/higiene-ordenha",
-      image: "https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?w=800&q=80", // Milking machine / parlor
-    },
-    {
-      icon: FaAppleAlt,
-      title: "Nutrição Animal",
-      description: "Sucedâneos lácteos premium e sistemas de alimentação Milk Bar.",
-      href: "/solucoes/nutricao-animal",
-      image: "https://images.unsplash.com/photo-1595304958316-56be3175ac25?w=800&q=80", // Cattle / Calf feeding context
-    },
-    {
-      icon: FaShieldAlt,
-      title: "Sanidade e Vacinação",
-      description: "Ivomec® Gold e linha completa de vacinas para saúde do rebanho.",
-      href: "/solucoes/sanidade-vacinacao",
-      image: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=900&q=80", // Herd in field
-    },
-    {
-      icon: FaBug,
-      title: "Controle de Pragas",
-      description: "Amarillo: Solução ecológica para controle definitivo de moscas.",
-      href: "/solucoes/controle-pragas",
-      image: "https://images.unsplash.com/photo-1534431713063-f93806be95fe?w=900&q=80", // Cow close up
-    },
-    {
-      icon: FaSeedling,
-      title: "Sementes de Pastagem",
-      description: "Sementes certificadas Biscayart e Atto. Alta conversão em carne e leite.",
-      href: "/solucoes/sementes-pastagem",
-      image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80", // Green field
-    },
-  ];
-
   return (
     <section className="bg-forest section-padding relative overflow-hidden !pt-32">
       <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-lime/[0.03] rounded-full blur-[150px]" />
@@ -228,44 +183,168 @@ function Solucoes() {
           light
         />
 
-        {/* Grid 3-column cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {solucoes.map((sol, i) => (
-            <motion.div
-              key={sol.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group relative rounded-3xl overflow-hidden cursor-pointer glass-card-hover"
-            >
-              <Link href={sol.href} className="block">
-                <div className="relative aspect-[16/10]">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                    style={{ backgroundImage: `url('${sol.image}')` }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/60 to-forest/20" />
+        {/* ── Bento Grid ── */}
+        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-[320px_280px] gap-4">
 
-                  <div className="absolute inset-0 flex flex-col justify-end p-7">
-                    <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center mb-4 text-lime group-hover:bg-lime group-hover:text-forest transition-all duration-400">
-                      <sol.icon size={20} />
-                    </div>
-                    <h3 className="text-xl font-extrabold text-white tracking-tight">
-                      {sol.title}
-                    </h3>
-                    <p className="text-white/50 text-xs mt-2 leading-relaxed line-clamp-2">
-                      {sol.description}
-                    </p>
-                    <div className="mt-4 flex items-center gap-2 text-lime text-xs font-bold opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                      <span>Saiba mais</span>
-                      <FaArrowRight className="text-[10px]" />
-                    </div>
-                  </div>
+          {/* ── 1. Reprodução e IATF — 2col, row 1, image card ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0, duration: 0.5 }}
+            className="group relative overflow-hidden cursor-pointer rounded-3xl md:col-span-2 min-h-[280px] md:min-h-0 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500"
+          >
+            <Link href="/solucoes/reproducao-iatf" className="block h-full">
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=1200&q=80')" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              {/* Icon badge */}
+              <div className="absolute top-5 left-5 w-10 h-10 rounded-xl bg-lime/90 flex items-center justify-center text-forest">
+                <FaDna size={16} />
+              </div>
+              <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+                <h3 className="text-[28px] font-bold text-white tracking-tight leading-tight">
+                  Reprodução e IATF
+                </h3>
+                <p className="text-white/60 text-sm mt-1.5">
+                  Linha hormonal Boehringer Ingelheim
+                </p>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* ── 2. Nutrição Animal — 1col, row 1, solid color card ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.08, duration: 0.5 }}
+            className="group relative overflow-hidden cursor-pointer rounded-3xl min-h-[240px] md:min-h-0 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500"
+            style={{ backgroundColor: "#e8f5e9" }}
+          >
+            <Link href="/solucoes/nutricao-animal" className="block h-full">
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                <FaAppleAlt size={48} className="text-forest mb-4 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-[22px] font-bold text-forest tracking-tight leading-tight">
+                  Nutrição Animal
+                </h3>
+                <p className="text-forest/50 text-sm mt-1.5">
+                  Milk Bar + Agrifirm
+                </p>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* ── 3. Sanidade e Vacinação — 1col, row 1, image card ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.16, duration: 0.5 }}
+            className="group relative overflow-hidden cursor-pointer rounded-3xl min-h-[240px] md:min-h-0 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500"
+          >
+            <Link href="/solucoes/sanidade-vacinacao" className="block h-full">
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1605152276897-4f618f831968?w=800&q=80')" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute top-5 left-5 w-10 h-10 rounded-xl bg-lime/90 flex items-center justify-center text-forest">
+                <FaShieldAlt size={16} />
+              </div>
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <h3 className="text-xl font-bold text-white tracking-tight leading-tight">
+                  Sanidade e Vacinação
+                </h3>
+                <p className="text-white/60 text-sm mt-1.5">
+                  Ivomec® Gold + J-VAC®
+                </p>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* ── 4. Controle de Pragas — 1col, row 2, solid color card ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.24, duration: 0.5 }}
+            className="group relative overflow-hidden cursor-pointer rounded-3xl min-h-[220px] md:min-h-0 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500"
+            style={{ backgroundColor: "#fff8e1" }}
+          >
+            <Link href="/solucoes/controle-pragas" className="block h-full">
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                <FaBug size={48} className="text-yellow-700 mb-4 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-[22px] font-bold text-forest tracking-tight leading-tight">
+                  Controle de Pragas
+                </h3>
+                <p className="text-forest/50 text-sm mt-1.5">
+                  Amarillo
+                </p>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* ── 5. Sementes de Pastagem — 1col, row 2, image card ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.32, duration: 0.5 }}
+            className="group relative overflow-hidden cursor-pointer rounded-3xl min-h-[220px] md:min-h-0 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500"
+          >
+            <Link href="/solucoes/sementes-pastagem" className="block h-full">
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80')" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute top-5 left-5 w-10 h-10 rounded-xl bg-lime/90 flex items-center justify-center text-forest">
+                <FaSeedling size={16} />
+              </div>
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <h3 className="text-xl font-bold text-white tracking-tight leading-tight">
+                  Sementes de Pastagem
+                </h3>
+                <p className="text-white/60 text-sm mt-1.5">
+                  Biscayart + ATTO
+                </p>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* ── 6. Higiene de Ordenha — 2col, row 2, solid dark card ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="group relative overflow-hidden cursor-pointer rounded-3xl md:col-span-2 min-h-[220px] md:min-h-0 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500"
+            style={{ backgroundColor: "#1a3c2a" }}
+          >
+            <Link href="/solucoes/higiene-ordenha" className="block h-full">
+              {/* Decorative circles */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full border border-white/[0.06]" />
+              <div className="absolute -bottom-16 -right-16 w-64 h-64 rounded-full border border-white/[0.04]" />
+
+              <div className="absolute inset-0 flex items-center p-6 md:p-10 gap-6 md:gap-10">
+                <div className="shrink-0 w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-lime group-hover:bg-lime group-hover:text-forest transition-all duration-300">
+                  <FaHandSparkles size={28} />
                 </div>
-              </Link>
-            </motion.div>
-          ))}
+                <div>
+                  <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">
+                    Higiene de Ordenha
+                  </h3>
+                  <p className="text-white/50 text-sm mt-1.5 max-w-sm">
+                    Soluções Kersia para qualidade do leite
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
         </div>
 
         <motion.div
