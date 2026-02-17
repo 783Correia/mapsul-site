@@ -8,7 +8,6 @@ import {
   FaInstagram,
   FaMapMarkerAlt,
   FaPhoneAlt,
-  FaArrowRight,
   FaPaperPlane,
 } from "react-icons/fa";
 
