@@ -5,6 +5,8 @@ import {
   FaWhatsapp,
   FaShieldAlt,
   FaCalendarCheck,
+  FaChevronLeft,
+  FaChevronRight,
 } from "react-icons/fa";
 
 import SectionHeading from "@/components/SectionHeading";
@@ -113,16 +115,41 @@ export default function SanidadeVacinacaoContent() {
                   <FaShieldAlt className="text-lime" />
                   Produtos em Destaque
                 </h3>
-                {/* Carousel Container */}
-                <div className="flex overflow-x-auto pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 space-x-6 snap-x snap-mandatory scrollbar-hide">
-                  {products
-                    .filter((p) => p.category === "Sanidade")
-                    .slice(0, 4)
-                    .map((product) => (
-                      <div key={product.id} className="min-w-[280px] md:min-w-[320px] snap-center">
-                        <ProductCard product={product} />
-                      </div>
-                    ))}
+                {/* Carousel Navigation */}
+                <div className="relative group/carousel">
+                  {/* Buttons */}
+                  <button
+                    onClick={() => {
+                      const container = document.getElementById('products-carousel');
+                      if (container) container.scrollBy({ left: -320, behavior: 'smooth' });
+                    }}
+                    className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 z-30 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-forest hover:bg-lime transition-all opacity-0 group-hover/carousel:opacity-100 disabled:opacity-0"
+                  >
+                    <FaChevronLeft />
+                  </button>
+                  <button
+                    onClick={() => {
+                      const container = document.getElementById('products-carousel');
+                      if (container) container.scrollBy({ left: 320, behavior: 'smooth' });
+                    }}
+                    className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 z-30 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-forest hover:bg-lime transition-all opacity-0 group-hover/carousel:opacity-100 disabled:opacity-0"
+                  >
+                    <FaChevronRight />
+                  </button>
+
+                  <div
+                    id="products-carousel"
+                    className="flex overflow-x-auto pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 space-x-6 snap-x snap-mandatory scrollbar-hide"
+                  >
+                    {products
+                      .filter((p) => p.category === "Sanidade")
+                      .slice(0, 4)
+                      .map((product) => (
+                        <div key={product.id} className="min-w-[280px] md:min-w-[320px] snap-center">
+                          <ProductCard product={product} />
+                        </div>
+                      ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
