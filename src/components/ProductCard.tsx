@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { FaWhatsapp, FaArrowRight } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
+import Image from "next/image";
 import { Product } from "@/data/products";
 
 interface ProductCardProps {
@@ -22,10 +22,12 @@ export default function ProductCard({ product }: ProductCardProps) {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutral-900/90 z-10" />
                 <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-lime/20 rounded-full blur-[50px]" />
 
-                <img
+                <Image
                     src={product.image}
                     alt={product.name}
-                    className="relative z-0 w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl"
+                    fill
+                    className="z-0 object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
 
                 {/* Heart Icon (Decorative) */}

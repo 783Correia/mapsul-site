@@ -5,7 +5,6 @@ import {
   FaWhatsapp,
   FaArrowRight,
   FaAppleAlt,
-  FaCheckCircle,
   FaCalendarAlt,
 } from "react-icons/fa";
 import Link from "next/link";

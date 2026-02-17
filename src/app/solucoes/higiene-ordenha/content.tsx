@@ -3,13 +3,12 @@
 import { motion } from "framer-motion";
 import {
     FaWhatsapp,
-    FaArrowRight,
     FaCheckCircle,
     FaHandSparkles,
     FaFlask,
     FaShieldAlt,
 } from "react-icons/fa";
-import Link from "next/link";
+
 import SectionHeading from "@/components/SectionHeading";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";

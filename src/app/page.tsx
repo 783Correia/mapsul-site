@@ -10,7 +10,6 @@ import {
   FaWhatsapp,
   FaArrowRight,
   FaArrowLeft,
-  FaUsers,
   FaStar,
   FaQuoteLeft,
   FaChevronLeft,
@@ -24,22 +23,14 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
+
 import SectionHeading from "@/components/SectionHeading";
-import AnimatedCounter from "@/components/AnimatedCounter";
+
+import { AgrifirmLogo, BiscayartLogo, KersiaLogo, BoehringerLogo, MilkBarLogo } from "@/components/Logos";
+
 /* ═══════════════════════════════════════════════
    HERO — Rutivo Style (Wide/Clean/Centered)
    ═══════════════════════════════════════════════ */
-const heroBrands = [
-  { name: "Agrifirm", logo: "/logos/agrifirm.png" },
-  { name: "Biscayart", logo: "/logos/biscayart.png" },
-  { name: "Kersia", logo: "/logos/kersia.jpg" },
-  { name: "Boehringer Ingelheim", logo: "/logos/boehringer.png" },
-  { name: "Milk Bar", logo: "/logos/milkbar.jpg" },
-  { name: "ATTO", logo: "/logos/atto.png" },
-  { name: "Luxembourg", logo: "/logos/luxembourg.jpg" },
-];
-const carouselBrands = [...heroBrands, ...heroBrands, ...heroBrands, ...heroBrands];
-
 function Hero() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -49,10 +40,23 @@ function Hero() {
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
+  // Local brands for the floating bar carousel
+  const heroBrands = [
+    { name: "Agrifirm", component: AgrifirmLogo },
+    { name: "Biscayart", component: BiscayartLogo },
+    { name: "Kersia", component: KersiaLogo },
+    { name: "Boehringer Ingelheim", component: BoehringerLogo },
+    { name: "Milk Bar", component: MilkBarLogo },
+    { name: "ATTO", logo: "/logos/atto.png" },
+    { name: "Luxembourg", logo: "/logos/luxembourg.jpg" },
+  ];
+  // Duplicate for infinite scroll
+  const carouselBrands = [...heroBrands, ...heroBrands, ...heroBrands, ...heroBrands];
+
   return (
     <section
       ref={ref}
-      className="relative min-h-[95vh] flex flex-col justify-start overflow-hidden bg-forest"
+      className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-forest"
     >
       {/* Background Parallax */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
@@ -70,7 +74,7 @@ function Hero() {
       <div className="absolute top-20 left-20 w-96 h-96 bg-lime/20 rounded-full blur-[100px] z-10 opacity-60 mix-blend-screen" />
       <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] z-10 opacity-50 mix-blend-screen" />
 
-      <div className="container-main relative z-20 text-center pt-32 pb-52">
+      <div className="container-main relative z-20 text-center">
         <motion.div
           style={{ y: textY }}
           initial={{ opacity: 0, y: 30 }}
@@ -101,7 +105,7 @@ function Hero() {
           </p>
 
           {/* CTA */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="https://wa.me/5554996356819"
               target="_blank"
@@ -128,7 +132,7 @@ function Hero() {
         className="absolute bottom-12 left-0 right-0 z-30 px-4"
       >
         <div className="container-main">
-          <div className="bg-white rounded-3xl p-6 md:p-8 flex flex-wrap md:flex-nowrap justify-between items-center gap-8 shadow-2xl mx-auto max-w-5xl">
+          <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-6 md:p-8 flex flex-wrap md:flex-nowrap justify-between items-center gap-8 shadow-2xl border border-white/20 mx-auto max-w-5xl">
             {[
               { number: "19+", label: "Anos de Experiência" },
               { number: "1000+", label: "Produtores Atendidos" },
@@ -143,13 +147,23 @@ function Hero() {
             {/* Brand Carousel in the 4th Slot */}
             <div className="flex-[1.5] md:w-80 overflow-hidden relative group h-20 flex items-center">
               {/* Gradient Masks for fade effect */}
-              <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+              <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white/90 to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white/90 to-transparent z-10 pointer-events-none" />
 
               <div className="flex animate-infinite-scroll w-max hover:[animation-play-state:paused] items-center">
                 {carouselBrands.map((brand, index) => (
                   <div key={`${brand.name}-${index}`} className="flex items-center justify-center mx-8 shrink-0 opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
-                    <Image src={brand.logo} alt={brand.name} width={120} height={40} className="h-10 w-auto object-contain" />
+                    {brand.component ? (
+                      <brand.component className="h-10 w-auto" />
+                    ) : (
+                      <Image
+                        src={brand.logo ?? ""}
+                        alt={brand.name}
+                        width={120}
+                        height={40}
+                        className="h-10 w-auto object-contain mix-blend-multiply"
+                      />
+                    )}
                   </div>
                 ))}
               </div>
@@ -165,136 +179,59 @@ function Hero() {
 // Note: Removed the "Stats" function entirely as requested to avoid duplication.
 
 /* ═══════════════════════════════════════════════
-   SOLUÇÕES — Carrossel infinito (6 cards)
+   SOLUÇÕES — 6 categorias com ícones
    ═══════════════════════════════════════════════ */
-function SolucaoCard({ sol }: { sol: { type: string; title: string; subtitle: string; href: string; bg?: string; image?: string; icon?: React.ElementType; iconColor?: string; tags?: string[] } }) {
-  const Icon = sol.icon;
-
-  /* ── Image card ── */
-  if (sol.type === "image") {
-    return (
-      <Link href={sol.href} className="block h-full group">
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-          style={{ backgroundImage: `url('${sol.image}')` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-        {Icon && (
-          <div className="absolute top-5 left-5 w-10 h-10 rounded-xl bg-lime/90 flex items-center justify-center text-forest">
-            <Icon size={16} />
-          </div>
-        )}
-        <div className="absolute bottom-0 left-0 right-0 p-7">
-          <h3 className="text-[24px] font-bold text-white tracking-tight leading-tight" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
-            {sol.title}
-          </h3>
-          <p className="text-white/60 text-sm mt-1.5">{sol.subtitle}</p>
-        </div>
-      </Link>
-    );
-  }
-
-  /* ── Solid color card with tags ── */
-  if (sol.type === "tags") {
-    return (
-      <Link href={sol.href} className="block h-full group">
-        <div className="p-7 pt-8">
-          <h3 className="text-[28px] font-extrabold tracking-tight leading-tight" style={{ color: "#1a3c2a" }}>
-            {sol.title}
-          </h3>
-        </div>
-        {sol.tags && (
-          <div className="px-7 flex flex-wrap gap-2">
-            {sol.tags.map((tag) => (
-              <span key={tag} className="inline-block text-xs font-semibold px-4 py-2 rounded-full border" style={{ borderColor: "#1a3c2a", color: "#1a3c2a" }}>
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
-      </Link>
-    );
-  }
-
-  /* ── Solid color card with icon ── */
-  if (sol.type === "icon") {
-    return (
-      <Link href={sol.href} className="block h-full group">
-        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-          {Icon && <Icon size={56} className={`${sol.iconColor || "text-forest"} mb-4 group-hover:scale-110 transition-transform duration-300`} />}
-          <h3 className="text-[22px] font-bold tracking-tight leading-tight" style={{ color: sol.bg === "#1a3c2a" ? "#fff" : "#1a3c2a" }}>
-            {sol.title}
-          </h3>
-          <p className="text-sm mt-1.5" style={{ color: sol.bg === "#1a3c2a" ? "rgba(255,255,255,0.6)" : "rgba(26,60,42,0.5)" }}>
-            {sol.subtitle}
-          </p>
-        </div>
-      </Link>
-    );
-  }
-
-  return null;
-}
-
 function Solucoes() {
-  const cards = [
+  const solucoes = [
     {
-      type: "image",
-      title: "Reprodução e IATF",
-      subtitle: "Boehringer Ingelheim",
-      href: "/solucoes/reproducao-iatf",
-      image: "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=800&q=80",
       icon: FaDna,
+      title: "Reprodução e IATF",
+      description: "Linha hormonal completa Boehringer Ingelheim. Protocolos para máxima eficiência reprodutiva.",
+      href: "/solucoes/reproducao-iatf",
+      image: "https://images.unsplash.com/photo-1545465175-9c5957385e05?w=800&q=80", // Black calf / cattle
     },
     {
-      type: "image",
-      title: "Nutrição Animal",
-      subtitle: "Milk Bar + Agrifirm",
-      href: "/solucoes/nutricao-animal",
-      image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
-      icon: FaAppleAlt,
-    },
-    {
-      type: "tags",
-      title: "Sanidade e\nVacinação",
-      subtitle: "",
-      href: "/solucoes/sanidade-vacinacao",
-      bg: "#e8f5e9",
-      tags: ["Ivomec® Gold", "J-VAC®", "Metacam®"],
-    },
-    {
-      type: "icon",
-      title: "Controle de Pragas",
-      subtitle: "Amarillo",
-      href: "/solucoes/controle-pragas",
-      bg: "#fff8e1",
-      icon: FaBug,
-      iconColor: "text-yellow-700",
-    },
-    {
-      type: "image",
-      title: "Sementes de Pastagem",
-      subtitle: "Biscayart + ATTO",
-      href: "/solucoes/sementes-pastagem",
-      image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
-      icon: FaSeedling,
-    },
-    {
-      type: "icon",
-      title: "Higiene de Ordenha",
-      subtitle: "Soluções Kersia",
-      href: "/solucoes/higiene-ordenha",
-      bg: "#1a3c2a",
       icon: FaHandSparkles,
-      iconColor: "text-lime",
+      title: "Higiene de Ordenha",
+      description: "Soluções Kersia para qualidade do leite. Detergentes, desinfetantes e pós-dipping.",
+      href: "/solucoes/higiene-ordenha",
+      image: "https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?w=800&q=80", // Milking machine / parlor
+    },
+    {
+      icon: FaAppleAlt,
+      title: "Nutrição Animal",
+      description: "Sucedâneos lácteos premium e sistemas de alimentação Milk Bar.",
+      href: "/solucoes/nutricao-animal",
+      image: "https://images.unsplash.com/photo-1595304958316-56be3175ac25?w=800&q=80", // Cattle / Calf feeding context
+    },
+    {
+      icon: FaShieldAlt,
+      title: "Sanidade e Vacinação",
+      description: "Ivomec® Gold e linha completa de vacinas para saúde do rebanho.",
+      href: "/solucoes/sanidade-vacinacao",
+      image: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=900&q=80", // Herd in field
+    },
+    {
+      icon: FaBug,
+      title: "Controle de Pragas",
+      description: "Amarillo: Solução ecológica para controle definitivo de moscas.",
+      href: "/solucoes/controle-pragas",
+      image: "https://images.unsplash.com/photo-1534431713063-f93806be95fe?w=900&q=80", // Cow close up
+    },
+    {
+      icon: FaSeedling,
+      title: "Sementes de Pastagem",
+      description: "Sementes certificadas Biscayart e Atto. Alta conversão em carne e leite.",
+      href: "/solucoes/sementes-pastagem",
+      image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80", // Green field
     },
   ];
 
-  // Duplicate for seamless loop
-  const allCards = [...cards, ...cards];
-
   return (
-    <section style={{ backgroundColor: "#0f1f0f" }} className="py-20 md:py-28 relative overflow-hidden">
+    <section className="bg-forest section-padding relative overflow-hidden !pt-32">
+      <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-lime/[0.03] rounded-full blur-[150px]" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary/[0.05] rounded-full blur-[120px]" />
+
       <div className="container-main relative">
         <SectionHeading
           tag="Nossas Soluções"
@@ -302,32 +239,47 @@ function Solucoes() {
           description="Trabalhamos com as melhores marcas do mercado para garantir saúde, produtividade e sustentabilidade."
           light
         />
-      </div>
 
-      {/* ── Carousel container ── */}
-      <div className="relative overflow-hidden group/carousel">
-        {/* Fade masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#0f1f0f] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#0f1f0f] to-transparent z-10 pointer-events-none" />
-
-        {/* Scrolling track */}
-        <div className="flex w-max animate-solucoes-scroll group-hover/carousel:[animation-play-state:paused] items-stretch">
-          {allCards.map((sol, i) => (
-            <div
-              key={`${sol.title}-${i}`}
-              className="relative overflow-hidden cursor-pointer shrink-0 w-[300px] md:w-[340px] h-[380px] md:h-[420px] mx-2 hover:scale-[1.02] transition-transform duration-300"
-              style={{
-                borderRadius: 20,
-                backgroundColor: sol.bg || "transparent",
-              }}
+        {/* Grid 3-column cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {solucoes.map((sol, i) => (
+            <motion.div
+              key={sol.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="group relative rounded-3xl overflow-hidden cursor-pointer glass-card-hover"
             >
-              <SolucaoCard sol={sol} />
-            </div>
+              <Link href={sol.href} className="block">
+                <div className="relative aspect-[16/10]">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    style={{ backgroundImage: `url('${sol.image}')` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/60 to-forest/20" />
+
+                  <div className="absolute inset-0 flex flex-col justify-end p-7">
+                    <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center mb-4 text-lime group-hover:bg-lime group-hover:text-forest transition-all duration-400">
+                      <sol.icon size={20} />
+                    </div>
+                    <h3 className="text-xl font-extrabold text-white tracking-tight">
+                      {sol.title}
+                    </h3>
+                    <p className="text-white/50 text-xs mt-2 leading-relaxed line-clamp-2">
+                      {sol.description}
+                    </p>
+                    <div className="mt-4 flex items-center gap-2 text-lime text-xs font-bold opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                      <span>Saiba mais</span>
+                      <FaArrowRight className="text-[10px]" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
-      </div>
 
-      <div className="container-main relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -355,7 +307,7 @@ function ProdutosDestaque() {
       brand: "Boehringer Ingelheim",
       description:
         "O padrão ouro em controle parasitário. Formulação tixotrópica com Ivermectina 3,15%. Proteção por até 12 semanas contra berne e carrapatos, garantindo maior ganho de peso e pastos limpos.",
-      image: "https://mapsul.com.br/wp-content/uploads/2019/07/Ivomec-Gold-1.jpg",
+      image: "https://images.unsplash.com/photo-1704221191316-168a25edbc59?auto=format&fit=crop&q=80",
       badge: "Líder de Mercado",
     },
     {
@@ -363,31 +315,31 @@ function ProdutosDestaque() {
       brand: "Agrifirm",
       description:
         "Substituto de leite premium para bezerras. Digestão rápida, excelente desenvolvimento ruminal e crescimento juvenil acelerado. Tecnologia holandesa para sua recria.",
-      image: "https://mapsul.com.br/wp-content/uploads/2025/05/Sem-titulo-1-2.png",
+      image: "https://images.unsplash.com/photo-1549420063-e382d6da5722?auto=format&fit=crop&q=80",
       badge: "Alta Performance",
     },
     {
-      name: "Milk Bar Individual",
-      brand: "Milk Bar",
+      name: "Topline® Spray",
+      brand: "Boehringer Ingelheim",
       description:
-        "Alimentador individual com bico de fluxo controlado. Promove sucção lenta e natural, melhorando a digestão e reduzindo problemas respiratórios em bezerros.",
-      image: "/images/products/milkbar/balde-individual.jpg",
-      badge: "Nutrição",
+        "Antiparasitário externo de aplicação tópica. Eficácia comprovada no tratamento e prevenção de bicheiras (miíases) e infecções de umbigo.",
+      image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&q=80",
+      badge: "Sanidade",
     },
     {
-      name: "Dermisan",
-      brand: "Kersia",
+      name: "Azevém Baqueano",
+      brand: "Biscayart",
       description:
-        "Solução premium para higiene e proteção do úbere. Pré e pós-dipping de alta eficácia, garantindo qualidade do leite e saúde do rebanho.",
-      image: "/images/products/higiene/dermisan.jpg",
-      badge: "Higiene",
+        "Azevém tetraplóide de ciclo médio/longo. Genética europeia com alto potencial de produção de massa verde. Ideal para pré-secado e pastejo direto até seis meses.",
+      image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80",
+      badge: "Produtividade",
     },
     {
       name: "Amarillo",
       brand: "Luxembourg",
       description:
         "Armadilha adesiva ecológica para controle de moscas. Não tóxico, ideal para instalações pecuárias. Captura eficaz sem uso de venenos.",
-      image: "/images/products/pragas/amarillo.jpg",
+      image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&q=80",
       badge: "Sustentável",
     },
   ];
