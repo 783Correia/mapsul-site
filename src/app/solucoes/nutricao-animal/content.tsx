@@ -14,8 +14,6 @@ import SectionHeading from "@/components/SectionHeading";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 
-
-
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
@@ -27,7 +25,7 @@ export default function NutricaoAnimalContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-forest pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden" style={{ backgroundColor: "#0f1f0f" }}>
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
@@ -35,7 +33,7 @@ export default function NutricaoAnimalContent() {
               "url('https://images.unsplash.com/photo-1549420063-e382d6da5722?w=1920&q=80')",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0f1f0f] via-[#0f1f0f]/80 to-[#0f1f0f]/40" />
 
         <div className="container-main relative">
           <motion.div
@@ -70,17 +68,17 @@ export default function NutricaoAnimalContent() {
       </section>
 
       {/* Criação de Bezerras */}
-      <section className="bg-white section-padding">
+      <section className="section-padding" style={{ backgroundColor: "#0f1f0f" }}>
         <div className="container-main">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div {...fadeUp}>
               <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
                 Destaque
               </span>
-              <h2 className="text-heading text-dark">
+              <h2 className="text-heading text-white">
                 Criação de Bezerras: O Melhor Começo para um Futuro Produtivo
               </h2>
-              <div className="mt-6 space-y-4 text-gray-500 leading-relaxed">
+              <div className="mt-6 space-y-4 text-white/50 leading-relaxed">
                 <p>
                   Os primeiros meses de vida de uma bezerra definem todo o seu potencial
                   produtivo. Uma nutrição adequada nessa fase impacta diretamente no
@@ -89,12 +87,12 @@ export default function NutricaoAnimalContent() {
                 </p>
                 <p>
                   A MAPSUL promove eventos e capacitações sobre criação de bezerras, como
-                  o seminário <strong className="text-dark">&quot;Criação de Bezerras — O melhor
+                  o seminário <strong className="text-white">&quot;Criação de Bezerras — O melhor
                     começo para um futuro produtivo&quot;</strong>, onde especialistas compartilham
                   as melhores práticas de manejo nutricional desde o nascimento.
                 </p>
                 <p>
-                  Trabalhamos com o <strong className="text-dark">sistema Milk Bar</strong>,
+                  Trabalhamos com o <strong className="text-white">sistema Milk Bar</strong>,
                   desenvolvido na Nova Zelândia, que simula a amamentação natural e promove
                   alimentação controlada, reduzindo problemas digestivos e melhorando o
                   desempenho das bezerras.
@@ -123,12 +121,13 @@ export default function NutricaoAnimalContent() {
       </section>
 
       {/* Agrifirm */}
-      <section className="bg-gray-50 section-padding">
+      <section className="section-padding" style={{ backgroundColor: "#0f1f0f" }}>
         <div className="container-main">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               {...fadeUp}
-              className="order-2 lg:order-1 bg-forest rounded-3xl p-10 flex items-center justify-center aspect-[4/3]"
+              className="order-2 lg:order-1 rounded-3xl p-10 flex items-center justify-center aspect-[4/3]"
+              style={{ backgroundColor: "#1a3c2a" }}
             >
               <div className="text-center">
                 <div className="text-4xl md:text-5xl font-extrabold text-lime mb-2">
@@ -142,10 +141,10 @@ export default function NutricaoAnimalContent() {
               <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
                 Parceria
               </span>
-              <h2 className="text-heading text-dark">
+              <h2 className="text-heading text-white">
                 Agrifirm: Nutrição de Precisão
               </h2>
-              <p className="text-gray-500 leading-relaxed mt-6">
+              <p className="text-white/50 leading-relaxed mt-6">
                 Em parceria com a Agrifirm, oferecemos soluções nutricionais baseadas
                 em ciência e formulações de alto desempenho para todas as fases de criação:
               </p>
@@ -155,7 +154,7 @@ export default function NutricaoAnimalContent() {
                   href="https://www.agrifirm.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-outline"
+                  className="btn-lime"
                 >
                   Conhecer a Agrifirm
                   <FaArrowRight className="text-xs" />
@@ -164,10 +163,10 @@ export default function NutricaoAnimalContent() {
             </motion.div>
           </div>
         </div>
-      </section >
+      </section>
 
-      {/* Catálogo Nutrição (Padrão Sementes: Fundo Forest) */}
-      < section className="bg-forest section-padding relative overflow-hidden" >
+      {/* Catálogo Nutrição */}
+      <section className="section-padding relative overflow-hidden" style={{ backgroundColor: "#0f1f0f" }}>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-lime/[0.03] rounded-full blur-[150px]" />
 
         <div className="container-main relative">
@@ -186,10 +185,10 @@ export default function NutricaoAnimalContent() {
               ))}
           </div>
         </div>
-      </section >
+      </section>
 
       {/* Evento */}
-      < section className="bg-forest section-padding relative overflow-hidden" >
+      <section className="section-padding relative overflow-hidden" style={{ backgroundColor: "#0f1f0f" }}>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-lime/[0.03] rounded-full blur-[150px]" />
 
         <div className="container-main relative">
@@ -217,14 +216,15 @@ export default function NutricaoAnimalContent() {
             </a>
           </motion.div>
         </div>
-      </section >
+      </section>
 
       {/* CTA Final */}
-      < section className="bg-white section-padding" >
+      <section className="section-padding" style={{ backgroundColor: "#0f1f0f" }}>
         <div className="container-main">
           <motion.div
             {...fadeUp}
-            className="bg-forest rounded-3xl p-10 md:p-16 text-center relative overflow-hidden"
+            className="rounded-3xl p-10 md:p-16 text-center relative overflow-hidden"
+            style={{ backgroundColor: "#1a3c2a" }}
           >
             <div className="absolute top-0 right-0 w-60 h-60 bg-lime/[0.06] rounded-full -translate-y-1/2 translate-x-1/3 blur-[80px]" />
             <div className="relative">
@@ -254,7 +254,7 @@ export default function NutricaoAnimalContent() {
             </div>
           </motion.div>
         </div>
-      </section >
+      </section>
     </>
   );
 }
