@@ -69,7 +69,7 @@ export default function Header() {
   return (
     <header
       className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "top-3" : "top-5 md:top-6"
+        scrolled ? "top-4 md:top-5" : "top-7 md:top-8"
       }`}
     >
       <div className="px-5 sm:px-8 lg:px-12">
