@@ -113,7 +113,7 @@ export default function SanidadeVacinacaoContent() {
                   <FaShieldAlt className="text-lime" />
                   Produtos em Destaque
                 </h3>
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {products
                     .filter((p) => p.category === "Sanidade")
                     .slice(0, 4)
