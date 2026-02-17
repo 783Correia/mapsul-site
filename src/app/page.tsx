@@ -52,7 +52,7 @@ function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[95vh] flex flex-col justify-start overflow-hidden bg-forest"
+      className="relative min-h-[95vh] flex flex-col justify-center overflow-hidden bg-forest"
     >
       {/* Background Parallax */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
@@ -70,7 +70,7 @@ function Hero() {
       <div className="absolute top-20 left-20 w-96 h-96 bg-lime/20 rounded-full blur-[100px] z-10 opacity-60 mix-blend-screen" />
       <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] z-10 opacity-50 mix-blend-screen" />
 
-      <div className="container-main relative z-20 text-center pt-28 pb-36">
+      <div className="container-main relative z-20 text-center pb-40">
         <motion.div
           style={{ y: textY }}
           initial={{ opacity: 0, y: 30 }}
