@@ -52,7 +52,7 @@ function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[95vh] flex flex-col justify-center overflow-hidden bg-forest"
+      className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden bg-forest"
     >
       {/* Background Parallax */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
