@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { getWhatsAppLink } from "@/utils/whatsapp";
 import {
   FaWhatsapp,
   FaArrowRight,
@@ -11,6 +12,7 @@ import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
+
 
 
 const fadeUp = {
@@ -53,7 +55,7 @@ export default function NutricaoAnimalContent() {
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <a
-                href="https://wa.me/5554996356819?text=Olá! Gostaria de consultoria sobre nutrição animal."
+                href={getWhatsAppLink("Olá! Gostaria de consultoria sobre nutrição animal.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-lime shadow-glow-lime"
@@ -200,7 +202,7 @@ export default function NutricaoAnimalContent() {
               um futuro produtivo&quot;. Fique atento às próximas datas e participe!
             </p>
             <a
-              href="https://wa.me/5554996356819?text=Olá! Quero saber sobre os próximos eventos de nutrição animal da MAPSUL."
+              href={getWhatsAppLink("Olá! Quero saber sobre os próximos eventos de nutrição animal da MAPSUL.")}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-lime mt-8"
@@ -231,7 +233,7 @@ export default function NutricaoAnimalContent() {
               </p>
               <div className="flex flex-wrap justify-center gap-4 mt-8">
                 <a
-                  href="https://wa.me/5554996356819?text=Olá! Quero consultoria nutricional para meu rebanho."
+                  href={getWhatsAppLink("Olá! Quero consultoria nutricional para meu rebanho.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-lime shadow-glow-lime"

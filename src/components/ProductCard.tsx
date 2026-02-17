@@ -6,12 +6,12 @@ interface ProductCardProps {
     product: Product;
 }
 
+import { getWhatsAppLink } from "@/utils/whatsapp";
+
 // ProductCard.tsx - Hybrid Theme
 export default function ProductCard({ product }: ProductCardProps) {
     const whatsappMessage = `Olá! Tenho interesse no produto ${product.name} que vi no site.`;
-    const whatsappLink = `https://wa.me/5554996356819?text=${encodeURIComponent(
-        whatsappMessage
-    )}`;
+    const whatsappLink = getWhatsAppLink(whatsappMessage);
 
     return (
         <div className="group relative bg-neutral-900 rounded-3xl overflow-hidden border border-white/10 shadow-lg transition-all duration-300 hover:border-lime/50 hover:shadow-2xl flex flex-col h-full w-full">

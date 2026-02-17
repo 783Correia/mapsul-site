@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { getWhatsAppLink } from "@/utils/whatsapp";
 import {
   FaWhatsapp,
   FaArrowRight,
@@ -55,7 +56,7 @@ export default function ReproducaoIATFContent() {
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <a
-                href="https://wa.me/5554996356819?text=Olá! Gostaria de consultoria sobre protocolo IATF para meu rebanho."
+                href={getWhatsAppLink("Olá! Gostaria de consultoria sobre protocolo IATF para meu rebanho.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-lime shadow-glow-lime"
@@ -262,7 +263,7 @@ export default function ReproducaoIATFContent() {
               </p>
               <div className="flex flex-wrap justify-center gap-4 mt-8">
                 <a
-                  href="https://wa.me/5554996356819?text=Olá! Quero consultoria sobre protocolo IATF para meu rebanho."
+                  href={getWhatsAppLink("Olá! Quero consultoria sobre protocolo IATF para meu rebanho.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-lime shadow-glow-lime"

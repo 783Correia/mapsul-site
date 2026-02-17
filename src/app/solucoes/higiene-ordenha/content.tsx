@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { getWhatsAppLink } from "@/utils/whatsapp";
 import {
     FaWhatsapp,
     FaCheckCircle,
@@ -54,7 +55,7 @@ export default function HigieneOrdenhaContent() {
                         </p>
                         <div className="flex flex-wrap gap-4 mt-8">
                             <a
-                                href="https://wa.me/5554996356819?text=Olá! Gostaria de consultoria sobre produtos de higiene de ordenha."
+                                href={getWhatsAppLink("Olá! Gostaria de consultoria sobre produtos de higiene de ordenha.")}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn-lime shadow-glow-lime"
@@ -192,7 +193,7 @@ export default function HigieneOrdenhaContent() {
                             </p>
                             <div className="flex flex-wrap justify-center gap-4 mt-8">
                                 <a
-                                    href="https://wa.me/5554996356819?text=Olá! Quero melhorar a qualidade do leite com produtos Kersia."
+                                    href={getWhatsAppLink("Olá! Quero melhorar a qualidade do leite com produtos Kersia.")}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="btn-lime shadow-glow-lime"

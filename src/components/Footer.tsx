@@ -6,6 +6,7 @@ import {
   FaMapMarkerAlt,
   FaPhoneAlt,
 } from "react-icons/fa";
+import { getWhatsAppLink } from "@/utils/whatsapp";
 
 export default function Footer() {
   return (
@@ -33,7 +34,7 @@ export default function Footer() {
                   <FaInstagram size={15} />
                 </a>
                 <a
-                  href="https://wa.me/5554996356819"
+                  href={getWhatsAppLink()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 bg-white/[0.05] hover:bg-lime hover:text-forest rounded-xl flex items-center justify-center text-white/30 transition-all duration-300"
@@ -118,7 +119,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://wa.me/5554996356819"
+                    href={getWhatsAppLink()}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2.5 text-white/40 hover:text-lime text-sm transition-colors"

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { getWhatsAppLink } from "@/utils/whatsapp";
 import { FaWhatsapp, FaCalendarAlt, FaArrowLeft, FaTag } from "react-icons/fa";
 import Link from "next/link";
 
@@ -86,7 +87,7 @@ export default function ArtigoNutricaoContent() {
               </p>
               <p>
                 A recomendação é fornecer pelo menos <strong className="text-dark">4 litros de
-                colostro de boa qualidade</strong> (acima de 50 g/L de IgG) logo após o
+                  colostro de boa qualidade</strong> (acima de 50 g/L de IgG) logo após o
                 nascimento. A falha na transferência de imunidade passiva é a principal causa
                 de mortalidade e morbidade em bezerras nos primeiros meses de vida.
               </p>
@@ -150,7 +151,7 @@ export default function ArtigoNutricaoContent() {
               </h2>
               <p>
                 Água limpa e fresca deve estar disponível <strong className="text-dark">desde o
-                primeiro dia de vida</strong>. Muitos produtores não fornecem água para bezerras
+                  primeiro dia de vida</strong>. Muitos produtores não fornecem água para bezerras
                 em aleitamento, mas isso é um erro grave. A água é essencial para o consumo de
                 concentrado e para o desenvolvimento ruminal. Sem água, a bezerra consome menos
                 concentrado e o desenvolvimento do rúmen é prejudicado.
@@ -161,7 +162,7 @@ export default function ArtigoNutricaoContent() {
               </h2>
               <p>
                 O desmame deve ser feito com base no <strong className="text-dark">consumo de
-                concentrado</strong>, não apenas pela idade. A bezerra está pronta para ser
+                  concentrado</strong>, não apenas pela idade. A bezerra está pronta para ser
                 desmamada quando consome de forma consistente pelo menos 800g a 1 kg de
                 concentrado por dia, durante 3 dias consecutivos.
               </p>
@@ -177,7 +178,7 @@ export default function ArtigoNutricaoContent() {
               <p>
                 Pesquisas demonstram que bezerras que dobram o peso de nascimento até 60 dias
                 de vida produzem até <strong className="text-dark">1.500 kg a mais de leite na
-                primeira lactação</strong> em comparação a bezerras com crescimento deficiente.
+                  primeira lactação</strong> em comparação a bezerras com crescimento deficiente.
                 Além disso, atingem a puberdade mais cedo, podendo entrar em reprodução com
                 14–15 meses em raças leiteiras.
               </p>
@@ -199,7 +200,7 @@ export default function ArtigoNutricaoContent() {
               </p>
               <p>
                 Periodicamente, realizamos o seminário <strong className="text-dark">&quot;Criação
-                de Bezerras — O melhor começo para um futuro produtivo&quot;</strong>, onde
+                  de Bezerras — O melhor começo para um futuro produtivo&quot;</strong>, onde
                 especialistas compartilham as melhores práticas e pesquisas mais recentes sobre
                 o tema.
               </p>
@@ -213,7 +214,7 @@ export default function ArtigoNutricaoContent() {
                   Fale com um consultor MAPSUL da sua região.
                 </p>
                 <a
-                  href="https://wa.me/5554996356819?text=Olá! Li o artigo sobre nutrição de bezerras e gostaria de consultoria."
+                  href={getWhatsAppLink("Olá! Li o artigo sobre nutrição de bezerras e gostaria de consultoria.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-lime"

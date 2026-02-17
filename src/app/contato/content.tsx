@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getWhatsAppLink } from "@/utils/whatsapp";
 import { motion } from "framer-motion";
 import {
   FaWhatsapp,
@@ -50,7 +51,7 @@ export default function ContatoContent() {
       .filter(Boolean)
       .join("%0A");
 
-    window.open(`https://wa.me/5554996356819?text=${lines}`, "_blank");
+    window.open(getWhatsAppLink(lines), "_blank");
     setSubmitted(true);
   };
 
@@ -314,7 +315,7 @@ export default function ContatoContent() {
                       icon: FaWhatsapp,
                       label: "WhatsApp",
                       value: "(54) 99635-6819",
-                      href: "https://wa.me/5554996356819",
+                      href: getWhatsAppLink(),
                       color: "bg-[#25D366]/10 text-[#25D366]",
                     },
                     {

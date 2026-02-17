@@ -3,10 +3,12 @@
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
 
+import { getWhatsAppLink } from "@/utils/whatsapp";
+
 export default function WhatsAppButton() {
   return (
     <motion.a
-      href="https://wa.me/5554996356819?text=Olá! Gostaria de saber mais sobre os produtos MAPSUL."
+      href={getWhatsAppLink("Olá! Gostaria de saber mais sobre os produtos MAPSUL.")}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20BD5A] text-white w-14 h-14 rounded-full shadow-float flex items-center justify-center transition-colors"

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { getWhatsAppLink } from "@/utils/whatsapp";
 import {
   FaWhatsapp,
   FaSeedling,
@@ -91,7 +92,7 @@ export default function SementesPastagemContent() {
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <a
-                href="https://wa.me/5554996356819?text=Olá! Gostaria de consultoria sobre sementes de pastagem."
+                href={getWhatsAppLink("Olá! Gostaria de consultoria sobre sementes de pastagem.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-lime shadow-glow-lime"
@@ -252,7 +253,7 @@ export default function SementesPastagemContent() {
                 propriedade para recomendar as melhores cultivares e o manejo ideal.
               </p>
               <a
-                href="https://wa.me/5554996356819?text=Olá! Preciso de consultoria para escolher as melhores sementes de pastagem."
+                href={getWhatsAppLink("Olá! Preciso de consultoria para escolher as melhores sementes de pastagem.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-lime shadow-glow-lime mt-8"

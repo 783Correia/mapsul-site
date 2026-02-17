@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { getWhatsAppLink } from "@/utils/whatsapp";
 import { FaWhatsapp, FaCalendarAlt, FaArrowLeft, FaTag } from "react-icons/fa";
 import Link from "next/link";
 
@@ -146,7 +147,7 @@ export default function ArtigoIATFContent() {
               </p>
               <p>
                 A MAPSUL distribui a <strong className="text-dark">linha hormonal completa da
-                Boehringer Ingelheim</strong>, líder mundial em saúde animal reprodutiva. Todos
+                  Boehringer Ingelheim</strong>, líder mundial em saúde animal reprodutiva. Todos
                 os produtos são armazenados e transportados em condições ideais de temperatura,
                 garantindo a máxima eficácia no campo.
               </p>
@@ -228,7 +229,7 @@ export default function ArtigoIATFContent() {
                   Fale com um consultor MAPSUL da sua região.
                 </p>
                 <a
-                  href="https://wa.me/5554996356819?text=Olá! Li o guia de IATF no blog e gostaria de consultoria para meu rebanho."
+                  href={getWhatsAppLink("Olá! Li o guia de IATF no blog e gostaria de consultoria para meu rebanho.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-lime"

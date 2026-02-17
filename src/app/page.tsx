@@ -1,5 +1,6 @@
 "use client";
 
+import { getWhatsAppLink } from "@/utils/whatsapp";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect, useCallback } from "react";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -102,8 +103,10 @@ function Hero() {
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+
             <a
-              href="https://wa.me/5554996356819"
+              href={getWhatsAppLink("Olá! Gostaria de falar com um veterinário da MAPSUL.")}
               target="_blank"
               className="group bg-lime text-forest-dark px-6 py-3 rounded-full font-bold text-base transition-all hover:scale-105 hover:bg-lime/90 flex items-center gap-2 shadow-xl shadow-lime/20"
             >
@@ -317,8 +320,9 @@ function Solucoes() {
   const allCards = [...cards, ...cards];
 
   return (
-    <section style={{ backgroundColor: "#0f1f0f" }} className="pt-8 pb-20 md:pt-10 md:pb-28 relative overflow-hidden">
-      <div className="container-main relative">
+    <section style={{ backgroundColor: "#0f1f0f" }} className="pb-20 md:pb-28 relative">
+      <StatsBar />
+      <div className="container-main relative pt-8 md:pt-10">
         <SectionHeading
           tag="Soluções para Pecuária"
           title="Medicamentos, nutrição e sementes para o seu rebanho"
@@ -771,7 +775,6 @@ export default function Home() {
   return (
     <main className="font-sans antialiased text-dark">
       <Hero />
-      <StatsBar />
       <Solucoes />
       <ProdutosDestaque />
       <Diferenciais />

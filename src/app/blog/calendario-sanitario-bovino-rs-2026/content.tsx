@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { getWhatsAppLink } from "@/utils/whatsapp";
 import { FaWhatsapp, FaCalendarAlt, FaArrowLeft, FaTag } from "react-icons/fa";
 import Link from "next/link";
 
@@ -178,9 +179,8 @@ export default function ArtigoCalendarioContent() {
                     {calendario.map((item, i) => (
                       <tr
                         key={item.mes}
-                        className={`border-b border-gray-100 ${
-                          i % 2 === 0 ? "bg-white" : "bg-gray-50"
-                        }`}
+                        className={`border-b border-gray-100 ${i % 2 === 0 ? "bg-white" : "bg-gray-50"
+                          }`}
                       >
                         <td className="p-4 font-bold text-dark whitespace-nowrap">
                           {item.mes}
@@ -287,7 +287,7 @@ export default function ArtigoCalendarioContent() {
                   Fale com um consultor MAPSUL da sua região.
                 </p>
                 <a
-                  href="https://wa.me/5554996356819?text=Olá! Li o calendário sanitário no blog e gostaria de montar o programa da minha propriedade."
+                  href={getWhatsAppLink("Olá! Li o calendário sanitário no blog e gostaria de montar o programa da minha propriedade.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-lime"

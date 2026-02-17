@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { getWhatsAppLink } from "@/utils/whatsapp";
 import {
   FaWhatsapp,
   FaShieldAlt,
@@ -198,7 +199,7 @@ export default function SanidadeVacinacaoContent() {
               </p>
               <div className="flex flex-wrap justify-center gap-4 mt-8">
                 <a
-                  href="https://wa.me/5554996356819?text=Olá! Quero montar o calendário sanitário da minha propriedade."
+                  href={getWhatsAppLink("Olá! Quero montar o calendário sanitário da minha propriedade.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-lime shadow-glow-lime"

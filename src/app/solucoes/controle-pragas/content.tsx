@@ -1,14 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  FaWhatsapp,
-  FaBug,
-  FaCheckCircle,
-  FaLeaf,
-  FaShieldAlt,
-  FaThumbsUp,
-} from "react-icons/fa";
+import { FaBug, FaLeaf, FaShieldAlt, FaWhatsapp, FaThumbsUp, FaCheckCircle } from "react-icons/fa";
+import { getWhatsAppLink } from "@/utils/whatsapp";
 import SectionHeading from "@/components/SectionHeading";
 
 
@@ -52,7 +46,7 @@ export default function ControlePragasContent() {
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <a
-                href="https://wa.me/5554996356819?text=Olá! Gostaria de saber mais sobre o controle de pragas Amarillo."
+                href={getWhatsAppLink("Olá! Gostaria de saber mais sobre o controle de pragas Amarillo.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-lime shadow-glow-lime"

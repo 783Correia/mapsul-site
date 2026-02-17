@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaArrowRight } from "react-icons/fa";
+import { FaWhatsapp, FaMapMarkerAlt, FaPhone, FaEnvelope, FaArrowRight } from "react-icons/fa";
+import { getWhatsAppLink } from "@/utils/whatsapp";
 
 const representantes = [
   {
@@ -114,7 +115,7 @@ export default function RepresentantesContent() {
                 </div>
 
                 <a
-                  href={`https://wa.me/555433581151?text=Olá! Sou da região ${rep.name} e gostaria de falar com um representante.`}
+                  href={getWhatsAppLink(`Olá! Sou da região ${rep.name} e gostaria de falar com um representante.`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-lime w-full justify-center !py-3 !text-[11px]"

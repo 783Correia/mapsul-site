@@ -16,6 +16,7 @@ import {
   FaBug,
   FaSeedling,
 } from "react-icons/fa";
+import { getWhatsAppLink } from "@/utils/whatsapp";
 
 const solucoes = [
   { href: "/solucoes/reproducao-iatf", label: "Reprodução e IATF", icon: FaDna },
@@ -278,7 +279,7 @@ export default function Header() {
               })}
 
               <a
-                href="https://wa.me/5554996356819"
+                href={getWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-lime w-full justify-center mt-3 !py-3"
