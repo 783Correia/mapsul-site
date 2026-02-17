@@ -28,36 +28,47 @@ export default function Footer() {
       {/* ─── Hero CTA with background image ─── */}
       {/* ─── Newsletter / Mission Style (Redesign) ─── */}
       <section className="bg-white py-24 border-b border-gray-100 relative overflow-hidden">
+        {/* Background Decorations */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-1/2 left-10 w-64 h-64 bg-lime/10 rounded-full blur-[80px] -translate-y-1/2" />
+          <div className="absolute top-1/2 right-10 w-64 h-64 bg-forest/5 rounded-full blur-[80px] -translate-y-1/2" />
+        </div>
+
         <div className="container-main relative">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
-            {/* Left Image (Small Pill) */}
-            <div className="hidden lg:block w-48 shrink-0">
-              <div className="aspect-[3/4] rounded-[3rem] overflow-hidden relative shadow-lg rotate-[-6deg] hover:rotate-0 transition-all duration-500">
+            {/* Left Image (Small Pill) - Agora visível em MD+ */}
+            <div className="hidden md:block w-56 shrink-0 relative">
+              <div className="absolute inset-0 bg-lime/20 rounded-[3rem] blur-xl transform translate-x-4 translate-y-4"></div>
+              <div className="aspect-[3/4] rounded-[3rem] overflow-hidden relative shadow-2xl rotate-[-3deg] hover:rotate-0 transition-all duration-500 bg-gray-100">
                 <Image
-                  src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80"
                   alt="Pastagem"
-                  fill
-                  className="object-cover"
+                  width={400}
+                  height={600}
+                  className="object-cover w-full h-full"
                 />
               </div>
             </div>
 
             {/* Center Content */}
-            <div className="flex-1 text-center">
-              <div className="flex justify-center mb-6">
-                <Image src="/logos/mapsul.png" alt="Mapsul" width={100} height={60} className="h-12 w-auto" />
+            <div className="flex-1 text-center relative z-10">
+              <div className="flex justify-center mb-8">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-lime/20 blur-xl rounded-full"></div>
+                  <Image src="/logos/mapsul.png" alt="Mapsul" width={120} height={70} className="h-14 w-auto relative" />
+                </div>
               </div>
 
               <h2 className="text-display-sm text-dark max-w-2xl mx-auto tracking-tight">
-                Tecnologia e inovação para o campo.
+                Tecnologia de ponta para o campo.
               </h2>
               <p className="text-gray-500 mt-6 max-w-lg mx-auto leading-relaxed text-lg">
                 Receba novidades, dicas técnicas e ofertas exclusivas da Mapsul diretamente no seu e-mail.
               </p>
 
               {subscribed ? (
-                <div className="mt-8 bg-lime/10 rounded-full px-8 py-4 inline-flex items-center gap-3 text-forest font-bold mx-auto">
+                <div className="mt-8 bg-lime/10 rounded-full px-8 py-4 inline-flex items-center gap-3 text-forest font-bold mx-auto border border-lime/20">
                   <FaPaperPlane />
                   Inscrição confirmada!
                 </div>
@@ -71,12 +82,12 @@ export default function Footer() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Seu melhor e-mail"
-                    className="flex-1 bg-gray-50 border border-gray-200 rounded-full px-6 py-4 text-dark text-sm placeholder:text-gray-400 outline-none focus:border-lime focus:ring-2 focus:ring-lime/20 transition-all"
+                    placeholder="Seu endereço de e-mail"
+                    className="flex-1 bg-white border border-gray-200 rounded-full px-6 py-4 text-dark text-sm placeholder:text-gray-400 outline-none focus:border-lime focus:ring-4 focus:ring-lime/10 transition-all shadow-sm"
                   />
                   <button
                     type="submit"
-                    className="bg-lime text-forest font-bold px-8 py-4 rounded-full hover:shadow-glow-lime hover:scale-[1.03] transition-all duration-300 shadow-lg shadow-lime/20"
+                    className="bg-forest text-white font-bold px-8 py-4 rounded-full hover:bg-lime hover:text-forest hover:shadow-glow-lime hover:scale-[1.03] transition-all duration-300 shadow-lg"
                   >
                     Inscrever
                   </button>
@@ -85,13 +96,15 @@ export default function Footer() {
             </div>
 
             {/* Right Image (Large Pill) */}
-            <div className="hidden lg:block w-72 shrink-0">
-              <div className="aspect-[4/3] rounded-[4rem] overflow-hidden relative shadow-2xl rotate-[3deg] hover:rotate-0 transition-all duration-500 transform translate-x-8">
+            <div className="hidden md:block w-72 shrink-0 relative">
+              <div className="absolute inset-0 bg-forest/10 rounded-[3.5rem] blur-xl transform -translate-x-4 translate-y-4"></div>
+              <div className="aspect-[4/5] rounded-[3.5rem] overflow-hidden relative shadow-2xl rotate-[3deg] hover:rotate-0 transition-all duration-500 transform translate-y-8 bg-gray-100">
                 <Image
-                  src="https://images.unsplash.com/photo-1596733430284-f74377bc21a6?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1596733430284-f74377bc21a6?w=600&q=80"
                   alt="Tecnologia"
-                  fill
-                  className="object-cover"
+                  width={400}
+                  height={500}
+                  className="object-cover w-full h-full"
                 />
               </div>
             </div>
