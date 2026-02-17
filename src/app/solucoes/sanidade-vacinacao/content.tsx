@@ -113,12 +113,15 @@ export default function SanidadeVacinacaoContent() {
                   <FaShieldAlt className="text-lime" />
                   Produtos em Destaque
                 </h3>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {/* Carousel Container */}
+                <div className="flex overflow-x-auto pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 space-x-6 snap-x snap-mandatory scrollbar-hide">
                   {products
                     .filter((p) => p.category === "Sanidade")
                     .slice(0, 4)
                     .map((product) => (
-                      <ProductCard key={product.id} product={product} />
+                      <div key={product.id} className="min-w-[280px] md:min-w-[320px] snap-center">
+                        <ProductCard product={product} />
+                      </div>
                     ))}
                 </div>
               </div>
