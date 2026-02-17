@@ -139,7 +139,7 @@ function Hero() {
    ═══════════════════════════════════════════════ */
 function StatsBar() {
   return (
-    <div className="relative z-40 -mt-14 px-4">
+    <div className="relative z-40 -mt-20 md:-mt-24 px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -320,9 +320,9 @@ function Solucoes() {
   const allCards = [...cards, ...cards];
 
   return (
-    <section style={{ backgroundColor: "#0f1f0f" }} className="pb-20 md:pb-28 relative">
+    <section style={{ backgroundColor: "#0f1f0f" }} className="pt-10 md:pt-14 pb-20 md:pb-28 relative">
       <StatsBar />
-      <div className="container-main relative pt-8 md:pt-10">
+      <div className="container-main relative pt-10 md:pt-14">
         <SectionHeading
           tag="Soluções para Pecuária"
           title="Medicamentos, nutrição e sementes para o seu rebanho"

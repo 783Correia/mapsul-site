@@ -43,7 +43,7 @@ export default function Header() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -67,12 +67,16 @@ export default function Header() {
   const isSolucoesActive = pathname.startsWith("/solucoes");
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="container-main py-4">
+    <header
+      className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? "top-3" : "top-5 md:top-6"
+      }`}
+    >
+      <div className="px-5 sm:px-8 lg:px-12">
         <div
-          className={`flex items-center justify-between px-8 h-20 max-w-[1216px] mx-auto rounded-full transition-all duration-500 ${scrolled
-            ? "bg-forest-dark/80 backdrop-blur-2xl shadow-float border border-white/[0.06]"
-            : "bg-forest/60 backdrop-blur-xl border border-white/[0.08]"
+          className={`flex items-center justify-between px-6 md:px-10 h-16 md:h-[68px] max-w-[1120px] mx-auto rounded-full transition-all duration-500 ${scrolled
+            ? "bg-forest-dark/85 backdrop-blur-2xl shadow-float border border-white/[0.08]"
+            : "bg-forest/50 backdrop-blur-xl border border-white/[0.1]"
             }`}
         >
           {/* Logo */}
@@ -207,7 +211,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.98 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden mx-5 sm:mx-8"
+            className="lg:hidden mx-5 sm:mx-8 lg:mx-12"
           >
             <div className="bg-forest-dark/95 backdrop-blur-2xl border border-white/[0.08] rounded-3xl p-5 mt-2 shadow-float">
               <Link
