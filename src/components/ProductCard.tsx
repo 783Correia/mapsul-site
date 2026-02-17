@@ -14,7 +14,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     const whatsappLink = getWhatsAppLink(whatsappMessage);
 
     return (
-        <div className="group relative bg-neutral-900 rounded-3xl overflow-hidden border border-white/10 shadow-lg transition-all duration-300 hover:border-lime/50 hover:shadow-2xl flex flex-col h-full w-full">
+        <div className="group relative rounded-3xl overflow-hidden border border-white/[0.12] shadow-lg transition-all duration-300 hover:border-lime/50 hover:shadow-2xl flex flex-col h-full w-full" style={{ backgroundColor: "#1a3c2a" }}>
             {/* Imagem (Fundo Claro para misturar com JPEG) */}
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-white p-6 flex items-center justify-center">
                 <Image
@@ -32,7 +32,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             </div>
 
             {/* Conteúdo (Fundo Escuro Original) */}
-            <div className="relative z-20 p-5 flex flex-col flex-grow bg-neutral-900">
+            <div className="relative z-20 p-5 flex flex-col flex-grow" style={{ backgroundColor: "#1a3c2a" }}>
                 <div className="mb-2">
                     <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">
                         {product.brand}
@@ -58,7 +58,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                         href={whatsappLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 bg-white text-neutral-900 px-5 py-2 rounded-full font-bold text-xs hover:bg-lime hover:scale-105 transition-all duration-300"
+                        className="flex items-center gap-2 bg-white text-forest-dark px-5 py-2 rounded-full font-bold text-xs hover:bg-lime hover:scale-105 transition-all duration-300"
                     >
                         Solicitar
                         <FaArrowRight className="text-[10px]" />
