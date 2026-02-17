@@ -31,12 +31,12 @@ export default function ProdutosContent() {
   });
 
   return (
-    <div className="min-h-screen bg-neutral-900 flex flex-col font-sans selection:bg-lime selection:text-forest">
+    <div className="min-h-screen flex flex-col font-sans selection:bg-lime selection:text-forest" style={{ backgroundColor: "#0f1f0f" }}>
 
       {/* Hero Simplificado - Dark & Green */}
-      <section className="bg-forest pt-32 pb-16 relative overflow-hidden text-center md:text-left">
+      <section className="pt-32 pb-16 relative overflow-hidden text-center md:text-left" style={{ backgroundColor: "#0f1f0f" }}>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1595856942838-8ca080e729a9?w=1920&q=80')] bg-cover bg-center opacity-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-forest to-forest/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0f1f0f] to-[#0f1f0f]/80" />
 
         <div className="container-main relative z-10">
           <motion.div
