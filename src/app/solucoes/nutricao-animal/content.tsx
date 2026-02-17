@@ -103,13 +103,18 @@ export default function NutricaoAnimalContent() {
 
             <motion.div
               {...fadeUp}
-              className="relative rounded-3xl overflow-hidden aspect-[4/3]"
+              className="relative aspect-[4/3]"
+              style={{
+                borderRadius: 16,
+                boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
+              }}
             >
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
                   backgroundImage:
                     "url('https://images.unsplash.com/photo-1549420063-e382d6da5722?w=800&q=80')",
+                  borderRadius: 16,
                 }}
               />
             </motion.div>
