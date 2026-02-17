@@ -81,22 +81,22 @@ function Hero() {
           {/* Tag */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
             <div className="w-2 h-2 rounded-full bg-lime animate-pulse" />
-            <span className="text-xs font-bold uppercase tracking-widest text-white">Distribuidora referência no RS desde 2007</span>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-white">Distribuidora referência no RS desde 2007</span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-[clamp(3.5rem,6vw,6rem)] font-bold text-white leading-[1.1] tracking-tight mb-8 drop-shadow-lg">
-            Produtos veterinários e<br />
+          <h1 className="text-[clamp(2rem,3.5vw,3.2rem)] font-bold text-white leading-[1.15] tracking-tight mb-6 drop-shadow-lg">
+            Produtos veterinários e{" "}
             <span className="text-lime inline-block relative">
               nutrição animal no RS.
-              <svg className="absolute w-full h-3 -bottom-1 left-0 text-lime opacity-40" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <svg className="absolute w-full h-2 -bottom-0.5 left-0 text-lime opacity-40" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
               </svg>
             </span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed mb-10 font-normal shadow-black/10 drop-shadow-md">
+          <p className="text-sm md:text-base text-white/80 max-w-lg mx-auto leading-relaxed mb-8 font-normal drop-shadow-md">
             Medicamentos, sementes de pastagem e suplementação para pecuaristas de todo o Rio Grande do Sul. Consultoria técnica especializada e entrega em todas as regiões.
           </p>
 
@@ -105,14 +105,14 @@ function Hero() {
             <a
               href="https://wa.me/5554996356819"
               target="_blank"
-              className="group bg-lime text-forest-dark px-8 py-4 rounded-full font-bold text-lg transition-all hover:scale-105 hover:bg-lime/90 flex items-center gap-3 shadow-xl shadow-lime/20"
+              className="group bg-lime text-forest-dark px-6 py-3 rounded-full font-bold text-base transition-all hover:scale-105 hover:bg-lime/90 flex items-center gap-2 shadow-xl shadow-lime/20"
             >
               Fale com nosso Veterinário
               <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
             </a>
             <Link
               href="/produtos"
-              className="px-8 py-4 rounded-full font-bold text-lg text-white border border-white/20 hover:bg-white/10 transition-all backdrop-blur-sm"
+              className="px-6 py-3 rounded-full font-bold text-base text-white border border-white/20 hover:bg-white/10 transition-all backdrop-blur-sm"
             >
               Ver todos os Produtos
             </Link>
@@ -135,7 +135,7 @@ function Hero() {
               { number: "100%", label: "Cobertura no RS" },
             ].map((stat, i) => (
               <div key={i} className="flex-1 text-center md:text-left border-r last:border-0 border-gray-200 pr-8 last:pr-0">
-                <div className="text-3xl font-extrabold text-primary mb-1">{stat.number}</div>
+                <div className="text-2xl font-extrabold text-primary mb-1">{stat.number}</div>
                 <div className="text-sm text-gray-500 font-medium uppercase tracking-wide">{stat.label}</div>
               </div>
             ))}
