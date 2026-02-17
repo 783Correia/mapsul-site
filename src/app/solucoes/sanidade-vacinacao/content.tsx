@@ -5,13 +5,10 @@ import {
   FaWhatsapp,
   FaShieldAlt,
   FaCalendarCheck,
-  FaChevronLeft,
-  FaChevronRight,
 } from "react-icons/fa";
 
 import SectionHeading from "@/components/SectionHeading";
-import ProductCard from "@/components/ProductCard";
-import { products } from "@/data/products";
+
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -107,55 +104,29 @@ export default function SanidadeVacinacaoContent() {
                   de vermes, carrapatos e berne, otimizando a conversão alimentar e o
                   ganho de peso.
                 </p>
-              </div>
-
-              {/* Vitrine de Produtos */}
-              <div className="mt-12">
-                <h3 className="font-bold text-dark text-lg mb-6 flex items-center gap-2">
-                  <FaShieldAlt className="text-lime" />
-                  Produtos em Destaque
-                </h3>
-                {/* Responsive Container: Carousel < LG, Grid >= LG */}
-                <div className="relative group/carousel">
-                  {/* Buttons (Only visible on Carousel mode < LG) */}
-                  <div className="lg:hidden">
-                    {/* Mobile/Tablet can use swipe, buttons hidden for cleanliness or added if needed */}
-                  </div>
-
-                  <div
-                    className="flex lg:grid lg:grid-cols-4 overflow-x-auto lg:overflow-visible pb-8 lg:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 space-x-4 lg:space-x-0 lg:gap-4 snap-x snap-mandatory lg:snap-none scrollbar-hide"
-                  >
-                    {products
-                      .filter((p) => p.category === "Sanidade")
-                      .slice(0, 4)
-                      .map((product) => (
-                        <div key={product.id} className="min-w-[280px] md:min-w-[320px] lg:min-w-0 lg:w-full snap-center">
-                          <ProductCard product={product} />
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              {...fadeUp}
-              className="relative rounded-3xl overflow-hidden aspect-[4/3]"
-            >
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{
-                  backgroundImage:
-                    "url('https://images.unsplash.com/photo-1704221191316-168a25edbc59?w=800&q=80')",
-                }}
-              />
-            </motion.div>
+              </p>
           </div>
-        </div>
-      </section>
 
-      {/* Calendário */}
-      <section className="bg-forest section-padding relative overflow-hidden">
+        </motion.div>
+
+        <motion.div
+          {...fadeUp}
+          className="relative rounded-3xl overflow-hidden aspect-[4/3]"
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1704221191316-168a25edbc59?w=800&q=80')",
+            }}
+          />
+        </motion.div>
+      </div>
+    </div >
+      </section >
+
+    {/* Calendário */ }
+    < section className = "bg-forest section-padding relative overflow-hidden" >
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-lime/[0.03] rounded-full blur-[150px]" />
 
         <div className="container-main relative">
@@ -185,40 +156,40 @@ export default function SanidadeVacinacaoContent() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
-      {/* CTA Final */}
-      <section className="bg-white section-padding">
-        <div className="container-main">
-          <motion.div
-            {...fadeUp}
-            className="bg-forest rounded-3xl p-10 md:p-16 text-center relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-60 h-60 bg-lime/[0.06] rounded-full -translate-y-1/2 translate-x-1/3 blur-[80px]" />
-            <div className="relative">
-              <FaShieldAlt className="text-lime text-4xl mx-auto mb-6" />
-              <h2 className="text-display-sm text-white max-w-2xl mx-auto">
-                Monte o calendário sanitário da sua propriedade
-              </h2>
-              <p className="text-white/50 mt-4 max-w-lg mx-auto leading-relaxed">
-                Nosso consultor técnico avalia a situação sanitária do seu rebanho
-                e monta um programa personalizado de vacinação e controle parasitário.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 mt-8">
-                <a
-                  href="https://wa.me/5554996356819?text=Olá! Quero montar o calendário sanitário da minha propriedade."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-lime shadow-glow-lime"
-                >
-                  <FaWhatsapp className="text-lg" />
-                  Falar com Consultor
-                </a>
-              </div>
+    {/* CTA Final */ }
+    < section className = "bg-white section-padding" >
+      <div className="container-main">
+        <motion.div
+          {...fadeUp}
+          className="bg-forest rounded-3xl p-10 md:p-16 text-center relative overflow-hidden"
+        >
+          <div className="absolute top-0 right-0 w-60 h-60 bg-lime/[0.06] rounded-full -translate-y-1/2 translate-x-1/3 blur-[80px]" />
+          <div className="relative">
+            <FaShieldAlt className="text-lime text-4xl mx-auto mb-6" />
+            <h2 className="text-display-sm text-white max-w-2xl mx-auto">
+              Monte o calendário sanitário da sua propriedade
+            </h2>
+            <p className="text-white/50 mt-4 max-w-lg mx-auto leading-relaxed">
+              Nosso consultor técnico avalia a situação sanitária do seu rebanho
+              e monta um programa personalizado de vacinação e controle parasitário.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <a
+                href="https://wa.me/5554996356819?text=Olá! Quero montar o calendário sanitário da minha propriedade."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-lime shadow-glow-lime"
+              >
+                <FaWhatsapp className="text-lg" />
+                Falar com Consultor
+              </a>
             </div>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </motion.div>
+      </div>
+      </section >
     </>
   );
 }
