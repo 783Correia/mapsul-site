@@ -85,8 +85,8 @@ function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-[clamp(2rem,3.5vw,3.2rem)] font-bold text-white leading-[1.15] tracking-tight mb-6 drop-shadow-lg">
-            Produtos veterinários e{" "}
+          <h1 className="text-[clamp(2.2rem,4vw,3.8rem)] font-bold text-white leading-[1.1] tracking-tight mb-6 drop-shadow-lg">
+            Produtos veterinários e<br />
             <span className="text-lime inline-block relative">
               nutrição animal no RS.
               <svg className="absolute w-full h-2 -bottom-0.5 left-0 text-lime opacity-40" viewBox="0 0 100 10" preserveAspectRatio="none">
