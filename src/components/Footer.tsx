@@ -109,7 +109,7 @@ export default function Footer() {
             {/* Brand */}
             <div className="col-span-2 md:col-span-1">
               <div className="mb-6">
-                <Image src="/logos/mapsul.png" alt="MAP Sul" width={140} height={100} className="h-16 w-auto brightness-0 invert" />
+                <Image src="/logos/mapsul.png" alt="MAP Sul" width={140} height={100} className="h-16 w-auto" />
               </div>
               <p className="text-white/30 text-sm leading-relaxed max-w-xs">
                 Há 19 anos levando saúde e produtividade para a pecuária gaúcha.
