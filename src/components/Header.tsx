@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -74,13 +75,8 @@ export default function Header() {
             }`}
         >
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <div className="w-8 h-8 bg-lime rounded-lg flex items-center justify-center">
-              <span className="text-forest font-extrabold text-sm">M</span>
-            </div>
-            <span className="font-extrabold text-white text-base tracking-tight">
-              MAPSUL
-            </span>
+          <Link href="/" className="shrink-0">
+            <Image src="/logos/mapsul-alt.png" alt="MAP Sul" width={110} height={36} className="h-8 w-auto" />
           </Link>
 
           {/* Desktop Nav */}

@@ -26,11 +26,20 @@ import Link from "next/link";
 import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import { AgrifirmLogo, BiscayartLogo, KersiaLogo, BoehringerLogo, MilkBarLogo } from "@/components/Logos";
-
 /* ═══════════════════════════════════════════════
    HERO — Rutivo Style (Wide/Clean/Centered)
    ═══════════════════════════════════════════════ */
+const heroBrands = [
+  { name: "Agrifirm", logo: "/logos/agrifirm.png" },
+  { name: "Biscayart", logo: "/logos/biscayart.png" },
+  { name: "Kersia", logo: "/logos/kersia.jpg" },
+  { name: "Boehringer Ingelheim", logo: "/logos/boehringer.png" },
+  { name: "Milk Bar", logo: "/logos/milkbar.jpg" },
+  { name: "ATTO", logo: "/logos/atto.png" },
+  { name: "Luxembourg", logo: "/logos/luxembourg.jpg" },
+];
+const carouselBrands = [...heroBrands, ...heroBrands, ...heroBrands, ...heroBrands];
+
 function Hero() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -39,17 +48,6 @@ function Hero() {
   });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-
-  // Local brands for the floating bar carousel
-  const brands = [
-    { name: "Agrifirm", Component: AgrifirmLogo },
-    { name: "Biscayart", Component: BiscayartLogo },
-    { name: "Kersia", Component: KersiaLogo },
-    { name: "Boehringer Ingelheim", Component: BoehringerLogo },
-    { name: "Milk Bar", Component: MilkBarLogo },
-  ];
-  // Duplicate for infinite scroll
-  const carouselBrands = [...brands, ...brands, ...brands, ...brands];
 
   return (
     <section
@@ -151,7 +149,7 @@ function Hero() {
               <div className="flex animate-infinite-scroll w-max hover:[animation-play-state:paused] items-center">
                 {carouselBrands.map((brand, index) => (
                   <div key={`${brand.name}-${index}`} className="flex items-center justify-center mx-8 shrink-0 opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
-                    <brand.Component className="h-10 w-auto" />
+                    <Image src={brand.logo} alt={brand.name} width={120} height={40} className="h-10 w-auto object-contain" />
                   </div>
                 ))}
               </div>
@@ -357,7 +355,7 @@ function ProdutosDestaque() {
       brand: "Boehringer Ingelheim",
       description:
         "O padrão ouro em controle parasitário. Formulação tixotrópica com Ivermectina 3,15%. Proteção por até 12 semanas contra berne e carrapatos, garantindo maior ganho de peso e pastos limpos.",
-      image: "https://images.unsplash.com/photo-1704221191316-168a25edbc59?auto=format&fit=crop&q=80",
+      image: "https://mapsul.com.br/wp-content/uploads/2019/07/Ivomec-Gold-1.jpg",
       badge: "Líder de Mercado",
     },
     {
@@ -365,31 +363,31 @@ function ProdutosDestaque() {
       brand: "Agrifirm",
       description:
         "Substituto de leite premium para bezerras. Digestão rápida, excelente desenvolvimento ruminal e crescimento juvenil acelerado. Tecnologia holandesa para sua recria.",
-      image: "https://images.unsplash.com/photo-1549420063-e382d6da5722?auto=format&fit=crop&q=80",
+      image: "https://mapsul.com.br/wp-content/uploads/2025/05/Sem-titulo-1-2.png",
       badge: "Alta Performance",
     },
     {
-      name: "Topline® Spray",
-      brand: "Boehringer Ingelheim",
+      name: "Milk Bar Individual",
+      brand: "Milk Bar",
       description:
-        "Antiparasitário externo de aplicação tópica. Eficácia comprovada no tratamento e prevenção de bicheiras (miíases) e infecções de umbigo.",
-      image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&q=80",
-      badge: "Sanidade",
+        "Alimentador individual com bico de fluxo controlado. Promove sucção lenta e natural, melhorando a digestão e reduzindo problemas respiratórios em bezerros.",
+      image: "/images/products/milkbar/balde-individual.jpg",
+      badge: "Nutrição",
     },
     {
-      name: "Azevém Baqueano",
-      brand: "Biscayart",
+      name: "Dermisan",
+      brand: "Kersia",
       description:
-        "Azevém tetraplóide de ciclo médio/longo. Genética europeia com alto potencial de produção de massa verde. Ideal para pré-secado e pastejo direto até seis meses.",
-      image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80",
-      badge: "Produtividade",
+        "Solução premium para higiene e proteção do úbere. Pré e pós-dipping de alta eficácia, garantindo qualidade do leite e saúde do rebanho.",
+      image: "/images/products/higiene/dermisan.jpg",
+      badge: "Higiene",
     },
     {
       name: "Amarillo",
       brand: "Luxembourg",
       description:
         "Armadilha adesiva ecológica para controle de moscas. Não tóxico, ideal para instalações pecuárias. Captura eficaz sem uso de venenos.",
-      image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&q=80",
+      image: "/images/products/pragas/amarillo.jpg",
       badge: "Sustentável",
     },
   ];

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   FaWhatsapp,
   FaInstagram,
@@ -107,18 +108,8 @@ export default function Footer() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
             {/* Brand */}
             <div className="col-span-2 md:col-span-1">
-              <div className="flex items-center gap-2.5 mb-6">
-                <div className="w-9 h-9 bg-lime rounded-lg flex items-center justify-center">
-                  <span className="text-forest font-extrabold text-sm">M</span>
-                </div>
-                <div className="leading-tight">
-                  <span className="font-extrabold text-white text-lg">
-                    MAPSUL
-                  </span>
-                  <span className="block text-[9px] text-lime tracking-[0.2em] uppercase font-medium">
-                    Distribuidora
-                  </span>
-                </div>
+              <div className="mb-6">
+                <Image src="/logos/mapsul.png" alt="MAP Sul" width={140} height={100} className="h-16 w-auto brightness-0 invert" />
               </div>
               <p className="text-white/30 text-sm leading-relaxed max-w-xs">
                 Há 19 anos levando saúde e produtividade para a pecuária gaúcha.
