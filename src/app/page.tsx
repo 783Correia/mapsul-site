@@ -52,7 +52,7 @@ function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-forest"
+      className="relative min-h-[92vh] flex flex-col justify-center overflow-hidden bg-forest"
     >
       {/* Background Parallax */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
@@ -70,7 +70,7 @@ function Hero() {
       <div className="absolute top-20 left-20 w-96 h-96 bg-lime/20 rounded-full blur-[100px] z-10 opacity-60 mix-blend-screen" />
       <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] z-10 opacity-50 mix-blend-screen" />
 
-      <div className="container-main relative z-20 text-center">
+      <div className="container-main relative z-20 text-center pt-20">
         <motion.div
           style={{ y: textY }}
           initial={{ opacity: 0, y: 30 }}
@@ -121,11 +121,11 @@ function Hero() {
       </div>
 
       {/* Scroll Light Indicator — left side */}
-      <div className="absolute left-8 top-1/2 bottom-24 z-30 hidden lg:flex flex-col items-center gap-2">
-        <div className="w-px h-full bg-gradient-to-b from-transparent via-lime/30 to-transparent relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-lime to-transparent animate-scroll-light rounded-full" />
+      <div className="absolute left-10 top-[55%] bottom-20 z-30 hidden lg:flex flex-col items-center gap-3">
+        <div className="w-[2px] h-full bg-white/10 relative overflow-hidden rounded-full">
+          <div className="absolute left-1/2 -translate-x-1/2 w-[2px] h-12 bg-lime animate-scroll-light rounded-full shadow-[0_0_8px_2px_rgba(180,209,46,0.6)]" />
         </div>
-        <span className="text-[9px] uppercase tracking-[0.3em] text-white/30 font-medium mt-2 [writing-mode:vertical-rl] rotate-180">scroll</span>
+        <span className="text-[10px] uppercase tracking-[0.25em] text-white/40 font-medium mt-1 [writing-mode:vertical-rl] rotate-180">scroll</span>
       </div>
     </section>
   );
