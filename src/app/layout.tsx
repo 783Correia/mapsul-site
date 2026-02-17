@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SmoothScroll from "@/components/SmoothScroll";
 import Script from "next/script";
 
 const dmSans = DM_Sans({
@@ -244,10 +245,12 @@ export default function RootLayout({
         />
       </head>
       <body className={`${dmSans.variable} font-sans antialiased`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppButton />
+        <SmoothScroll>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <WhatsAppButton />
+        </SmoothScroll>
       </body>
     </html>
   );
