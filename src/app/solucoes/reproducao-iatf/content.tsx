@@ -12,6 +12,7 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 
 const fadeUp = {
@@ -108,16 +109,19 @@ export default function ReproducaoIATFContent() {
 
             <motion.div
               {...fadeUp}
-              className="relative rounded-3xl overflow-hidden aspect-[4/3]"
+              className="relative overflow-hidden aspect-[4/3]"
+              style={{
+                borderRadius: 16,
+                boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
+              }}
             >
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{
-                  backgroundImage:
-                    "url('https://images.unsplash.com/photo-1704221191316-168a25edbc59?w=800&q=80')",
-                }}
+              <Image
+                src="/images/iatf.png"
+                alt="Reprodução e IATF - MAPSUL"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest/40 to-transparent" />
             </motion.div>
           </div>
         </div>
