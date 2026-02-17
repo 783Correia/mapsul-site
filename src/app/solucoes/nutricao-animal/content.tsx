@@ -9,6 +9,7 @@ import {
   FaCalendarAlt,
 } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
@@ -103,19 +104,18 @@ export default function NutricaoAnimalContent() {
 
             <motion.div
               {...fadeUp}
-              className="relative aspect-[4/3]"
+              className="relative aspect-[4/3] overflow-hidden"
               style={{
                 borderRadius: 16,
                 boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
               }}
             >
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{
-                  backgroundImage:
-                    "url('https://images.unsplash.com/photo-1549420063-e382d6da5722?w=800&q=80')",
-                  borderRadius: 16,
-                }}
+              <Image
+                src="https://images.unsplash.com/photo-1549420063-e382d6da5722?w=800&q=80"
+                alt="Criação de Bezerras - Nutrição Animal MAPSUL"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </motion.div>
           </div>
