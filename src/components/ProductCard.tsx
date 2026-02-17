@@ -6,7 +6,7 @@ interface ProductCardProps {
     product: Product;
 }
 
-// ProductCard.tsx
+// ProductCard.tsx - Hybrid Theme
 export default function ProductCard({ product }: ProductCardProps) {
     const whatsappMessage = `Olá! Tenho interesse no produto ${product.name} que vi no site.`;
     const whatsappLink = `https://wa.me/5554996356819?text=${encodeURIComponent(
@@ -14,36 +14,30 @@ export default function ProductCard({ product }: ProductCardProps) {
     )}`;
 
     return (
-        <div className="group relative bg-neutral-900/80 backdrop-blur-md rounded-3xl overflow-hidden border border-white/10 shadow-2xl transition-all duration-300 hover:border-lime/30 flex flex-col h-full">
-            {/* Gradient Overlay Effect */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
-
-            {/* Imagem */}
-            <div className="relative aspect-[4/3] overflow-hidden p-8 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutral-900/90 z-10" />
-                <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-lime/20 rounded-full blur-[50px]" />
-
+        <div className="group relative bg-neutral-900 rounded-3xl overflow-hidden border border-white/10 shadow-lg transition-all duration-300 hover:border-lime/50 hover:shadow-2xl flex flex-col h-full w-full">
+            {/* Imagem (Fundo Claro para misturar com JPEG) */}
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-white p-6 flex items-center justify-center">
                 <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="z-0 object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl"
+                    className="z-10 object-contain group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
 
-                {/* Heart Icon (Decorative) */}
-                <div className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 text-white/50 group-hover:text-lime transition-colors">
-                    <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                {/* Heart Icon (Dark on White) */}
+                <div className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 group-hover:text-red-500 transition-colors shadow-sm">
+                    <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
                 </div>
             </div>
 
-            {/* Conteúdo */}
-            <div className="relative z-20 p-6 flex flex-col flex-grow -mt-4">
+            {/* Conteúdo (Fundo Escuro Original) */}
+            <div className="relative z-20 p-6 flex flex-col flex-grow bg-neutral-900">
                 <div className="mb-2">
                     <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">
                         {product.brand}
                     </span>
-                    <h3 className="text-xl font-bold text-white mt-1 group-hover:text-lime transition-colors">
+                    <h3 className="text-xl font-bold text-white mt-1 group-hover:text-lime transition-colors line-clamp-2">
                         {product.name}
                     </h3>
                 </div>
@@ -59,7 +53,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                         </span>
                     </div>
 
-                    {/* CTA Pill Button (Sony Style) */}
+                    {/* CTA Pill Button */}
                     <a
                         href={whatsappLink}
                         target="_blank"
