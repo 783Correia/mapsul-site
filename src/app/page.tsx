@@ -10,7 +10,6 @@ import {
   FaWhatsapp,
   FaArrowRight,
   FaArrowLeft,
-  FaArrowLeft,
   FaStar,
   FaQuoteLeft,
   FaChevronLeft,
