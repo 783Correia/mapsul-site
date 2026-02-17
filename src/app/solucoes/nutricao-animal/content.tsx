@@ -156,11 +156,10 @@ export default function NutricaoAnimalContent() {
             </motion.div>
           </div>
         </div>
-      </div>
-    </section >
+      </section >
 
-      {/* Catálogo Nutrição (Padrão Sementes: Fundo Forest) */ }
-      < section className = "bg-forest section-padding relative overflow-hidden" >
+      {/* Catálogo Nutrição (Padrão Sementes: Fundo Forest) */}
+      < section className="bg-forest section-padding relative overflow-hidden" >
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-lime/[0.03] rounded-full blur-[150px]" />
 
         <div className="container-main relative">
@@ -181,8 +180,8 @@ export default function NutricaoAnimalContent() {
         </div>
       </section >
 
-    {/* Evento */ }
-    < section className = "bg-forest section-padding relative overflow-hidden" >
+      {/* Evento */}
+      < section className="bg-forest section-padding relative overflow-hidden" >
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-lime/[0.03] rounded-full blur-[150px]" />
 
         <div className="container-main relative">
@@ -212,41 +211,41 @@ export default function NutricaoAnimalContent() {
         </div>
       </section >
 
-    {/* CTA Final */ }
-    < section className = "bg-white section-padding" >
-      <div className="container-main">
-        <motion.div
-          {...fadeUp}
-          className="bg-forest rounded-3xl p-10 md:p-16 text-center relative overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 w-60 h-60 bg-lime/[0.06] rounded-full -translate-y-1/2 translate-x-1/3 blur-[80px]" />
-          <div className="relative">
-            <FaAppleAlt className="text-lime text-4xl mx-auto mb-6" />
-            <h2 className="text-display-sm text-white max-w-2xl mx-auto">
-              Solicite uma consultoria nutricional para sua propriedade
-            </h2>
-            <p className="text-white/50 mt-4 max-w-lg mx-auto leading-relaxed">
-              Nossos consultores avaliam as necessidades nutricionais do seu rebanho
-              e recomendam o programa ideal para cada fase de produção.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <a
-                href="https://wa.me/5554996356819?text=Olá! Quero consultoria nutricional para meu rebanho."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-lime shadow-glow-lime"
-              >
-                <FaWhatsapp className="text-lg" />
-                Falar com Consultor
-              </a>
-              <Link href="/blog/nutricao-bezerras-desenvolvimento" className="btn-outline">
-                Ler sobre Nutrição de Bezerras
-                <FaArrowRight className="text-xs" />
-              </Link>
+      {/* CTA Final */}
+      < section className="bg-white section-padding" >
+        <div className="container-main">
+          <motion.div
+            {...fadeUp}
+            className="bg-forest rounded-3xl p-10 md:p-16 text-center relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-60 h-60 bg-lime/[0.06] rounded-full -translate-y-1/2 translate-x-1/3 blur-[80px]" />
+            <div className="relative">
+              <FaAppleAlt className="text-lime text-4xl mx-auto mb-6" />
+              <h2 className="text-display-sm text-white max-w-2xl mx-auto">
+                Solicite uma consultoria nutricional para sua propriedade
+              </h2>
+              <p className="text-white/50 mt-4 max-w-lg mx-auto leading-relaxed">
+                Nossos consultores avaliam as necessidades nutricionais do seu rebanho
+                e recomendam o programa ideal para cada fase de produção.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 mt-8">
+                <a
+                  href="https://wa.me/5554996356819?text=Olá! Quero consultoria nutricional para meu rebanho."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-lime shadow-glow-lime"
+                >
+                  <FaWhatsapp className="text-lg" />
+                  Falar com Consultor
+                </a>
+                <Link href="/blog/nutricao-bezerras-desenvolvimento" className="btn-outline">
+                  Ler sobre Nutrição de Bezerras
+                  <FaArrowRight className="text-xs" />
+                </Link>
+              </div>
             </div>
-          </div>
-        </motion.div>
-      </div>
+          </motion.div>
+        </div>
       </section >
     </>
   );
