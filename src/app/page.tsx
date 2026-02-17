@@ -136,7 +136,7 @@ function Hero() {
    ═══════════════════════════════════════════════ */
 function StatsBar() {
   return (
-    <div className="relative z-40 -mt-14 mb-8 px-4">
+    <div className="relative z-40 -mt-14 px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

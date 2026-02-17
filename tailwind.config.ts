@@ -82,6 +82,12 @@ const config: Config = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "scroll-light": {
+          "0%": { top: "-12px", opacity: "0" },
+          "10%": { opacity: "1" },
+          "90%": { opacity: "1" },
+          "100%": { top: "calc(100% - 12px)", opacity: "0" },
+        },
       },
       animation: {
         "count-up": "count-up 0.6s ease-out forwards",
@@ -89,6 +95,7 @@ const config: Config = {
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
         "infinite-scroll": "infinite-scroll 40s linear infinite",
         "solucoes-scroll": "solucoes-scroll 60s linear infinite",
+        "scroll-light": "scroll-light 2s ease-in-out infinite",
       },
     },
   },
