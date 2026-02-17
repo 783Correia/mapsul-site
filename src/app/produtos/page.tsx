@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaSearch, FaFilter } from "react-icons/fa";
 import ProductCard from "@/components/ProductCard";
@@ -33,8 +31,7 @@ export default function ProdutosPage() {
   });
 
   return (
-    <main className="min-h-screen bg-neutral-900 flex flex-col font-sans selection:bg-lime selection:text-forest">
-      <Header />
+    <div className="min-h-screen bg-neutral-900 flex flex-col font-sans selection:bg-lime selection:text-forest">
 
       {/* Hero Simplificado - Dark & Green */}
       <section className="bg-forest pt-32 pb-16 relative overflow-hidden text-center md:text-left">
@@ -96,8 +93,8 @@ export default function ProdutosPage() {
                         key={cat}
                         onClick={() => setActiveCategory(cat)}
                         className={`text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 border border-transparent ${activeCategory === cat
-                            ? "bg-lime text-forest-dark font-bold shadow-lg shadow-lime/10"
-                            : "text-white/60 hover:bg-white/5 hover:text-white hover:border-white/10"
+                          ? "bg-lime text-forest-dark font-bold shadow-lg shadow-lime/10"
+                          : "text-white/60 hover:bg-white/5 hover:text-white hover:border-white/10"
                           }`}
                       >
                         {cat}
@@ -168,7 +165,6 @@ export default function ProdutosPage() {
         </div>
       </section>
 
-      <Footer />
-    </main>
+    </div>
   );
 }
