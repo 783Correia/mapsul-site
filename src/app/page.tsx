@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect, useCallback } from "react";
+import NewsletterSection from "@/components/NewsletterSection";
 import {
   FaHandshake,
   FaAward,
@@ -762,6 +763,7 @@ export default function Home() {
       <Diferenciais />
       <MissaoVisaoValores />
       <Depoimentos />
+      <NewsletterSection />
     </main>
   );
 }
