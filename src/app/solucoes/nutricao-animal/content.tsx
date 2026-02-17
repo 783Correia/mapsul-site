@@ -11,6 +11,7 @@ import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 
+
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },

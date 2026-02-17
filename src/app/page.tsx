@@ -16,7 +16,7 @@ import {
   FaChevronRight,
   FaDna,
   FaAppleAlt,
-  FaShieldAlt,
+
   FaBug,
   FaSeedling,
   FaHandSparkles,
