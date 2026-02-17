@@ -557,7 +557,7 @@ function Diferenciais() {
   ];
 
   return (
-    <section className="bg-forest section-padding relative overflow-hidden">
+    <section style={{ backgroundColor: "#0f1f0f" }} className="section-padding relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-lime/[0.03] rounded-full blur-[150px]" />
 
       <div className="container-main relative">
@@ -607,7 +607,7 @@ function MissaoVisaoValores() {
   ];
 
   return (
-    <section className="bg-forest section-padding relative overflow-hidden">
+    <section style={{ backgroundColor: "#0f1f0f" }} className="section-padding relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-lime/[0.04] rounded-full blur-[120px]" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/[0.06] rounded-full blur-[150px]" />
@@ -710,12 +710,12 @@ function Depoimentos() {
     setActive((a) => (a - 1 + depoimentos.length) % depoimentos.length);
 
   return (
-    <section className="bg-gray-50 section-padding">
+    <section style={{ backgroundColor: "#0f1f0f" }} className="section-padding relative overflow-hidden">
       <div className="container-main">
-        <SectionHeading tag="Depoimentos de Pecuaristas" title="Quem confia na MAPSUL recomenda" />
+        <SectionHeading tag="Depoimentos de Pecuaristas" title="Quem confia na MAPSUL recomenda" light />
 
         <div className="max-w-3xl mx-auto relative">
-          <div className="bg-white rounded-3xl p-10 md:p-14 shadow-card relative overflow-hidden">
+          <div className="glass-card p-10 md:p-14 relative overflow-hidden">
             <FaQuoteLeft className="text-lime/10 text-6xl absolute top-6 left-6" />
 
             <motion.div
@@ -725,16 +725,16 @@ function Depoimentos() {
               transition={{ duration: 0.4 }}
               className="relative"
             >
-              <p className="text-gray-600 text-lg md:text-xl leading-relaxed italic">
+              <p className="text-white/70 text-lg md:text-xl leading-relaxed italic">
                 &quot;{depoimentos[active].text}&quot;
               </p>
               <div className="mt-8 flex items-center gap-4">
-                <div className="w-12 h-12 bg-forest rounded-full flex items-center justify-center text-lime font-extrabold">
+                <div className="w-12 h-12 bg-lime rounded-full flex items-center justify-center text-forest font-extrabold">
                   {depoimentos[active].name[0]}
                 </div>
                 <div>
-                  <p className="font-bold text-dark">{depoimentos[active].name}</p>
-                  <p className="text-gray-400 text-sm">{depoimentos[active].role}</p>
+                  <p className="font-bold text-white">{depoimentos[active].name}</p>
+                  <p className="text-white/40 text-sm">{depoimentos[active].role}</p>
                 </div>
                 <div className="ml-auto flex gap-1">
                   {[...Array(5)].map((_, i) => (
@@ -748,7 +748,7 @@ function Depoimentos() {
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={prev}
-              className="w-11 h-11 bg-white rounded-full shadow-card flex items-center justify-center text-dark hover:bg-lime hover:text-forest transition-all hover:scale-105"
+              className="w-11 h-11 bg-white/[0.08] border border-white/[0.1] rounded-full flex items-center justify-center text-white/60 hover:bg-lime hover:text-forest hover:border-lime transition-all hover:scale-105"
             >
               <FaChevronLeft size={12} />
             </button>
@@ -757,14 +757,14 @@ function Depoimentos() {
                 <button
                   key={i}
                   onClick={() => setActive(i)}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${active === i ? "bg-lime w-8" : "bg-gray-200 w-2"
+                  className={`h-1.5 rounded-full transition-all duration-500 ${active === i ? "bg-lime w-8" : "bg-white/20 w-2"
                     }`}
                 />
               ))}
             </div>
             <button
               onClick={next}
-              className="w-11 h-11 bg-white rounded-full shadow-card flex items-center justify-center text-dark hover:bg-lime hover:text-forest transition-all hover:scale-105"
+              className="w-11 h-11 bg-white/[0.08] border border-white/[0.1] rounded-full flex items-center justify-center text-white/60 hover:bg-lime hover:text-forest hover:border-lime transition-all hover:scale-105"
             >
               <FaChevronRight size={12} />
             </button>
