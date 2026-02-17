@@ -607,8 +607,12 @@ function MissaoVisaoValores() {
   ];
 
   return (
-    <section className="bg-white section-padding">
-      <div className="container-main">
+    <section className="bg-forest section-padding relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-lime/[0.04] rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/[0.06] rounded-full blur-[150px]" />
+
+      <div className="container-main relative">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <motion.div
@@ -619,7 +623,7 @@ function MissaoVisaoValores() {
               <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
                 Institucional
               </span>
-              <h2 className="text-heading text-dark">
+              <h2 className="text-heading text-white">
                 Missão, Visão & Valores
               </h2>
             </motion.div>
@@ -632,16 +636,16 @@ function MissaoVisaoValores() {
               className="mt-10 space-y-8"
             >
               <div className="border-l-4 border-lime pl-6">
-                <h3 className="font-bold text-dark text-lg mb-2">Missão</h3>
-                <p className="text-gray-500 leading-relaxed">
+                <h3 className="font-bold text-white text-lg mb-2">Missão</h3>
+                <p className="text-white/50 leading-relaxed">
                   Atuar com responsabilidade e excelência na distribuição de
                   produtos e na prestação de serviços, promovendo o conhecimento
                   e inovação no Agronegócio.
                 </p>
               </div>
-              <div className="border-l-4 border-forest pl-6">
-                <h3 className="font-bold text-dark text-lg mb-2">Visão</h3>
-                <p className="text-gray-500 leading-relaxed">
+              <div className="border-l-4 border-white/20 pl-6">
+                <h3 className="font-bold text-white text-lg mb-2">Visão</h3>
+                <p className="text-white/50 leading-relaxed">
                   Ser referência na distribuição de produtos e consultoria
                   técnica no Agronegócio, entregando inovação e conscientizando
                   para o uso eficiente e sustentável dos produtos.
@@ -655,19 +659,19 @@ function MissaoVisaoValores() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-gray-50 rounded-3xl p-10"
+            className="glass-card p-10"
           >
-            <h3 className="font-bold text-dark text-lg mb-8">Nossos Valores</h3>
+            <h3 className="font-bold text-white text-lg mb-8">Nossos Valores</h3>
             <div className="space-y-3">
               {valores.map((v, i) => (
                 <div
                   key={v}
-                  className="flex items-center gap-4 bg-white rounded-2xl p-4 shadow-sm hover:shadow-card hover:-translate-y-0.5 transition-all duration-300"
+                  className="flex items-center gap-4 bg-white/[0.06] border border-white/[0.08] rounded-2xl p-4 hover:bg-white/[0.1] hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  <div className="w-10 h-10 bg-lime/10 rounded-xl flex items-center justify-center text-lime font-extrabold text-sm shrink-0">
+                  <div className="w-10 h-10 bg-lime/15 rounded-xl flex items-center justify-center text-lime font-extrabold text-sm shrink-0">
                     {String(i + 1).padStart(2, "0")}
                   </div>
-                  <span className="font-medium text-dark">{v}</span>
+                  <span className="font-medium text-white">{v}</span>
                 </div>
               ))}
             </div>
