@@ -52,7 +52,7 @@ function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden bg-forest"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-forest"
     >
       {/* Background Parallax */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
@@ -70,7 +70,7 @@ function Hero() {
       <div className="absolute top-20 left-20 w-96 h-96 bg-lime/20 rounded-full blur-[100px] z-10 opacity-60 mix-blend-screen" />
       <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] z-10 opacity-50 mix-blend-screen" />
 
-      <div className="container-main relative z-20 text-center pb-40">
+      <div className="container-main relative z-20 text-center">
         <motion.div
           style={{ y: textY }}
           initial={{ opacity: 0, y: 30 }}
@@ -120,54 +120,67 @@ function Hero() {
         </motion.div>
       </div>
 
-      {/* Floating Stats Bar */}
+      {/* Scroll Light Indicator — left side */}
+      <div className="absolute left-8 top-1/2 bottom-24 z-30 hidden lg:flex flex-col items-center gap-2">
+        <div className="w-px h-full bg-gradient-to-b from-transparent via-lime/30 to-transparent relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-lime to-transparent animate-scroll-light rounded-full" />
+        </div>
+        <span className="text-[9px] uppercase tracking-[0.3em] text-white/30 font-medium mt-2 [writing-mode:vertical-rl] rotate-180">scroll</span>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════════
+   STATS BAR — Between Hero and Soluções
+   ═══════════════════════════════════════════════ */
+function StatsBar() {
+  return (
+    <div className="relative z-40 -mt-14 mb-8 px-4">
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.8 }}
-        className="absolute bottom-12 left-0 right-0 z-30 px-4"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="container-main"
       >
-        <div className="container-main">
-          <div className="bg-white rounded-3xl p-6 md:p-8 flex flex-wrap md:flex-nowrap justify-between items-center gap-8 shadow-2xl mx-auto max-w-5xl">
-            {[
-              { number: "19+", label: "Anos de Experiência" },
-              { number: "1000+", label: "Produtores Atendidos" },
-              { number: "100%", label: "Cobertura no RS" },
-            ].map((stat, i) => (
-              <div key={i} className="flex-1 text-center md:text-left border-r last:border-0 border-gray-200 pr-8 last:pr-0">
-                <div className="text-2xl font-extrabold text-primary mb-1">{stat.number}</div>
-                <div className="text-sm text-gray-500 font-medium uppercase tracking-wide">{stat.label}</div>
-              </div>
-            ))}
+        <div className="bg-white rounded-3xl p-6 md:p-8 flex flex-wrap md:flex-nowrap justify-between items-center gap-8 shadow-2xl mx-auto max-w-5xl">
+          {[
+            { number: "19+", label: "Anos de Experiência" },
+            { number: "1000+", label: "Produtores Atendidos" },
+            { number: "100%", label: "Cobertura no RS" },
+          ].map((stat, i) => (
+            <div key={i} className="flex-1 text-center md:text-left border-r last:border-0 border-gray-200 pr-8 last:pr-0">
+              <div className="text-2xl font-extrabold text-primary mb-1">{stat.number}</div>
+              <div className="text-sm text-gray-500 font-medium uppercase tracking-wide">{stat.label}</div>
+            </div>
+          ))}
 
-            {/* Brand Carousel in the 4th Slot */}
-            <div className="flex-[1.5] md:w-80 overflow-hidden relative group h-20 flex items-center">
-              {/* Gradient Masks for fade effect */}
-              <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-
-              <div className="flex animate-infinite-scroll w-max hover:[animation-play-state:paused] items-center">
-                {carouselBrands.map((brand, index) => (
-                  <div key={`${brand.name}-${index}`} className="flex items-center justify-center mx-8 shrink-0 opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
-                    {brand.component ? (
-                      <brand.component className="h-10 w-auto" />
-                    ) : (
-                      <Image
-                        src={brand.logo ?? ""}
-                        alt={brand.name}
-                        width={120}
-                        height={40}
-                        className="h-10 w-auto object-contain mix-blend-multiply"
-                      />
-                    )}
-                  </div>
-                ))}
-              </div>
+          {/* Brand Carousel in the 4th Slot */}
+          <div className="flex-[1.5] md:w-80 overflow-hidden relative group h-20 flex items-center">
+            <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+            <div className="flex animate-infinite-scroll w-max hover:[animation-play-state:paused] items-center">
+              {carouselBrands.map((brand, index) => (
+                <div key={`${brand.name}-${index}`} className="flex items-center justify-center mx-8 shrink-0 opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
+                  {brand.component ? (
+                    <brand.component className="h-10 w-auto" />
+                  ) : (
+                    <Image
+                      src={brand.logo ?? ""}
+                      alt={brand.name}
+                      width={120}
+                      height={40}
+                      className="h-10 w-auto object-contain mix-blend-multiply"
+                    />
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </motion.div>
-    </section>
+    </div>
   );
 }
 
@@ -758,6 +771,7 @@ export default function Home() {
   return (
     <main className="font-sans antialiased text-dark">
       <Hero />
+      <StatsBar />
       <Solucoes />
       <ProdutosDestaque />
       <Diferenciais />
