@@ -287,7 +287,7 @@ export default function ArtigoCalendarioContent() {
                   Fale com um consultor MAPSUL da sua região.
                 </p>
                 <a
-                  href="https://wa.me/5554996695509?text=Olá! Li o calendário sanitário no blog e gostaria de montar o programa da minha propriedade."
+                  href="https://wa.me/5554996356819?text=Olá! Li o calendário sanitário no blog e gostaria de montar o programa da minha propriedade."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-lime"

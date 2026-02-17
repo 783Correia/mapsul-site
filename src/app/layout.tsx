@@ -62,7 +62,7 @@ const organizationSchema = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+55-54-99669-5509",
+    telephone: "+55-54-99635-6819",
     contactType: "sales",
     availableLanguage: "Portuguese",
   },

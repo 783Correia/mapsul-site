@@ -84,7 +84,7 @@ export default function Footer() {
             {/* CTA */}
             <div className="text-right hidden md:block">
               <a
-                href="https://wa.me/5554996695509?text=Olá! Gostaria de saber mais sobre os produtos MAPSUL."
+                href="https://wa.me/5554996356819?text=Olá! Gostaria de saber mais sobre os produtos MAPSUL."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-lime shadow-glow-lime"
@@ -133,7 +133,7 @@ export default function Footer() {
                   <FaInstagram size={15} />
                 </a>
                 <a
-                  href="https://wa.me/5554996695509"
+                  href="https://wa.me/5554996356819"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 bg-white/[0.05] hover:bg-lime hover:text-forest rounded-xl flex items-center justify-center text-white/30 transition-all duration-300"
@@ -218,13 +218,13 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://wa.me/5554996695509"
+                    href="https://wa.me/5554996356819"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2.5 text-white/40 hover:text-lime text-sm transition-colors"
                   >
                     <FaWhatsapp className="text-lime text-xs" />
-                    (54) 99669-5509
+                    (54) 99635-6819
                   </a>
                 </li>
               </ul>

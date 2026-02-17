@@ -307,7 +307,7 @@ export default function SobreContent() {
                   {membro.regiao}
                 </div>
                 <a
-                  href="https://wa.me/5554996695509"
+                  href="https://wa.me/5554996356819"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-lime text-xs font-bold mt-4 hover:underline"

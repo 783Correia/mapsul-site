@@ -26,6 +26,7 @@ const solucoes = [
 
 const navLinks = [
   { href: "/", label: "Início" },
+  { href: "/produtos", label: "Produtos" },
   { href: "/sobre", label: "Sobre" },
   { href: "/blog", label: "Blog" },
   { href: "/contato", label: "Contato" },
@@ -67,11 +68,10 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="container-main py-4">
         <div
-          className={`flex items-center justify-between px-6 h-14 rounded-full transition-all duration-500 ${
-            scrolled
+          className={`flex items-center justify-between px-6 h-14 rounded-full transition-all duration-500 ${scrolled
               ? "bg-forest-dark/80 backdrop-blur-2xl shadow-float border border-white/[0.06]"
               : "bg-forest/60 backdrop-blur-xl border border-white/[0.08]"
-          }`}
+            }`}
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
@@ -138,11 +138,10 @@ export default function Header() {
                         <Link
                           key={sol.href}
                           href={sol.href}
-                          className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
-                            isActive
+                          className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${isActive
                               ? "bg-lime/10 text-lime"
                               : "text-white/60 hover:text-white hover:bg-white/[0.06]"
-                          }`}
+                            }`}
                         >
                           <sol.icon size={14} className={isActive ? "text-lime" : "text-white/30"} />
                           <span className="text-[13px] font-medium">{sol.label}</span>
@@ -164,9 +163,8 @@ export default function Header() {
                   className="relative px-4 py-2 text-[13px] font-medium transition-colors duration-300 group"
                 >
                   <span
-                    className={`relative z-10 ${
-                      isActive ? "text-lime" : "text-white/60 group-hover:text-white"
-                    }`}
+                    className={`relative z-10 ${isActive ? "text-lime" : "text-white/60 group-hover:text-white"
+                      }`}
                   >
                     {link.label}
                   </span>
@@ -218,11 +216,10 @@ export default function Header() {
               <Link
                 href="/"
                 onClick={() => setMobileOpen(false)}
-                className={`block px-4 py-3 rounded-xl font-medium transition-all duration-200 ${
-                  pathname === "/"
+                className={`block px-4 py-3 rounded-xl font-medium transition-all duration-200 ${pathname === "/"
                     ? "text-lime bg-white/[0.06]"
                     : "text-white/60 hover:text-white hover:bg-white/[0.04]"
-                }`}
+                  }`}
               >
                 Início
               </Link>
@@ -230,11 +227,10 @@ export default function Header() {
               {/* Mobile Soluções accordion */}
               <button
                 onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium transition-all duration-200 ${
-                  isSolucoesActive
+                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium transition-all duration-200 ${isSolucoesActive
                     ? "text-lime bg-white/[0.06]"
                     : "text-white/60 hover:text-white hover:bg-white/[0.04]"
-                }`}
+                  }`}
               >
                 Soluções
                 <FaChevronDown className={`text-[10px] transition-transform duration-300 ${mobileDropdownOpen ? "rotate-180" : ""}`} />
@@ -254,11 +250,10 @@ export default function Header() {
                           key={sol.href}
                           href={sol.href}
                           onClick={() => setMobileOpen(false)}
-                          className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-sm transition-all duration-200 ${
-                            pathname === sol.href
+                          className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-sm transition-all duration-200 ${pathname === sol.href
                               ? "text-lime bg-white/[0.06]"
                               : "text-white/40 hover:text-white hover:bg-white/[0.04]"
-                          }`}
+                            }`}
                         >
                           <sol.icon size={12} />
                           {sol.label}
@@ -276,11 +271,10 @@ export default function Header() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`block px-4 py-3 rounded-xl font-medium transition-all duration-200 ${
-                      isActive
+                    className={`block px-4 py-3 rounded-xl font-medium transition-all duration-200 ${isActive
                         ? "text-lime bg-white/[0.06]"
                         : "text-white/60 hover:text-white hover:bg-white/[0.04]"
-                    }`}
+                      }`}
                   >
                     {link.label}
                   </Link>
@@ -288,7 +282,7 @@ export default function Header() {
               })}
 
               <a
-                href="https://wa.me/5554996695509"
+                href="https://wa.me/5554996356819"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-lime w-full justify-center mt-3 !py-3"

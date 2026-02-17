@@ -10,6 +10,8 @@ import {
   FaThumbsUp,
 } from "react-icons/fa";
 import SectionHeading from "@/components/SectionHeading";
+import ProductCard from "@/components/ProductCard";
+import { products } from "@/data/products";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -51,7 +53,7 @@ export default function ControlePragasContent() {
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <a
-                href="https://wa.me/5554996695509?text=Olá! Gostaria de saber mais sobre o controle de pragas Amarillo."
+                href="https://wa.me/5554996356819?text=Olá! Gostaria de saber mais sobre o controle de pragas Amarillo."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-lime shadow-glow-lime"
@@ -104,7 +106,7 @@ export default function ControlePragasContent() {
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
                   backgroundImage:
-                    "url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80')",
+                    "url('https://images.unsplash.com/photo-1549420063-e382d6da5722?w=800&q=80')",
                 }}
               />
             </motion.div>
@@ -195,7 +197,7 @@ export default function ControlePragasContent() {
                 quantidade e posicionamento ideal das armadilhas Amarillo.
               </p>
               <a
-                href="https://wa.me/5554996695509?text=Olá! Quero orientação sobre controle de pragas com Amarillo."
+                href="https://wa.me/5554996356819?text=Olá! Quero orientação sobre controle de pragas com Amarillo."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-lime shadow-glow-lime mt-8"

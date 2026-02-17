@@ -9,6 +9,8 @@ import {
   FaSnowflake,
 } from "react-icons/fa";
 import SectionHeading from "@/components/SectionHeading";
+import ProductCard from "@/components/ProductCard";
+import { products } from "@/data/products";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -19,16 +21,16 @@ const fadeUp = {
 
 const cultivares = [
   {
-    nome: "Aveia Preta",
+    nome: "Aveia Preta (Biscayart)",
     epoca: "Outono/Inverno",
     icon: FaSnowflake,
-    descricao: "Excelente para pastejo direto e cobertura de solo. Alta produção de massa verde no inverno gaúcho.",
+    descricao: "Alta produção de massa verde. Ideal para pastejo direto e cobertura de solo no inverno gaúcho.",
   },
   {
-    nome: "Azevém Anual",
+    nome: "Azevém Baqueano (Biscayart)",
     epoca: "Outono/Inverno",
     icon: FaSnowflake,
-    descricao: "Forrageira de alta qualidade nutricional. Ressemeadura natural e boa tolerância ao frio intenso.",
+    descricao: "Ciclo longo e alta qualidade nutricional. Genética europeia selecionada com alta produção.",
   },
   {
     nome: "Crotalária",
@@ -43,7 +45,7 @@ const cultivares = [
     descricao: "Leguminosa perene de alta digestibilidade. Ideal para consórcio com gramíneas, fixando nitrogênio no solo.",
   },
   {
-    nome: "Milheto",
+    nome: "Milheto ADR 300 (Atto)",
     epoca: "Primavera/Verão",
     icon: FaSun,
     descricao: "Gramínea de verão com alto potencial forrageiro. Rápido estabelecimento e tolerância à seca.",
@@ -89,7 +91,7 @@ export default function SementesPastagemContent() {
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <a
-                href="https://wa.me/5554996695509?text=Olá! Gostaria de consultoria sobre sementes de pastagem."
+                href="https://wa.me/5554996356819?text=Olá! Gostaria de consultoria sobre sementes de pastagem."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-lime shadow-glow-lime"
@@ -129,7 +131,7 @@ export default function SementesPastagemContent() {
                 </p>
                 <p>
                   A MAPSUL trabalha com sementes de <strong className="text-dark">alta pureza
-                  e germinação comprovada</strong>, de fornecedores certificados como Biscayart
+                    e germinação comprovada</strong>, de fornecedores certificados como Biscayart
                   e outras marcas líderes, garantindo o melhor resultado no campo.
                 </p>
               </div>
@@ -143,7 +145,7 @@ export default function SementesPastagemContent() {
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
                   backgroundImage:
-                    "url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80')",
+                    "url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80')",
                 }}
               />
             </motion.div>
@@ -163,7 +165,15 @@ export default function SementesPastagemContent() {
             light
           />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {products
+              .filter((p) => p.category === "Sementes")
+              .map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {cultivares.map((cv, i) => (
               <motion.div
                 key={cv.nome}
@@ -242,7 +252,7 @@ export default function SementesPastagemContent() {
                 propriedade para recomendar as melhores cultivares e o manejo ideal.
               </p>
               <a
-                href="https://wa.me/5554996695509?text=Olá! Preciso de consultoria para escolher as melhores sementes de pastagem."
+                href="https://wa.me/5554996356819?text=Olá! Preciso de consultoria para escolher as melhores sementes de pastagem."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-lime shadow-glow-lime mt-8"

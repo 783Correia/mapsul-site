@@ -50,7 +50,7 @@ export default function ContatoContent() {
       .filter(Boolean)
       .join("%0A");
 
-    window.open(`https://wa.me/5554996695509?text=${lines}`, "_blank");
+    window.open(`https://wa.me/5554996356819?text=${lines}`, "_blank");
     setSubmitted(true);
   };
 
@@ -313,8 +313,8 @@ export default function ContatoContent() {
                     {
                       icon: FaWhatsapp,
                       label: "WhatsApp",
-                      value: "(54) 99669-5509",
-                      href: "https://wa.me/5554996695509",
+                      value: "(54) 99635-6819",
+                      href: "https://wa.me/5554996356819",
                       color: "bg-[#25D366]/10 text-[#25D366]",
                     },
                     {

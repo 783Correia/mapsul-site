@@ -228,7 +228,7 @@ export default function ArtigoIATFContent() {
                   Fale com um consultor MAPSUL da sua região.
                 </p>
                 <a
-                  href="https://wa.me/5554996695509?text=Olá! Li o guia de IATF no blog e gostaria de consultoria para meu rebanho."
+                  href="https://wa.me/5554996356819?text=Olá! Li o guia de IATF no blog e gostaria de consultoria para meu rebanho."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-lime"

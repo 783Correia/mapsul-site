@@ -213,7 +213,7 @@ export default function ArtigoNutricaoContent() {
                   Fale com um consultor MAPSUL da sua região.
                 </p>
                 <a
-                  href="https://wa.me/5554996695509?text=Olá! Li o artigo sobre nutrição de bezerras e gostaria de consultoria."
+                  href="https://wa.me/5554996356819?text=Olá! Li o artigo sobre nutrição de bezerras e gostaria de consultoria."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-lime"

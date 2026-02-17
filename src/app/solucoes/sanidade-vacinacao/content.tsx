@@ -10,6 +10,8 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
+import ProductCard from "@/components/ProductCard";
+import { products } from "@/data/products";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -42,7 +44,7 @@ export default function SanidadeVacinacaoContent() {
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=1920&q=80')",
+              "url('https://images.unsplash.com/photo-1704221191316-168a25edbc59?w=1920&q=80')",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/40" />
@@ -67,7 +69,7 @@ export default function SanidadeVacinacaoContent() {
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <a
-                href="https://wa.me/5554996695509?text=Olá! Quero montar o calendário sanitário da minha propriedade."
+                href="https://wa.me/5554996356819?text=Olá! Quero montar o calendário sanitário da minha propriedade."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-lime shadow-glow-lime"
@@ -107,19 +109,20 @@ export default function SanidadeVacinacaoContent() {
                 </p>
               </div>
 
-              <div className="mt-8 space-y-3">
-                {[
-                  "Vacinas clostridiais (J-VAC e polivalentes)",
-                  "Vacinas reprodutivas (IBR, BVD, Leptospirose)",
-                  "Antiparasitários injetáveis e pour-on",
-                  "Bernicidas e carrapaticidas",
-                  "Produtos para controle de moscas-dos-chifres",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <FaCheckCircle className="text-lime shrink-0" />
-                    <span className="text-gray-600 text-sm">{item}</span>
-                  </div>
-                ))}
+              {/* Vitrine de Produtos */}
+              <div className="mt-12">
+                <h3 className="font-bold text-dark text-lg mb-6 flex items-center gap-2">
+                  <FaShieldAlt className="text-lime" />
+                  Produtos em Destaque
+                </h3>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {products
+                    .filter((p) => p.category === "Sanidade")
+                    .slice(0, 4)
+                    .map((product) => (
+                      <ProductCard key={product.id} product={product} />
+                    ))}
+                </div>
               </div>
             </motion.div>
 
@@ -131,7 +134,7 @@ export default function SanidadeVacinacaoContent() {
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
                   backgroundImage:
-                    "url('https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=900&q=80')",
+                    "url('https://images.unsplash.com/photo-1704221191316-168a25edbc59?w=800&q=80')",
                 }}
               />
             </motion.div>
@@ -191,7 +194,7 @@ export default function SanidadeVacinacaoContent() {
               </p>
               <div className="flex flex-wrap justify-center gap-4 mt-8">
                 <a
-                  href="https://wa.me/5554996695509?text=Olá! Quero montar o calendário sanitário da minha propriedade."
+                  href="https://wa.me/5554996356819?text=Olá! Quero montar o calendário sanitário da minha propriedade."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-lime shadow-glow-lime"
@@ -199,10 +202,6 @@ export default function SanidadeVacinacaoContent() {
                   <FaWhatsapp className="text-lg" />
                   Falar com Consultor
                 </a>
-                <Link href="/blog/calendario-sanitario-bovino-rs-2026" className="btn-outline">
-                  Ver Calendário Completo
-                  <FaArrowRight className="text-xs" />
-                </Link>
               </div>
             </div>
           </motion.div>

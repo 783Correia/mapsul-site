@@ -9,6 +9,8 @@ import {
   FaCalendarAlt,
 } from "react-icons/fa";
 import Link from "next/link";
+import ProductCard from "@/components/ProductCard";
+import { products } from "@/data/products";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -26,7 +28,7 @@ export default function NutricaoAnimalContent() {
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=1920&q=80')",
+              "url('https://images.unsplash.com/photo-1549420063-e382d6da5722?w=1920&q=80')",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/40" />
@@ -50,7 +52,7 @@ export default function NutricaoAnimalContent() {
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <a
-                href="https://wa.me/5554996695509?text=Olá! Gostaria de consultoria sobre nutrição animal."
+                href="https://wa.me/5554996356819?text=Olá! Gostaria de consultoria sobre nutrição animal."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-lime shadow-glow-lime"
@@ -84,7 +86,7 @@ export default function NutricaoAnimalContent() {
                 <p>
                   A MAPSUL promove eventos e capacitações sobre criação de bezerras, como
                   o seminário <strong className="text-dark">&quot;Criação de Bezerras — O melhor
-                  começo para um futuro produtivo&quot;</strong>, onde especialistas compartilham
+                    começo para um futuro produtivo&quot;</strong>, onde especialistas compartilham
                   as melhores práticas de manejo nutricional desde o nascimento.
                 </p>
                 <p>
@@ -104,7 +106,7 @@ export default function NutricaoAnimalContent() {
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
                   backgroundImage:
-                    "url('https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=800&q=80')",
+                    "url('https://images.unsplash.com/photo-1549420063-e382d6da5722?w=800&q=80')",
                 }}
               />
             </motion.div>
@@ -140,19 +142,12 @@ export default function NutricaoAnimalContent() {
                 em ciência e formulações de alto desempenho para todas as fases de criação:
               </p>
 
-              <div className="mt-8 space-y-3">
-                {[
-                  "Suplementação mineral para cria, recria e engorda",
-                  "Núcleos e premix para formulação de rações",
-                  "Aditivos para melhor aproveitamento nutricional",
-                  "Programas nutricionais personalizados por fase",
-                  "Suporte técnico para formulação na propriedade",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <FaCheckCircle className="text-lime shrink-0" />
-                    <span className="text-gray-600 text-sm">{item}</span>
-                  </div>
-                ))}
+              <div className="mt-8 grid sm:grid-cols-2 gap-4">
+                {products
+                  .filter((p) => p.category === "Nutrição")
+                  .map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
               </div>
             </motion.div>
           </div>
@@ -178,7 +173,7 @@ export default function NutricaoAnimalContent() {
               um futuro produtivo&quot;. Fique atento às próximas datas e participe!
             </p>
             <a
-              href="https://wa.me/5554996695509?text=Olá! Quero saber sobre os próximos eventos de nutrição animal da MAPSUL."
+              href="https://wa.me/5554996356819?text=Olá! Quero saber sobre os próximos eventos de nutrição animal da MAPSUL."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-lime mt-8"
@@ -209,7 +204,7 @@ export default function NutricaoAnimalContent() {
               </p>
               <div className="flex flex-wrap justify-center gap-4 mt-8">
                 <a
-                  href="https://wa.me/5554996695509?text=Olá! Quero consultoria nutricional para meu rebanho."
+                  href="https://wa.me/5554996356819?text=Olá! Quero consultoria nutricional para meu rebanho."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-lime shadow-glow-lime"

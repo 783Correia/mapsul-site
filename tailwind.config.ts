@@ -74,11 +74,16 @@ const config: Config = {
           "0%, 100%": { boxShadow: "0 0 20px rgba(180,209,46,0.2)" },
           "50%": { boxShadow: "0 0 40px rgba(180,209,46,0.5)" },
         },
+        "infinite-scroll": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "count-up": "count-up 0.6s ease-out forwards",
         "slide-up": "slide-up 0.8s ease-out forwards",
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
+        "infinite-scroll": "infinite-scroll 40s linear infinite",
       },
     },
   },

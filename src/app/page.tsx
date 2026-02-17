@@ -20,14 +20,16 @@ import {
   FaShieldAlt,
   FaBug,
   FaSeedling,
+  FaHandSparkles,
 } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import { AgrifirmLogo, BiscayartLogo, KersiaLogo, BoehringerLogo, MilkBarLogo } from "@/components/Logos";
 
 /* ═══════════════════════════════════════════════
-   HERO — Forest dark bg + photo opacity 0.3
-   Glassmorphism floating card + parallax
+   HERO — Rutivo Style (Wide/Clean/Centered)
    ═══════════════════════════════════════════════ */
 function Hero() {
   const ref = useRef(null);
@@ -35,285 +37,186 @@ function Hero() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-  const contentY = useTransform(scrollYProgress, [0, 0.7], [0, -60]);
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
+  // Local brands for the floating bar carousel
+  const brands = [
+    { name: "Agrifirm", Component: AgrifirmLogo },
+    { name: "Biscayart", Component: BiscayartLogo },
+    { name: "Kersia", Component: KersiaLogo },
+    { name: "Boehringer Ingelheim", Component: BoehringerLogo },
+    { name: "Milk Bar", Component: MilkBarLogo },
+  ];
+  // Duplicate for infinite scroll
+  const carouselBrands = [...brands, ...brands, ...brands, ...brands];
 
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex items-center overflow-hidden bg-forest"
+      className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-forest"
     >
-      {/* Background photo with parallax + opacity */}
-      <motion.div style={{ y: bgY }} className="absolute inset-0">
+      {/* Background Parallax */}
+      <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.25]"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1920&q=80')",
+              "url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80')",
           }}
         />
+        <div className="absolute inset-0 bg-forest/30 bg-gradient-to-t from-forest via-transparent to-forest/20" />
       </motion.div>
 
-      {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-forest/60 via-transparent to-forest" />
-      <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/40 to-transparent" />
+      {/* Decorative Orbs */}
+      <div className="absolute top-20 left-20 w-96 h-96 bg-lime/20 rounded-full blur-[100px] z-10 opacity-60 mix-blend-screen" />
+      <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] z-10 opacity-50 mix-blend-screen" />
 
-      {/* Decorative glow orbs */}
-      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-lime/[0.04] rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/[0.06] rounded-full blur-[100px]" />
-
-      <motion.div
-        style={{ opacity: contentOpacity, y: contentY }}
-        className="relative container-main pt-36 pb-24"
-      >
-        <div className="grid lg:grid-cols-5 gap-16 items-center min-h-[65vh]">
-          {/* Left content — 3 cols */}
-          <div className="lg:col-span-3">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
-              <span className="inline-flex items-center gap-2.5 glass-light rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-[0.15em] text-lime mb-8">
-                <span className="w-2 h-2 bg-lime rounded-full animate-pulse" />
-                19 Anos no Mercado
-              </span>
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-[clamp(2.8rem,6.5vw,4.5rem)] font-extrabold text-white leading-[1.02] tracking-[-0.04em]"
-            >
-              19 Anos Cuidando da{" "}
-              <span className="text-lime relative">
-                Saúde e Produtividade
-                <svg className="absolute -bottom-1 left-0 w-full h-2 text-lime/30" viewBox="0 0 200 8" preserveAspectRatio="none">
-                  <path d="M0 7 Q50 0 100 5 Q150 10 200 3" stroke="currentColor" strokeWidth="3" fill="none" />
-                </svg>
-              </span>{" "}
-              do Seu Rebanho
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.25 }}
-              className="text-white/50 text-lg md:text-xl mt-8 max-w-lg leading-relaxed"
-            >
-              Distribuição de medicamentos veterinários, nutrição animal e
-              sementes de pastagem para pecuaristas de todo o RS.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              className="flex flex-wrap gap-4 mt-10"
-            >
-              <a
-                href="https://wa.me/5554996695509?text=Olá! Gostaria de saber mais sobre os produtos MAPSUL."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-lime shadow-glow-lime"
-              >
-                <FaWhatsapp className="text-lg" />
-                Fale no WhatsApp
-              </a>
-              <Link href="/solucoes/reproducao-iatf" className="btn-outline">
-                Nossas Soluções
-                <FaArrowRight className="text-xs" />
-              </Link>
-            </motion.div>
-          </div>
-
-          {/* Right — Glassmorphism floating card */}
-          <motion.div
-            initial={{ opacity: 0, y: 40, rotateY: -3 }}
-            animate={{ opacity: 1, y: 0, rotateY: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="lg:col-span-2 hidden lg:block"
-          >
-            <div className="glass-card p-8 space-y-6">
-              {/* Avatars row */}
-              <div className="flex items-center gap-4">
-                <div className="flex -space-x-2.5">
-                  {["bg-lime", "bg-orange", "bg-primary-light", "bg-lime-dark"].map(
-                    (bg, i) => (
-                      <div
-                        key={i}
-                        className={`w-9 h-9 ${bg} rounded-full border-2 border-forest/50 flex items-center justify-center`}
-                      >
-                        <FaUsers className="text-white text-[10px]" />
-                      </div>
-                    )
-                  )}
-                  <div className="w-9 h-9 glass rounded-full border-2 border-forest/50 flex items-center justify-center text-white/60 text-[10px] font-bold">
-                    +
-                  </div>
-                </div>
-                <div className="text-white/40 text-xs leading-tight">
-                  Confiado por<br />
-                  <span className="text-white font-bold">1000+ produtores</span>
-                </div>
-              </div>
-
-              <div className="h-px bg-white/[0.08]" />
-
-              {/* Big number */}
-              <div>
-                <div className="text-5xl font-extrabold text-white tracking-tighter">
-                  <AnimatedCounter target={1000} suffix="+" className="" />
-                </div>
-                <p className="text-white/40 text-sm mt-1">
-                  Produtores no Rio Grande do Sul
-                </p>
-              </div>
-
-              <div className="h-px bg-white/[0.08]" />
-
-              {/* Mini stats */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="glass rounded-2xl p-4 text-center">
-                  <div className="text-2xl font-extrabold text-lime">7</div>
-                  <p className="text-white/30 text-[11px] mt-0.5">Marcas Líderes</p>
-                </div>
-                <div className="glass rounded-2xl p-4 text-center">
-                  <div className="text-2xl font-extrabold text-lime">RS</div>
-                  <p className="text-white/30 text-[11px] mt-0.5">Todo o Estado</p>
-                </div>
-              </div>
-
-              {/* Stars */}
-              <div className="flex items-center gap-1.5">
-                {[...Array(5)].map((_, i) => (
-                  <FaStar key={i} className="text-lime text-xs" />
-                ))}
-                <span className="text-white/30 text-[11px] ml-2">
-                  5.0 — Avaliação dos produtores
-                </span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Scroll indicator */}
+      <div className="container-main relative z-20 text-center">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          style={{ y: textY }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-4xl mx-auto"
         >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-            className="w-5 h-9 border-2 border-white/15 rounded-full flex justify-center pt-2"
-          >
-            <div className="w-1 h-2 bg-lime rounded-full" />
-          </motion.div>
+          {/* Tag */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
+            <div className="w-2 h-2 rounded-full bg-lime animate-pulse" />
+            <span className="text-xs font-bold uppercase tracking-widest text-white">Plataforma Líder em Nutrição Animal</span>
+          </div>
+
+          {/* Headline */}
+          <h1 className="text-[clamp(3.5rem,6vw,6rem)] font-bold text-white leading-[1.1] tracking-tight mb-8 drop-shadow-lg">
+            Leve o campo para o <br />
+            <span className="text-lime inline-block relative">
+              próximo nível.
+              <svg className="absolute w-full h-3 -bottom-1 left-0 text-lime opacity-40" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
+              </svg>
+            </span>
+          </h1>
+
+          {/* Subheadline */}
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed mb-10 font-normal shadow-black/10 drop-shadow-md">
+            Soluções completas em medicamentos, nutrição e sementes para maximizar a produtividade do seu rebanho com tecnologia de ponta.
+          </p>
+
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="https://wa.me/5554996356819"
+              target="_blank"
+              className="group bg-lime text-forest-dark px-8 py-4 rounded-full font-bold text-lg transition-all hover:scale-105 hover:bg-lime/90 flex items-center gap-3 shadow-xl shadow-lime/20"
+            >
+              Fale com um Especialista
+              <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <Link
+              href="/produtos"
+              className="px-8 py-4 rounded-full font-bold text-lg text-white border border-white/20 hover:bg-white/10 transition-all backdrop-blur-sm"
+            >
+              Ver Catálogo
+            </Link>
+          </div>
         </motion.div>
+      </div>
+
+      {/* Floating Stats Bar */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.8 }}
+        className="absolute bottom-12 left-0 right-0 z-30 px-4"
+      >
+        <div className="container-main">
+          <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-6 md:p-8 flex flex-wrap md:flex-nowrap justify-between items-center gap-8 shadow-2xl border border-white/20 mx-auto max-w-5xl">
+            {[
+              { number: "19+", label: "Anos de Experiência" },
+              { number: "1000+", label: "Produtores Atendidos" },
+              { number: "100%", label: "Cobertura no RS" },
+            ].map((stat, i) => (
+              <div key={i} className="flex-1 text-center md:text-left border-r last:border-0 border-gray-200 pr-8 last:pr-0">
+                <div className="text-3xl font-extrabold text-primary mb-1">{stat.number}</div>
+                <div className="text-sm text-gray-500 font-medium uppercase tracking-wide">{stat.label}</div>
+              </div>
+            ))}
+
+            {/* Brand Carousel in the 4th Slot */}
+            <div className="flex-[1.5] md:w-80 overflow-hidden relative group h-20 flex items-center">
+              {/* Gradient Masks for fade effect */}
+              <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white/90 to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white/90 to-transparent z-10 pointer-events-none" />
+
+              <div className="flex animate-infinite-scroll w-max hover:[animation-play-state:paused] items-center">
+                {carouselBrands.map((brand, index) => (
+                  <div key={`${brand.name}-${index}`} className="flex items-center justify-center mx-8 w-36 opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
+                    <brand.Component className="h-12 w-auto max-w-full" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </motion.div>
     </section>
   );
 }
 
-/* ═══════════════════════════════════════════════
-   STATS — Asymmetric with animated counters
-   ═══════════════════════════════════════════════ */
-function Stats() {
-  return (
-    <section className="bg-white section-padding">
-      <div className="container-main">
-        <div className="grid md:grid-cols-12 gap-8 items-end">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="md:col-span-4"
-          >
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-lime">
-              Nossos Números
-            </span>
-            <div className="text-[5.5rem] md:text-[7rem] font-extrabold text-dark leading-none tracking-tighter mt-2">
-              <AnimatedCounter target={19} className="" />
-            </div>
-            <p className="text-gray-400 text-lg -mt-1">Anos de mercado</p>
-          </motion.div>
-
-          <div className="md:col-span-8 grid grid-cols-3 gap-6">
-            {[
-              { number: 1000, suffix: "+", label: "Produtores atendidos", sublabel: "em todo o RS" },
-              { number: 7, suffix: "", label: "Marcas líderes", sublabel: "do agronegócio" },
-              { number: 100, suffix: "%", label: "Cobertura RS", sublabel: "todas as regiões" },
-            ].map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="border-l-2 border-gray-100 pl-6"
-              >
-                <div className="text-3xl md:text-4xl font-extrabold text-dark tracking-tight">
-                  <AnimatedCounter target={stat.number} suffix={stat.suffix} />
-                </div>
-                <p className="text-gray-800 text-sm font-medium mt-1">{stat.label}</p>
-                <p className="text-gray-400 text-xs">{stat.sublabel}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+// ... Rest of the file (Solucoes, ProdutosDestaque, Diferenciais, etc.)
+// Note: Removed the "Stats" function entirely as requested to avoid duplication.
 
 /* ═══════════════════════════════════════════════
-   SOLUÇÕES — 5 categorias com ícones
+   SOLUÇÕES — 6 categorias com ícones
    ═══════════════════════════════════════════════ */
 function Solucoes() {
   const solucoes = [
     {
       icon: FaDna,
       title: "Reprodução e IATF",
-      description: "Hormônios, protocolos e insumos para inseminação artificial em tempo fixo. Linha completa Boehringer Ingelheim.",
+      description: "Linha hormonal completa Boehringer Ingelheim. Protocolos para máxima eficiência reprodutiva.",
       href: "/solucoes/reproducao-iatf",
-      image: "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1545465175-9c5957385e05?w=800&q=80", // Black calf / cattle
+    },
+    {
+      icon: FaHandSparkles,
+      title: "Higiene de Ordenha",
+      description: "Soluções Kersia para qualidade do leite. Detergentes, desinfetantes e pós-dipping.",
+      href: "/solucoes/higiene-ordenha",
+      image: "https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?w=800&q=80", // Milking machine / parlor
     },
     {
       icon: FaAppleAlt,
       title: "Nutrição Animal",
-      description: "Suplementação mineral, sistemas de alimentação para bezerras e rações de alta performance. Parceria Agrifirm.",
+      description: "Sucedâneos lácteos premium e sistemas de alimentação Milk Bar.",
       href: "/solucoes/nutricao-animal",
-      image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1595304958316-56be3175ac25?w=800&q=80", // Cattle / Calf feeding context
     },
     {
       icon: FaShieldAlt,
       title: "Sanidade e Vacinação",
-      description: "Vacinas, antiparasitários e produtos para o calendário sanitário completo do seu rebanho.",
+      description: "Ivomec® Gold e linha completa de vacinas para saúde do rebanho.",
       href: "/solucoes/sanidade-vacinacao",
-      image: "https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=900&q=80",
+      image: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=900&q=80", // Herd in field
     },
     {
       icon: FaBug,
       title: "Controle de Pragas",
-      description: "Soluções ecológicas para controle de moscas e insetos em instalações pecuárias. Produto Amarillo.",
+      description: "Amarillo: Solução ecológica para controle definitivo de moscas.",
       href: "/solucoes/controle-pragas",
-      image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=900&q=80",
+      image: "https://images.unsplash.com/photo-1534431713063-f93806be95fe?w=900&q=80", // Cow close up
     },
     {
       icon: FaSeedling,
       title: "Sementes de Pastagem",
-      description: "Sementes certificadas para formação e recuperação de pastagens. Cultivares adaptadas ao RS.",
+      description: "Sementes certificadas Biscayart e Atto. Alta conversão em carne e leite.",
       href: "/solucoes/sementes-pastagem",
-      image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80", // Green field
     },
   ];
 
   return (
-    <section className="bg-forest section-padding relative overflow-hidden">
+    <section className="bg-forest section-padding relative overflow-hidden !pt-32">
       <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-lime/[0.03] rounded-full blur-[150px]" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary/[0.05] rounded-full blur-[120px]" />
 
@@ -325,7 +228,7 @@ function Solucoes() {
           light
         />
 
-        {/* Grid 5 cards */}
+        {/* Grid 3-column cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {solucoes.map((sol, i) => (
             <motion.div
@@ -334,9 +237,7 @@ function Solucoes() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`group relative rounded-3xl overflow-hidden cursor-pointer glass-card-hover ${
-                i >= 3 ? "sm:col-span-1 lg:col-span-1" : ""
-              }`}
+              className="group relative rounded-3xl overflow-hidden cursor-pointer glass-card-hover"
             >
               <Link href={sol.href} className="block">
                 <div className="relative aspect-[16/10]">
@@ -384,33 +285,49 @@ function Solucoes() {
 }
 
 /* ═══════════════════════════════════════════════
-   PRODUTOS DESTAQUE — Rultivo carousel 60/40
+   PRODUTOS DESTAQUE — Locked
    ═══════════════════════════════════════════════ */
 function ProdutosDestaque() {
   const [active, setActive] = useState(0);
   const destaques = [
     {
-      name: "Ivomec Gold",
+      name: "Ivomec® Gold",
       brand: "Boehringer Ingelheim",
       description:
-        "Antiparasitário de longa ação para bovinos. Proteção prolongada contra vermes, carrapatos e berne. Referência no mercado veterinário.",
-      image: "https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=900&q=80",
-      badge: "Mais Vendido",
+        "O padrão ouro em controle parasitário. Formulação tixotrópica com Ivermectina 3,15%. Proteção por até 12 semanas contra berne e carrapatos, garantindo maior ganho de peso e pastos limpos.",
+      image: "https://images.unsplash.com/photo-1704221191316-168a25edbc59?auto=format&fit=crop&q=80",
+      badge: "Líder de Mercado",
     },
     {
-      name: "Milk Bar",
-      brand: "Milk Bar NZ",
+      name: "Kalvolac Quick",
+      brand: "Agrifirm",
       description:
-        "Sistema de amamentação para bezerros desenvolvido na Nova Zelândia. Alimentação natural que melhora saúde, ganho de peso e bem-estar.",
-      image: "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=900&q=80",
-      badge: "Inovação",
+        "Substituto de leite premium para bezerras. Digestão rápida, excelente desenvolvimento ruminal e crescimento juvenil acelerado. Tecnologia holandesa para sua recria.",
+      image: "https://images.unsplash.com/photo-1549420063-e382d6da5722?auto=format&fit=crop&q=80",
+      badge: "Alta Performance",
     },
     {
-      name: "Crotalária",
+      name: "Topline® Spray",
+      brand: "Boehringer Ingelheim",
+      description:
+        "Antiparasitário externo de aplicação tópica. Eficácia comprovada no tratamento e prevenção de bicheiras (miíases) e infecções de umbigo.",
+      image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&q=80",
+      badge: "Sanidade",
+    },
+    {
+      name: "Azevém Baqueano",
       brand: "Biscayart",
       description:
-        "Sementes de alta pureza para adubação verde e recuperação de solos degradados. Solução sustentável e certificada.",
-      image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=900&q=80",
+        "Azevém tetraplóide de ciclo médio/longo. Genética europeia com alto potencial de produção de massa verde. Ideal para pré-secado e pastejo direto até seis meses.",
+      image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80",
+      badge: "Produtividade",
+    },
+    {
+      name: "Amarillo",
+      brand: "Luxembourg",
+      description:
+        "Armadilha adesiva ecológica para controle de moscas. Não tóxico, ideal para instalações pecuárias. Captura eficaz sem uso de venenos.",
+      image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&q=80",
       badge: "Sustentável",
     },
   ];
@@ -499,7 +416,7 @@ function ProdutosDestaque() {
             </motion.div>
 
             <a
-              href={`https://wa.me/5554996695509?text=Olá! Tenho interesse no produto ${current.name}.`}
+              href={`https://wa.me/5554996356819?text=Olá! Tenho interesse no produto ${current.name}.`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-lime mt-8"
@@ -513,9 +430,8 @@ function ProdutosDestaque() {
                 <button
                   key={i}
                   onClick={() => setActive(i)}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${
-                    active === i ? "bg-lime w-10" : "bg-gray-200 w-3"
-                  }`}
+                  className={`h-1.5 rounded-full transition-all duration-500 ${active === i ? "bg-lime w-10" : "bg-gray-200 w-3"
+                    }`}
                 />
               ))}
             </div>
@@ -527,7 +443,7 @@ function ProdutosDestaque() {
 }
 
 /* ═══════════════════════════════════════════════
-   DIFERENCIAIS — dark bg + glass cards (4 novos)
+   DIFERENCIAIS — Locked
    ═══════════════════════════════════════════════ */
 function Diferenciais() {
   const items = [
@@ -592,7 +508,7 @@ function Diferenciais() {
 }
 
 /* ═══════════════════════════════════════════════
-   MISSÃO VISÃO VALORES
+   MISSÃO VISÃO VALORES — Locked
    ═══════════════════════════════════════════════ */
 function MissaoVisaoValores() {
   const valores = [
@@ -676,7 +592,7 @@ function MissaoVisaoValores() {
 }
 
 /* ═══════════════════════════════════════════════
-   DEPOIMENTOS — Carousel with glass
+   DEPOIMENTOS — Locked
    ═══════════════════════════════════════════════ */
 function Depoimentos() {
   const [active, setActive] = useState(0);
@@ -750,9 +666,8 @@ function Depoimentos() {
                 <button
                   key={i}
                   onClick={() => setActive(i)}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${
-                    active === i ? "bg-lime w-8" : "bg-gray-200 w-2"
-                  }`}
+                  className={`h-1.5 rounded-full transition-all duration-500 ${active === i ? "bg-lime w-8" : "bg-gray-200 w-2"
+                    }`}
                 />
               ))}
             </div>
@@ -769,79 +684,15 @@ function Depoimentos() {
   );
 }
 
-/* ═══════════════════════════════════════════════
-   MARCAS PARCEIRAS — Logo strip com placeholders
-   ═══════════════════════════════════════════════ */
-function MarcasParceiras() {
-  const marcas = [
-    { name: "Boehringer Ingelheim", destaque: true },
-    { name: "Agrifirm", destaque: true },
-    { name: "ATTO", destaque: false },
-    { name: "Milk Bar", destaque: false },
-    { name: "Kersia", destaque: false },
-    { name: "Biscayart", destaque: false },
-    { name: "Luxembourg", destaque: false },
-  ];
-
-  return (
-    <section className="bg-white py-20 border-t border-gray-100">
-      <div className="container-main">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
-            Parceiros
-          </span>
-          <h2 className="text-heading-sm text-dark">Marcas Parceiras</h2>
-          <p className="text-gray-400 mt-2 text-sm">Distribuidor oficial das marcas líderes do agronegócio</p>
-        </motion.div>
-
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-          {marcas.map((marca, i) => (
-            <motion.div
-              key={marca.name}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className={`group flex items-center justify-center rounded-2xl border px-8 py-5 transition-all duration-300 hover:shadow-card hover:-translate-y-1 ${
-                marca.destaque
-                  ? "border-lime/30 bg-lime/5 hover:border-lime"
-                  : "border-gray-100 bg-white hover:border-gray-200"
-              }`}
-            >
-              <span className={`font-extrabold text-lg md:text-xl tracking-tight transition-colors duration-300 ${
-                marca.destaque
-                  ? "text-forest group-hover:text-forest"
-                  : "text-gray-300 group-hover:text-forest"
-              }`}>
-                {marca.name}
-              </span>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════════════════════════════════
-   PAGE
-   ═══════════════════════════════════════════════ */
 export default function Home() {
   return (
-    <>
+    <main className="font-sans antialiased text-dark">
       <Hero />
-      <Stats />
       <Solucoes />
       <ProdutosDestaque />
       <Diferenciais />
       <MissaoVisaoValores />
       <Depoimentos />
-      <MarcasParceiras />
-    </>
+    </main>
   );
 }

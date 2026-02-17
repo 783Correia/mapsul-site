@@ -55,7 +55,7 @@ export default function ReproducaoIATFContent() {
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <a
-                href="https://wa.me/5554996695509?text=Olá! Gostaria de consultoria sobre protocolo IATF para meu rebanho."
+                href="https://wa.me/5554996356819?text=Olá! Gostaria de consultoria sobre protocolo IATF para meu rebanho."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-lime shadow-glow-lime"
@@ -98,7 +98,7 @@ export default function ReproducaoIATFContent() {
                 </p>
                 <p>
                   O sucesso da IATF depende diretamente da <strong className="text-dark">qualidade
-                  dos hormônios</strong> utilizados no protocolo. Hormônios de procedência confiável,
+                    dos hormônios</strong> utilizados no protocolo. Hormônios de procedência confiável,
                   armazenados e manipulados corretamente, garantem a sincronização precisa do ciclo
                   estral e, consequentemente, melhores taxas de concepção.
                 </p>
@@ -113,7 +113,7 @@ export default function ReproducaoIATFContent() {
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
                   backgroundImage:
-                    "url('https://images.unsplash.com/photo-1560493676-04071c5f467b?w=800&q=80')",
+                    "url('https://images.unsplash.com/photo-1704221191316-168a25edbc59?w=800&q=80')",
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest/40 to-transparent" />
@@ -158,12 +158,12 @@ export default function ReproducaoIATFContent() {
 
               <div className="mt-8 space-y-3">
                 {[
-                  "Dispositivos intravaginais de progesterona",
-                  "Benzoato de estradiol",
-                  "Cipionato de estradiol",
+                  "Dispositivos de Progesterona (P4)",
+                  "Benzoato de Estradiol",
+                  "Cipionato de Estradiol",
                   "Prostaglandina (PGF2α)",
-                  "eCG (Gonadotrofina Coriônica Equina)",
-                  "GnRH (Hormônio Liberador de Gonadotrofina)",
+                  "GnRH e eCG",
+                  "Protocolos completos para TETF e IATF",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <FaCheckCircle className="text-lime shrink-0" />
@@ -262,7 +262,7 @@ export default function ReproducaoIATFContent() {
               </p>
               <div className="flex flex-wrap justify-center gap-4 mt-8">
                 <a
-                  href="https://wa.me/5554996695509?text=Olá! Quero consultoria sobre protocolo IATF para meu rebanho."
+                  href="https://wa.me/5554996356819?text=Olá! Quero consultoria sobre protocolo IATF para meu rebanho."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-lime shadow-glow-lime"
