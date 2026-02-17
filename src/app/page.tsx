@@ -317,7 +317,7 @@ function Solucoes() {
   const allCards = [...cards, ...cards];
 
   return (
-    <section style={{ backgroundColor: "#0f1f0f" }} className="py-20 md:py-28 relative overflow-hidden">
+    <section style={{ backgroundColor: "#0f1f0f" }} className="pt-8 pb-20 md:pt-10 md:pb-28 relative overflow-hidden">
       <div className="container-main relative">
         <SectionHeading
           tag="Soluções para Pecuária"
