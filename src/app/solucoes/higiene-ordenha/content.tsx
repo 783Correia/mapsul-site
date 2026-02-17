@@ -126,13 +126,16 @@ export default function HigieneOrdenhaContent() {
                 </div>
             </section>
 
-            {/* Produtos */}
-            <section className="bg-gray-50 section-padding">
-                <div className="container-main">
+            {/* Produtos (Padrão Sementes: Fundo Forest) */}
+            <section className="bg-forest section-padding relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-lime/[0.03] rounded-full blur-[150px]" />
+
+                <div className="container-main relative">
                     <SectionHeading
                         tag="Catálogo"
                         title="Produtos em Destaque"
                         description="Soluções eficientes para cada etapa da ordenha e limpeza."
+                        light
                     />
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

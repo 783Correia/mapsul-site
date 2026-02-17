@@ -113,13 +113,16 @@ export default function ControlePragasContent() {
         </div>
       </section>
 
-      {/* Amarillo */}
-      <section className="bg-gray-50 section-padding">
-        <div className="container-main">
+      {/* Amarillo (Padrão Sementes: Fundo Forest) */}
+      <section className="bg-forest section-padding relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-lime/[0.03] rounded-full blur-[150px]" />
+
+        <div className="container-main relative">
           <SectionHeading
             tag="Solução"
             title="Amarillo: Armadilha Adesiva Ecológica"
             description="Tecnologia simples, eficaz e sem veneno para o controle de moscas em instalações pecuárias."
+            light
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -158,7 +161,7 @@ export default function ControlePragasContent() {
           </div>
 
           <motion.div {...fadeUp} className="mt-12 max-w-2xl mx-auto">
-            <h3 className="font-bold text-dark text-lg mb-4">Onde utilizar o Amarillo:</h3>
+            <h3 className="font-bold text-white text-lg mb-4">Onde utilizar o Amarillo:</h3>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 "Sala de ordenha",
@@ -170,7 +173,7 @@ export default function ControlePragasContent() {
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <FaCheckCircle className="text-lime shrink-0" />
-                  <span className="text-gray-600 text-sm">{item}</span>
+                  <span className="text-white/60 text-sm">{item}</span>
                 </div>
               ))}
             </div>
