@@ -81,14 +81,14 @@ function Hero() {
           {/* Tag */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
             <div className="w-2 h-2 rounded-full bg-lime animate-pulse" />
-            <span className="text-xs font-bold uppercase tracking-widest text-white">Plataforma Líder em Nutrição Animal</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-white">Distribuidora referência no RS desde 2007</span>
           </div>
 
           {/* Headline */}
           <h1 className="text-[clamp(3.5rem,6vw,6rem)] font-bold text-white leading-[1.1] tracking-tight mb-8 drop-shadow-lg">
-            Leve o campo para o <br />
+            Produtos veterinários e<br />
             <span className="text-lime inline-block relative">
-              próximo nível.
+              nutrição animal no RS.
               <svg className="absolute w-full h-3 -bottom-1 left-0 text-lime opacity-40" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
               </svg>
@@ -97,7 +97,7 @@ function Hero() {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed mb-10 font-normal shadow-black/10 drop-shadow-md">
-            Soluções completas em medicamentos, nutrição e sementes para maximizar a produtividade do seu rebanho com tecnologia de ponta.
+            Medicamentos, sementes de pastagem e suplementação para pecuaristas de todo o Rio Grande do Sul. Consultoria técnica especializada e entrega em todas as regiões.
           </p>
 
           {/* CTA */}
@@ -107,14 +107,14 @@ function Hero() {
               target="_blank"
               className="group bg-lime text-forest-dark px-8 py-4 rounded-full font-bold text-lg transition-all hover:scale-105 hover:bg-lime/90 flex items-center gap-3 shadow-xl shadow-lime/20"
             >
-              Fale com um Especialista
+              Fale com nosso Veterinário
               <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
             </a>
             <Link
               href="/produtos"
               className="px-8 py-4 rounded-full font-bold text-lg text-white border border-white/20 hover:bg-white/10 transition-all backdrop-blur-sm"
             >
-              Ver Catálogo
+              Ver todos os Produtos
             </Link>
           </div>
         </motion.div>
@@ -307,9 +307,9 @@ function Solucoes() {
     <section style={{ backgroundColor: "#0f1f0f" }} className="py-20 md:py-28 relative overflow-hidden">
       <div className="container-main relative">
         <SectionHeading
-          tag="Nossas Soluções"
-          title="Soluções completas para a pecuária gaúcha"
-          description="Trabalhamos com as melhores marcas do mercado para garantir saúde, produtividade e sustentabilidade."
+          tag="Soluções para Pecuária"
+          title="Medicamentos, nutrição e sementes para o seu rebanho"
+          description="Distribuímos as melhores marcas do mercado veterinário no RS: Boehringer Ingelheim, Agrifirm, Milk Bar, ATTO e mais."
           light
         />
       </div>
@@ -345,7 +345,7 @@ function Solucoes() {
           className="text-center mt-12"
         >
           <Link href="/produtos" className="btn-lime">
-            Ver Catálogo Completo
+            Explorar Catálogo Completo
             <FaArrowRight className="text-xs" />
           </Link>
         </motion.div>
@@ -486,13 +486,13 @@ function ProdutosDestaque() {
             </motion.div>
 
             <a
-              href={`https://wa.me/5554996356819?text=Olá! Tenho interesse no produto ${current.name}.`}
+              href={`https://wa.me/5554996356819?text=Olá! Tenho interesse no produto ${current.name} da ${current.brand}. Gostaria de saber preço e disponibilidade.`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-lime mt-8"
             >
               <FaWhatsapp className="text-lg" />
-              Solicitar Orçamento
+              Pedir Orçamento via WhatsApp
             </a>
 
             <div className="flex gap-2 mt-8">
@@ -545,8 +545,8 @@ function Diferenciais() {
 
       <div className="container-main relative">
         <SectionHeading
-          tag="Diferenciais"
-          title="Por que escolher a MAPSUL?"
+          tag="Por que a MAPSUL"
+          title="Diferenciais que fazem a diferença no campo"
           light
         />
 
@@ -691,7 +691,7 @@ function Depoimentos() {
   return (
     <section className="bg-gray-50 section-padding">
       <div className="container-main">
-        <SectionHeading tag="Depoimentos" title="O que nossos parceiros dizem" />
+        <SectionHeading tag="Depoimentos de Pecuaristas" title="Quem confia na MAPSUL recomenda" />
 
         <div className="max-w-3xl mx-auto relative">
           <div className="bg-white rounded-3xl p-10 md:p-14 shadow-card relative overflow-hidden">
