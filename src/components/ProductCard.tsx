@@ -32,7 +32,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             </div>
 
             {/* Conteúdo (Fundo Escuro Original) */}
-            <div className="relative z-20 p-6 flex flex-col flex-grow bg-neutral-900">
+            <div className="relative z-20 p-5 flex flex-col flex-grow bg-neutral-900">
                 <div className="mb-2">
                     <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">
                         {product.brand}
