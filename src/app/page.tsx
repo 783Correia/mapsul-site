@@ -10,7 +10,7 @@ import {
   FaWhatsapp,
   FaArrowRight,
   FaArrowLeft,
-  FaUsers,
+  FaArrowLeft,
   FaStar,
   FaQuoteLeft,
   FaChevronLeft,
@@ -25,16 +25,16 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
-import AnimatedCounter from "@/components/AnimatedCounter";
+import { AgrifirmLogo, BiscayartLogo, KersiaLogo, BoehringerLogo, MilkBarLogo } from "@/components/Logos";
 /* ═══════════════════════════════════════════════
    HERO — Rutivo Style (Wide/Clean/Centered)
    ═══════════════════════════════════════════════ */
 const heroBrands = [
-  { name: "Agrifirm", logo: "/logos/agrifirm.png" },
-  { name: "Biscayart", logo: "/logos/biscayart.png" },
-  { name: "Kersia", logo: "/logos/kersia.jpg" },
-  { name: "Boehringer Ingelheim", logo: "/logos/boehringer.png" },
-  { name: "Milk Bar", logo: "/logos/milkbar.jpg" },
+  { name: "Agrifirm", component: AgrifirmLogo },
+  { name: "Biscayart", component: BiscayartLogo },
+  { name: "Kersia", component: KersiaLogo },
+  { name: "Boehringer Ingelheim", component: BoehringerLogo },
+  { name: "Milk Bar", component: MilkBarLogo },
   { name: "ATTO", logo: "/logos/atto.png" },
   { name: "Luxembourg", logo: "/logos/luxembourg.jpg" },
 ];
@@ -149,7 +149,17 @@ function Hero() {
               <div className="flex animate-infinite-scroll w-max hover:[animation-play-state:paused] items-center">
                 {carouselBrands.map((brand, index) => (
                   <div key={`${brand.name}-${index}`} className="flex items-center justify-center mx-8 shrink-0 opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
-                    <Image src={brand.logo} alt={brand.name} width={120} height={40} className="h-10 w-auto object-contain" />
+                    {brand.component ? (
+                      <brand.component className="h-10 w-auto" />
+                    ) : (
+                      <Image
+                        src={brand.logo ?? ""}
+                        alt={brand.name}
+                        width={120}
+                        height={40}
+                        className="h-10 w-auto object-contain mix-blend-multiply"
+                      />
+                    )}
                   </div>
                 ))}
               </div>

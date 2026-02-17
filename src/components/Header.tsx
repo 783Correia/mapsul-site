@@ -69,9 +69,9 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="container-main py-4">
         <div
-          className={`flex items-center justify-between px-6 h-14 rounded-full transition-all duration-500 ${scrolled
-              ? "bg-forest-dark/80 backdrop-blur-2xl shadow-float border border-white/[0.06]"
-              : "bg-forest/60 backdrop-blur-xl border border-white/[0.08]"
+          className={`flex items-center justify-between px-8 h-20 max-w-[1216px] mx-auto rounded-full transition-all duration-500 ${scrolled
+            ? "bg-forest-dark/80 backdrop-blur-2xl shadow-float border border-white/[0.06]"
+            : "bg-forest/60 backdrop-blur-xl border border-white/[0.08]"
             }`}
         >
           {/* Logo */}
@@ -135,8 +135,8 @@ export default function Header() {
                           key={sol.href}
                           href={sol.href}
                           className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${isActive
-                              ? "bg-lime/10 text-lime"
-                              : "text-white/60 hover:text-white hover:bg-white/[0.06]"
+                            ? "bg-lime/10 text-lime"
+                            : "text-white/60 hover:text-white hover:bg-white/[0.06]"
                             }`}
                         >
                           <sol.icon size={14} className={isActive ? "text-lime" : "text-white/30"} />
@@ -213,8 +213,8 @@ export default function Header() {
                 href="/"
                 onClick={() => setMobileOpen(false)}
                 className={`block px-4 py-3 rounded-xl font-medium transition-all duration-200 ${pathname === "/"
-                    ? "text-lime bg-white/[0.06]"
-                    : "text-white/60 hover:text-white hover:bg-white/[0.04]"
+                  ? "text-lime bg-white/[0.06]"
+                  : "text-white/60 hover:text-white hover:bg-white/[0.04]"
                   }`}
               >
                 Início
@@ -224,8 +224,8 @@ export default function Header() {
               <button
                 onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
                 className={`w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium transition-all duration-200 ${isSolucoesActive
-                    ? "text-lime bg-white/[0.06]"
-                    : "text-white/60 hover:text-white hover:bg-white/[0.04]"
+                  ? "text-lime bg-white/[0.06]"
+                  : "text-white/60 hover:text-white hover:bg-white/[0.04]"
                   }`}
               >
                 Soluções
@@ -247,8 +247,8 @@ export default function Header() {
                           href={sol.href}
                           onClick={() => setMobileOpen(false)}
                           className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-sm transition-all duration-200 ${pathname === sol.href
-                              ? "text-lime bg-white/[0.06]"
-                              : "text-white/40 hover:text-white hover:bg-white/[0.04]"
+                            ? "text-lime bg-white/[0.06]"
+                            : "text-white/40 hover:text-white hover:bg-white/[0.04]"
                             }`}
                         >
                           <sol.icon size={12} />
@@ -268,8 +268,8 @@ export default function Header() {
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
                     className={`block px-4 py-3 rounded-xl font-medium transition-all duration-200 ${isActive
-                        ? "text-lime bg-white/[0.06]"
-                        : "text-white/60 hover:text-white hover:bg-white/[0.04]"
+                      ? "text-lime bg-white/[0.06]"
+                      : "text-white/60 hover:text-white hover:bg-white/[0.04]"
                       }`}
                   >
                     {link.label}
