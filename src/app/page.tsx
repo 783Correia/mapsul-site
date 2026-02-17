@@ -167,14 +167,136 @@ function Hero() {
 // Note: Removed the "Stats" function entirely as requested to avoid duplication.
 
 /* ═══════════════════════════════════════════════
-   SOLUÇÕES — Bento Grid (Apple/Agriplot style)
+   SOLUÇÕES — Carrossel infinito (6 cards)
    ═══════════════════════════════════════════════ */
-function Solucoes() {
-  return (
-    <section className="bg-forest section-padding relative overflow-hidden !pt-32">
-      <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-lime/[0.03] rounded-full blur-[150px]" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary/[0.05] rounded-full blur-[120px]" />
+function SolucaoCard({ sol }: { sol: { type: string; title: string; subtitle: string; href: string; bg?: string; image?: string; icon?: React.ElementType; iconColor?: string; tags?: string[] } }) {
+  const Icon = sol.icon;
 
+  /* ── Image card ── */
+  if (sol.type === "image") {
+    return (
+      <Link href={sol.href} className="block h-full group">
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+          style={{ backgroundImage: `url('${sol.image}')` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+        {Icon && (
+          <div className="absolute top-5 left-5 w-10 h-10 rounded-xl bg-lime/90 flex items-center justify-center text-forest">
+            <Icon size={16} />
+          </div>
+        )}
+        <div className="absolute bottom-0 left-0 right-0 p-7">
+          <h3 className="text-[24px] font-bold text-white tracking-tight leading-tight" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
+            {sol.title}
+          </h3>
+          <p className="text-white/60 text-sm mt-1.5">{sol.subtitle}</p>
+        </div>
+      </Link>
+    );
+  }
+
+  /* ── Solid color card with tags ── */
+  if (sol.type === "tags") {
+    return (
+      <Link href={sol.href} className="block h-full group">
+        <div className="p-7 pt-8">
+          <h3 className="text-[28px] font-extrabold tracking-tight leading-tight" style={{ color: "#1a3c2a" }}>
+            {sol.title}
+          </h3>
+        </div>
+        {sol.tags && (
+          <div className="px-7 flex flex-wrap gap-2">
+            {sol.tags.map((tag) => (
+              <span key={tag} className="inline-block text-xs font-semibold px-4 py-2 rounded-full border" style={{ borderColor: "#1a3c2a", color: "#1a3c2a" }}>
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </Link>
+    );
+  }
+
+  /* ── Solid color card with icon ── */
+  if (sol.type === "icon") {
+    return (
+      <Link href={sol.href} className="block h-full group">
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+          {Icon && <Icon size={56} className={`${sol.iconColor || "text-forest"} mb-4 group-hover:scale-110 transition-transform duration-300`} />}
+          <h3 className="text-[22px] font-bold tracking-tight leading-tight" style={{ color: sol.bg === "#1a3c2a" ? "#fff" : "#1a3c2a" }}>
+            {sol.title}
+          </h3>
+          <p className="text-sm mt-1.5" style={{ color: sol.bg === "#1a3c2a" ? "rgba(255,255,255,0.6)" : "rgba(26,60,42,0.5)" }}>
+            {sol.subtitle}
+          </p>
+        </div>
+      </Link>
+    );
+  }
+
+  return null;
+}
+
+function Solucoes() {
+  const cards = [
+    {
+      type: "image",
+      title: "Reprodução e IATF",
+      subtitle: "Boehringer Ingelheim",
+      href: "/solucoes/reproducao-iatf",
+      image: "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=800&q=80",
+      icon: FaDna,
+    },
+    {
+      type: "image",
+      title: "Nutrição Animal",
+      subtitle: "Milk Bar + Agrifirm",
+      href: "/solucoes/nutricao-animal",
+      image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+      icon: FaAppleAlt,
+    },
+    {
+      type: "tags",
+      title: "Sanidade e\nVacinação",
+      subtitle: "",
+      href: "/solucoes/sanidade-vacinacao",
+      bg: "#e8f5e9",
+      tags: ["Ivomec® Gold", "J-VAC®", "Metacam®"],
+    },
+    {
+      type: "icon",
+      title: "Controle de Pragas",
+      subtitle: "Amarillo",
+      href: "/solucoes/controle-pragas",
+      bg: "#fff8e1",
+      icon: FaBug,
+      iconColor: "text-yellow-700",
+    },
+    {
+      type: "image",
+      title: "Sementes de Pastagem",
+      subtitle: "Biscayart + ATTO",
+      href: "/solucoes/sementes-pastagem",
+      image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+      icon: FaSeedling,
+    },
+    {
+      type: "icon",
+      title: "Higiene de Ordenha",
+      subtitle: "Soluções Kersia",
+      href: "/solucoes/higiene-ordenha",
+      bg: "#1a3c2a",
+      icon: FaHandSparkles,
+      iconColor: "text-lime",
+    },
+  ];
+
+  // Duplicate for seamless loop
+  const allCards = [...cards, ...cards];
+
+  return (
+    <section style={{ backgroundColor: "#0f1f0f" }} className="py-20 md:py-28 relative overflow-hidden">
       <div className="container-main relative">
         <SectionHeading
           tag="Nossas Soluções"
@@ -182,171 +304,32 @@ function Solucoes() {
           description="Trabalhamos com as melhores marcas do mercado para garantir saúde, produtividade e sustentabilidade."
           light
         />
+      </div>
 
-        {/* ── Bento Grid ── */}
-        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-[320px_280px] gap-4">
+      {/* ── Carousel container ── */}
+      <div className="relative overflow-hidden group/carousel">
+        {/* Fade masks */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#0f1f0f] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#0f1f0f] to-transparent z-10 pointer-events-none" />
 
-          {/* ── 1. Reprodução e IATF — 2col, row 1, image card ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0, duration: 0.5 }}
-            className="group relative overflow-hidden cursor-pointer rounded-3xl md:col-span-2 min-h-[280px] md:min-h-0 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500"
-          >
-            <Link href="/solucoes/reproducao-iatf" className="block h-full">
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=1200&q=80')" }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-              {/* Icon badge */}
-              <div className="absolute top-5 left-5 w-10 h-10 rounded-xl bg-lime/90 flex items-center justify-center text-forest">
-                <FaDna size={16} />
-              </div>
-              <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-                <h3 className="text-[28px] font-bold text-white tracking-tight leading-tight">
-                  Reprodução e IATF
-                </h3>
-                <p className="text-white/60 text-sm mt-1.5">
-                  Linha hormonal Boehringer Ingelheim
-                </p>
-              </div>
-            </Link>
-          </motion.div>
-
-          {/* ── 2. Nutrição Animal — 1col, row 1, solid color card ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.08, duration: 0.5 }}
-            className="group relative overflow-hidden cursor-pointer rounded-3xl min-h-[240px] md:min-h-0 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500"
-            style={{ backgroundColor: "#e8f5e9" }}
-          >
-            <Link href="/solucoes/nutricao-animal" className="block h-full">
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                <FaAppleAlt size={48} className="text-forest mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-[22px] font-bold text-forest tracking-tight leading-tight">
-                  Nutrição Animal
-                </h3>
-                <p className="text-forest/50 text-sm mt-1.5">
-                  Milk Bar + Agrifirm
-                </p>
-              </div>
-            </Link>
-          </motion.div>
-
-          {/* ── 3. Sanidade e Vacinação — 1col, row 1, image card ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.16, duration: 0.5 }}
-            className="group relative overflow-hidden cursor-pointer rounded-3xl min-h-[240px] md:min-h-0 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500"
-          >
-            <Link href="/solucoes/sanidade-vacinacao" className="block h-full">
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1605152276897-4f618f831968?w=800&q=80')" }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-              <div className="absolute top-5 left-5 w-10 h-10 rounded-xl bg-lime/90 flex items-center justify-center text-forest">
-                <FaShieldAlt size={16} />
-              </div>
-              <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="text-xl font-bold text-white tracking-tight leading-tight">
-                  Sanidade e Vacinação
-                </h3>
-                <p className="text-white/60 text-sm mt-1.5">
-                  Ivomec® Gold + J-VAC®
-                </p>
-              </div>
-            </Link>
-          </motion.div>
-
-          {/* ── 4. Controle de Pragas — 1col, row 2, solid color card ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.24, duration: 0.5 }}
-            className="group relative overflow-hidden cursor-pointer rounded-3xl min-h-[220px] md:min-h-0 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500"
-            style={{ backgroundColor: "#fff8e1" }}
-          >
-            <Link href="/solucoes/controle-pragas" className="block h-full">
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                <FaBug size={48} className="text-yellow-700 mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-[22px] font-bold text-forest tracking-tight leading-tight">
-                  Controle de Pragas
-                </h3>
-                <p className="text-forest/50 text-sm mt-1.5">
-                  Amarillo
-                </p>
-              </div>
-            </Link>
-          </motion.div>
-
-          {/* ── 5. Sementes de Pastagem — 1col, row 2, image card ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.32, duration: 0.5 }}
-            className="group relative overflow-hidden cursor-pointer rounded-3xl min-h-[220px] md:min-h-0 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500"
-          >
-            <Link href="/solucoes/sementes-pastagem" className="block h-full">
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80')" }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-              <div className="absolute top-5 left-5 w-10 h-10 rounded-xl bg-lime/90 flex items-center justify-center text-forest">
-                <FaSeedling size={16} />
-              </div>
-              <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="text-xl font-bold text-white tracking-tight leading-tight">
-                  Sementes de Pastagem
-                </h3>
-                <p className="text-white/60 text-sm mt-1.5">
-                  Biscayart + ATTO
-                </p>
-              </div>
-            </Link>
-          </motion.div>
-
-          {/* ── 6. Higiene de Ordenha — 2col, row 2, solid dark card ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="group relative overflow-hidden cursor-pointer rounded-3xl md:col-span-2 min-h-[220px] md:min-h-0 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500"
-            style={{ backgroundColor: "#1a3c2a" }}
-          >
-            <Link href="/solucoes/higiene-ordenha" className="block h-full">
-              {/* Decorative circles */}
-              <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full border border-white/[0.06]" />
-              <div className="absolute -bottom-16 -right-16 w-64 h-64 rounded-full border border-white/[0.04]" />
-
-              <div className="absolute inset-0 flex items-center p-6 md:p-10 gap-6 md:gap-10">
-                <div className="shrink-0 w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-lime group-hover:bg-lime group-hover:text-forest transition-all duration-300">
-                  <FaHandSparkles size={28} />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">
-                    Higiene de Ordenha
-                  </h3>
-                  <p className="text-white/50 text-sm mt-1.5 max-w-sm">
-                    Soluções Kersia para qualidade do leite
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </motion.div>
-
+        {/* Scrolling track */}
+        <div className="flex w-max animate-solucoes-scroll group-hover/carousel:[animation-play-state:paused] items-stretch">
+          {allCards.map((sol, i) => (
+            <div
+              key={`${sol.title}-${i}`}
+              className="relative overflow-hidden cursor-pointer shrink-0 w-[300px] md:w-[340px] h-[380px] md:h-[420px] mx-2 hover:scale-[1.02] transition-transform duration-300"
+              style={{
+                borderRadius: 20,
+                backgroundColor: sol.bg || "transparent",
+              }}
+            >
+              <SolucaoCard sol={sol} />
+            </div>
+          ))}
         </div>
+      </div>
 
+      <div className="container-main relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

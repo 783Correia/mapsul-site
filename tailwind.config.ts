@@ -78,12 +78,17 @@ const config: Config = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "solucoes-scroll": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "count-up": "count-up 0.6s ease-out forwards",
         "slide-up": "slide-up 0.8s ease-out forwards",
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
         "infinite-scroll": "infinite-scroll 40s linear infinite",
+        "solucoes-scroll": "solucoes-scroll 60s linear infinite",
       },
     },
   },

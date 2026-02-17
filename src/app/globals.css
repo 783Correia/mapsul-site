@@ -74,4 +74,7 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
