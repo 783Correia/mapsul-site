@@ -13,7 +13,7 @@ export default function Footer() {
     <footer>
 
       {/* ─── Main Footer ─── */}
-      <div className="bg-dark">
+      <div style={{ backgroundColor: "#0f1f0f" }}>
         <div className="container-main py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
             {/* Brand */}
