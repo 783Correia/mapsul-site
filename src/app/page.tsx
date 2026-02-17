@@ -70,7 +70,7 @@ function Hero() {
       <div className="absolute top-20 left-20 w-96 h-96 bg-lime/20 rounded-full blur-[100px] z-10 opacity-60 mix-blend-screen" />
       <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] z-10 opacity-50 mix-blend-screen" />
 
-      <div className="container-main relative z-20 text-center pt-32 pb-52">
+      <div className="container-main relative z-20 text-center pt-28 pb-36">
         <motion.div
           style={{ y: textY }}
           initial={{ opacity: 0, y: 30 }}
@@ -79,13 +79,13 @@ function Hero() {
           className="max-w-4xl mx-auto"
         >
           {/* Tag */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-5">
             <div className="w-2 h-2 rounded-full bg-lime animate-pulse" />
             <span className="text-[10px] font-bold uppercase tracking-widest text-white">Distribuidora referência no RS desde 2007</span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-[clamp(2.2rem,4vw,3.8rem)] font-bold text-white leading-[1.1] tracking-tight mb-6 drop-shadow-lg">
+          <h1 className="text-[clamp(2.2rem,4vw,3.8rem)] font-bold text-white leading-[1.1] tracking-tight mb-4 drop-shadow-lg">
             Produtos veterinários e<br />
             <span className="text-lime inline-block relative">
               nutrição animal no RS.
@@ -96,12 +96,12 @@ function Hero() {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-sm md:text-base text-white/80 max-w-lg mx-auto leading-relaxed mb-8 font-normal drop-shadow-md">
+          <p className="text-sm md:text-base text-white/80 max-w-lg mx-auto leading-relaxed mb-6 font-normal drop-shadow-md">
             Medicamentos, sementes de pastagem e suplementação para pecuaristas de todo o Rio Grande do Sul. Consultoria técnica especializada e entrega em todas as regiões.
           </p>
 
           {/* CTA */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="https://wa.me/5554996356819"
               target="_blank"
