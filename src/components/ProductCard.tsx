@@ -1,7 +1,6 @@
 "use client";
 
 import { memo } from "react";
-import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
 import { Product } from "@/data/products";
@@ -9,21 +8,15 @@ import { getWhatsAppLink } from "@/utils/whatsapp";
 
 interface ProductCardProps {
     product: Product;
-    index?: number;
 }
 
-function ProductCard({ product, index = 0 }: ProductCardProps) {
+function ProductCard({ product }: ProductCardProps) {
     const whatsappMessage = `Olá! Tenho interesse no produto ${product.name} que vi no site.`;
     const whatsappLink = getWhatsAppLink(whatsappMessage);
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
-            whileHover={{ y: -8, transition: { duration: 0.3 } }}
-            className="group relative rounded-3xl overflow-hidden border border-white/[0.12] shadow-lg transition-all duration-300 hover:border-lime/50 hover:shadow-[0_20px_50px_rgba(180,209,46,0.15)] flex flex-col h-full w-full"
+        <div
+            className="group relative rounded-3xl overflow-hidden border border-white/[0.12] shadow-lg transition-all duration-300 hover:border-lime/50 hover:shadow-[0_20px_50px_rgba(180,209,46,0.15)] hover:-translate-y-2 flex flex-col h-full w-full"
             style={{ backgroundColor: "#1a3c2a" }}
         >
             {/* Imagem */}
@@ -74,8 +67,8 @@ function ProductCard({ product, index = 0 }: ProductCardProps) {
                     </a>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 }
 
-export default memo(ProductCard, (prev, next) => prev.product.id === next.product.id && prev.index === next.index);
+export default memo(ProductCard, (prev, next) => prev.product.id === next.product.id);

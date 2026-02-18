@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaArrowRight, FaCalendarAlt } from "react-icons/fa";
 
@@ -43,9 +42,7 @@ export default function BlogListContent() {
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-lime rounded-full translate-y-1/2 translate-x-1/3 blur-3xl" />
         </div>
         <div className="container-main relative text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <div
           >
             <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
               Blog
@@ -57,7 +54,7 @@ export default function BlogListContent() {
               Artigos, guias e dicas para melhorar a produtividade e a saúde do
               seu rebanho.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -65,13 +62,9 @@ export default function BlogListContent() {
       <section className="bg-gray-50 section-padding">
         <div className="container-main">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {artigos.map((artigo, i) => (
-              <motion.article
+            {artigos.map((artigo) => (
+              <article
                 key={artigo.slug}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
                 className="bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 group"
               >
                 <Link href={`/blog/${artigo.slug}`}>
@@ -110,7 +103,7 @@ export default function BlogListContent() {
                     </div>
                   </div>
                 </Link>
-              </motion.article>
+              </article>
             ))}
           </div>
         </div>

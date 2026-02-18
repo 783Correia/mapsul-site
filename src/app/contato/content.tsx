@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { getWhatsAppLink } from "@/utils/whatsapp";
-import { motion } from "framer-motion";
 import {
   FaWhatsapp,
   FaPhoneAlt,
@@ -68,9 +67,7 @@ export default function ContatoContent() {
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-lime rounded-full translate-y-1/2 translate-x-1/3 blur-3xl" />
         </div>
         <div className="container-main relative text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <div
           >
             <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
               Fale Conosco
@@ -80,7 +77,7 @@ export default function ContatoContent() {
               Estamos prontos para atender você. Preencha o formulário e
               entraremos em contato via WhatsApp.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -89,10 +86,7 @@ export default function ContatoContent() {
         <div className="container-main">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Form — 3 cols */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+            <div
               className="lg:col-span-3"
             >
               <div className="bg-white rounded-3xl p-8 md:p-10 shadow-card">
@@ -281,14 +275,10 @@ export default function ContatoContent() {
                   </form>
                 )}
               </div>
-            </motion.div>
+            </div>
 
             {/* Info — 2 cols */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+            <div
               className="lg:col-span-2 space-y-6"
             >
               <div className="bg-white rounded-3xl p-8 shadow-card">
@@ -383,7 +373,7 @@ export default function ContatoContent() {
                   title="Localização MAPSUL Distribuidora"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

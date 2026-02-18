@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { getWhatsAppLink } from "@/utils/whatsapp";
 import {
   FaWhatsapp,
@@ -14,13 +13,6 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
-
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6 },
-};
 
 export default function ReproducaoIATFContent() {
   return (
@@ -38,9 +30,7 @@ export default function ReproducaoIATFContent() {
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-lime/[0.06] rounded-full translate-y-1/2 translate-x-1/3 blur-[100px]" />
 
         <div className="container-main relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <div
             className="max-w-3xl"
           >
             <span className="inline-flex items-center gap-2 glass-light rounded-full px-5 py-2 text-xs font-bold uppercase tracking-[0.15em] text-lime mb-6">
@@ -70,7 +60,7 @@ export default function ReproducaoIATFContent() {
                 <FaArrowRight className="text-xs" />
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -78,7 +68,7 @@ export default function ReproducaoIATFContent() {
       <section className="bg-white section-padding">
         <div className="container-main">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div {...fadeUp}>
+            <div>
               <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
                 Entenda a Técnica
               </span>
@@ -105,10 +95,9 @@ export default function ReproducaoIATFContent() {
                   estral e, consequentemente, melhores taxas de concepção.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              {...fadeUp}
+            <div
               className="relative overflow-hidden aspect-[4/3]"
               style={{
                 borderRadius: 16,
@@ -122,7 +111,7 @@ export default function ReproducaoIATFContent() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -131,8 +120,7 @@ export default function ReproducaoIATFContent() {
       <section className="bg-gray-50 section-padding">
         <div className="container-main">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              {...fadeUp}
+            <div
               className="order-2 lg:order-1 relative rounded-3xl overflow-hidden aspect-[4/3] bg-forest"
             >
               <div className="absolute inset-0 flex items-center justify-center">
@@ -146,9 +134,9 @@ export default function ReproducaoIATFContent() {
                   <p className="text-white/30 text-sm mt-4">Linha Hormonal Completa</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div {...fadeUp} className="order-1 lg:order-2">
+            <div className="order-1 lg:order-2">
               <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
                 Parceria Estratégica
               </span>
@@ -181,7 +169,7 @@ export default function ReproducaoIATFContent() {
                 Todos os produtos com procedência garantida, rastreabilidade e
                 condições ideais de armazenamento para máxima eficácia no campo.
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -224,13 +212,9 @@ export default function ReproducaoIATFContent() {
                 description:
                   "Lotes uniformes de bezerros com maior peso à desmama e melhor preço de venda no mercado.",
               },
-            ].map((item, i) => (
-              <motion.div
+            ].map((item) => (
+              <div
                 key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
                 className="glass-card glass-card-hover p-7 text-center group"
               >
                 <div className="w-14 h-14 glass rounded-2xl flex items-center justify-center mx-auto mb-5 text-lime group-hover:bg-lime group-hover:text-forest transition-all duration-400">
@@ -242,7 +226,7 @@ export default function ReproducaoIATFContent() {
                 <p className="text-white/40 text-sm leading-relaxed">
                   {item.description}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -251,8 +235,7 @@ export default function ReproducaoIATFContent() {
       {/* CTA Final */}
       <section className="bg-gray-50 py-16 md:py-24">
         <div className="max-w-[900px] mx-auto px-5 sm:px-8">
-          <motion.div
-            {...fadeUp}
+          <div
             className="relative rounded-3xl p-8 md:p-12 text-center overflow-hidden"
             style={{ backgroundColor: "#0a2010", boxShadow: "0 25px 60px rgba(0,0,0,0.2)" }}
           >
@@ -282,7 +265,7 @@ export default function ReproducaoIATFContent() {
                 </Link>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

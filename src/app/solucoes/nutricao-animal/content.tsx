@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { getWhatsAppLink } from "@/utils/whatsapp";
 import {
   FaWhatsapp,
@@ -15,13 +14,6 @@ import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 
 
-
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6 },
-};
 
 export default function NutricaoAnimalContent() {
   return (
@@ -38,9 +30,7 @@ export default function NutricaoAnimalContent() {
         <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/40" />
 
         <div className="container-main relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <div
             className="max-w-3xl"
           >
             <span className="inline-flex items-center gap-2 glass-light rounded-full px-5 py-2 text-xs font-bold uppercase tracking-[0.15em] text-lime mb-6">
@@ -65,7 +55,7 @@ export default function NutricaoAnimalContent() {
                 Consultoria Nutricional
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -73,7 +63,7 @@ export default function NutricaoAnimalContent() {
       <section className="bg-white section-padding">
         <div className="container-main">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div {...fadeUp}>
+            <div>
               <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
                 Destaque
               </span>
@@ -100,10 +90,9 @@ export default function NutricaoAnimalContent() {
                   desempenho das bezerras.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              {...fadeUp}
+            <div
               className="relative overflow-hidden aspect-[4/3]"
               style={{
                 borderRadius: 16,
@@ -117,7 +106,7 @@ export default function NutricaoAnimalContent() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -126,8 +115,7 @@ export default function NutricaoAnimalContent() {
       <section className="bg-gray-50 section-padding">
         <div className="container-main">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              {...fadeUp}
+            <div
               className="order-2 lg:order-1 bg-forest rounded-3xl p-10 flex items-center justify-center aspect-[4/3]"
             >
               <div className="text-center">
@@ -136,9 +124,9 @@ export default function NutricaoAnimalContent() {
                 </div>
                 <p className="text-white/30 text-sm mt-2">Nutrição Animal de Precisão</p>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div {...fadeUp} className="order-1 lg:order-2">
+            <div className="order-1 lg:order-2">
               <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
                 Parceria
               </span>
@@ -161,7 +149,7 @@ export default function NutricaoAnimalContent() {
                   <FaArrowRight className="text-xs" />
                 </a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -181,8 +169,8 @@ export default function NutricaoAnimalContent() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products
               .filter((p) => p.category === "Nutrição")
-              .map((product, i) => (
-                <ProductCard key={product.id} product={product} index={i} />
+              .map((product) => (
+                <ProductCard key={product.id} product={product} />
               ))}
           </div>
         </div>
@@ -193,8 +181,7 @@ export default function NutricaoAnimalContent() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-lime/[0.03] rounded-full blur-[150px]" />
 
         <div className="container-main relative">
-          <motion.div
-            {...fadeUp}
+          <div
             className="glass-card p-10 md:p-14 max-w-3xl mx-auto text-center"
           >
             <FaCalendarAlt className="text-lime text-3xl mx-auto mb-4" />
@@ -215,15 +202,14 @@ export default function NutricaoAnimalContent() {
               <FaWhatsapp className="text-lg" />
               Saber dos Próximos Eventos
             </a>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* CTA Final */}
       <section className="bg-gray-50 py-16 md:py-24">
         <div className="max-w-[900px] mx-auto px-5 sm:px-8">
-          <motion.div
-            {...fadeUp}
+          <div
             className="relative rounded-3xl p-8 md:p-12 text-center overflow-hidden"
             style={{ backgroundColor: "#0a2010", boxShadow: "0 25px 60px rgba(0,0,0,0.2)" }}
           >
@@ -253,7 +239,7 @@ export default function NutricaoAnimalContent() {
                 </Link>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

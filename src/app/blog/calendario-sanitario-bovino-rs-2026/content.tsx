@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { getWhatsAppLink } from "@/utils/whatsapp";
 import { FaWhatsapp, FaCalendarAlt, FaArrowLeft, FaTag } from "react-icons/fa";
 import Link from "next/link";
@@ -95,9 +94,7 @@ export default function ArtigoCalendarioContent() {
         <div className="absolute inset-0 bg-gradient-to-b from-forest/60 to-forest" />
 
         <div className="container-main relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <div
             className="max-w-3xl"
           >
             <Link
@@ -130,17 +127,14 @@ export default function ArtigoCalendarioContent() {
               <span className="text-white/20">•</span>
               15 min de leitura
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Conteúdo */}
       <section className="bg-white section-padding">
         <div className="container-main">
-          <motion.article
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+          <article
             className="max-w-4xl mx-auto"
           >
             <div className="space-y-6 text-gray-600 leading-relaxed">
@@ -297,7 +291,7 @@ export default function ArtigoCalendarioContent() {
                 </a>
               </div>
             </div>
-          </motion.article>
+          </article>
         </div>
       </section>
     </>

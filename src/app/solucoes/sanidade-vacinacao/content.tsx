@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { getWhatsAppLink } from "@/utils/whatsapp";
 import {
   FaWhatsapp,
@@ -11,13 +10,6 @@ import {
 import SectionHeading from "@/components/SectionHeading";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
-
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6 },
-};
 
 const calendario = [
   { mes: "Janeiro", acoes: "Vacinação contra raiva (áreas de risco), controle de ectoparasitas" },
@@ -49,9 +41,7 @@ export default function SanidadeVacinacaoContent() {
         <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/40" />
 
         <div className="container-main relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <div
             className="max-w-3xl"
           >
             <span className="inline-flex items-center gap-2 glass-light rounded-full px-5 py-2 text-xs font-bold uppercase tracking-[0.15em] text-lime mb-6">
@@ -77,7 +67,7 @@ export default function SanidadeVacinacaoContent() {
                 Montar Meu Calendário
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -85,7 +75,7 @@ export default function SanidadeVacinacaoContent() {
       <section className="bg-white section-padding">
         <div className="container-main">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div {...fadeUp}>
+            <div>
               <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
                 Prevenção
               </span>
@@ -107,10 +97,9 @@ export default function SanidadeVacinacaoContent() {
                   ganho de peso.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              {...fadeUp}
+            <div
               className="relative rounded-3xl overflow-hidden aspect-[4/3]"
             >
               <div
@@ -120,7 +109,7 @@ export default function SanidadeVacinacaoContent() {
                     "url('https://images.unsplash.com/photo-1704221191316-168a25edbc59?w=800&q=80')",
                 }}
               />
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -140,8 +129,8 @@ export default function SanidadeVacinacaoContent() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products
               .filter((p) => p.category === "Sanidade")
-              .map((product, i) => (
-                <ProductCard key={product.id} product={product} index={i} />
+              .map((product) => (
+                <ProductCard key={product.id} product={product} />
               ))}
           </div>
         </div>
@@ -160,13 +149,9 @@ export default function SanidadeVacinacaoContent() {
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {calendario.map((item, i) => (
-              <motion.div
+            {calendario.map((item) => (
+              <div
                 key={item.mes}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
                 className="glass-card p-5"
               >
                 <div className="flex items-center gap-3 mb-2">
@@ -174,7 +159,7 @@ export default function SanidadeVacinacaoContent() {
                   <h3 className="font-bold text-white text-sm">{item.mes}</h3>
                 </div>
                 <p className="text-white/40 text-xs leading-relaxed">{item.acoes}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -183,8 +168,7 @@ export default function SanidadeVacinacaoContent() {
       {/* CTA Final */}
       <section className="bg-gray-50 py-16 md:py-24">
         <div className="max-w-[900px] mx-auto px-5 sm:px-8">
-          <motion.div
-            {...fadeUp}
+          <div
             className="relative rounded-3xl p-8 md:p-12 text-center overflow-hidden"
             style={{ backgroundColor: "#0a2010", boxShadow: "0 25px 60px rgba(0,0,0,0.2)" }}
           >
@@ -210,7 +194,7 @@ export default function SanidadeVacinacaoContent() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

@@ -1,17 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { FaBug, FaLeaf, FaShieldAlt, FaWhatsapp, FaThumbsUp, FaCheckCircle } from "react-icons/fa";
 import { getWhatsAppLink } from "@/utils/whatsapp";
 import SectionHeading from "@/components/SectionHeading";
 
-
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6 },
-};
 
 export default function ControlePragasContent() {
   return (
@@ -28,9 +20,7 @@ export default function ControlePragasContent() {
         <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/40" />
 
         <div className="container-main relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <div
             className="max-w-3xl"
           >
             <span className="inline-flex items-center gap-2 glass-light rounded-full px-5 py-2 text-xs font-bold uppercase tracking-[0.15em] text-lime mb-6">
@@ -55,7 +45,7 @@ export default function ControlePragasContent() {
                 Solicitar Orientação Técnica
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -63,7 +53,7 @@ export default function ControlePragasContent() {
       <section className="bg-white section-padding">
         <div className="container-main">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div {...fadeUp}>
+            <div>
               <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
                 O Problema
               </span>
@@ -89,10 +79,9 @@ export default function ControlePragasContent() {
                   Por isso, métodos alternativos e ecológicos são cada vez mais valorizados.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              {...fadeUp}
+            <div
               className="relative rounded-3xl overflow-hidden aspect-[4/3]"
             >
               <div
@@ -102,7 +91,7 @@ export default function ControlePragasContent() {
                     "url('https://images.unsplash.com/photo-1549420063-e382d6da5722?w=800&q=80')",
                 }}
               />
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -136,13 +125,9 @@ export default function ControlePragasContent() {
                 title: "Fácil Aplicação",
                 description: "Instalação simples em estábulos, sala de ordenha, bezerreiro e qualquer instalação rural.",
               },
-            ].map((item, i) => (
-              <motion.div
+            ].map((item) => (
+              <div
                 key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
                 className="bg-white rounded-3xl p-8 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 text-center"
               >
                 <div className="w-14 h-14 bg-lime/10 rounded-2xl flex items-center justify-center mx-auto mb-5 text-lime">
@@ -150,11 +135,11 @@ export default function ControlePragasContent() {
                 </div>
                 <h3 className="font-bold text-dark text-lg mb-2">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          <motion.div {...fadeUp} className="mt-12 max-w-2xl mx-auto">
+          <div className="mt-12 max-w-2xl mx-auto">
             <h3 className="font-bold text-white text-lg mb-4">Onde utilizar o Amarillo:</h3>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
@@ -171,15 +156,14 @@ export default function ControlePragasContent() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* CTA Final */}
       <section className="bg-gray-50 py-16 md:py-24">
         <div className="max-w-[900px] mx-auto px-5 sm:px-8">
-          <motion.div
-            {...fadeUp}
+          <div
             className="relative rounded-3xl p-8 md:p-12 text-center overflow-hidden"
             style={{ backgroundColor: "#0a2010", boxShadow: "0 25px 60px rgba(0,0,0,0.2)" }}
           >
@@ -203,7 +187,7 @@ export default function ControlePragasContent() {
                 Falar com Consultor
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

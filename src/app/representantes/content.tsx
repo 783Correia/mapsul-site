@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { FaWhatsapp, FaMapMarkerAlt, FaPhone, FaEnvelope, FaArrowRight } from "react-icons/fa";
 import { getWhatsAppLink } from "@/utils/whatsapp";
 
@@ -58,9 +57,7 @@ export default function RepresentantesContent() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-lime rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl" />
         </div>
         <div className="container-main relative text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <div
           >
             <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
               Atendimento
@@ -70,7 +67,7 @@ export default function RepresentantesContent() {
               Atuamos em todo o Rio Grande do Sul. Encontre o contato mais
               próximo da sua região.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -78,13 +75,9 @@ export default function RepresentantesContent() {
       <section className="bg-gray-50 section-padding">
         <div className="container-main">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {representantes.map((rep, i) => (
-              <motion.div
+            {representantes.map((rep) => (
+              <div
                 key={rep.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
                 className="bg-white rounded-3xl p-7 shadow-card hover:shadow-card-hover transition-all duration-300 group"
               >
                 <div className="flex items-center gap-3 mb-5">
@@ -123,7 +116,7 @@ export default function RepresentantesContent() {
                   <FaWhatsapp />
                   Falar com Representante
                 </a>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -132,10 +125,7 @@ export default function RepresentantesContent() {
       {/* CTA */}
       <section className="bg-dark section-padding">
         <div className="container-main text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <div
           >
             <h2 className="text-heading text-white">
               Não encontrou sua região?
@@ -154,7 +144,7 @@ export default function RepresentantesContent() {
               (54) 3358-1151
               <FaArrowRight className="text-xs" />
             </a>
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

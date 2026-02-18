@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { getWhatsAppLink } from "@/utils/whatsapp";
 import {
   FaWhatsapp,
@@ -12,13 +11,6 @@ import {
 import SectionHeading from "@/components/SectionHeading";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
-
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6 },
-};
 
 const cultivares = [
   {
@@ -74,9 +66,7 @@ export default function SementesPastagemContent() {
         <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/40" />
 
         <div className="container-main relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <div
             className="max-w-3xl"
           >
             <span className="inline-flex items-center gap-2 glass-light rounded-full px-5 py-2 text-xs font-bold uppercase tracking-[0.15em] text-lime mb-6">
@@ -101,7 +91,7 @@ export default function SementesPastagemContent() {
                 Consultoria de Pastagem
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -109,7 +99,7 @@ export default function SementesPastagemContent() {
       <section className="bg-white section-padding">
         <div className="container-main">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div {...fadeUp}>
+            <div>
               <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
                 Fundamento
               </span>
@@ -136,10 +126,9 @@ export default function SementesPastagemContent() {
                   e outras marcas líderes, garantindo o melhor resultado no campo.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              {...fadeUp}
+            <div
               className="relative rounded-3xl overflow-hidden aspect-[4/3]"
             >
               <div
@@ -149,7 +138,7 @@ export default function SementesPastagemContent() {
                     "url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80')",
                 }}
               />
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -169,19 +158,15 @@ export default function SementesPastagemContent() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {products
               .filter((p) => p.category === "Sementes")
-              .map((product, i) => (
-                <ProductCard key={product.id} product={product} index={i} />
+              .map((product) => (
+                <ProductCard key={product.id} product={product} />
               ))}
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {cultivares.map((cv, i) => (
-              <motion.div
+            {cultivares.map((cv) => (
+              <div
                 key={cv.nome}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
                 className="glass-card glass-card-hover p-7 group"
               >
                 <div className="flex items-center gap-3 mb-4">
@@ -194,7 +179,7 @@ export default function SementesPastagemContent() {
                   </div>
                 </div>
                 <p className="text-white/40 text-sm leading-relaxed">{cv.descricao}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -217,19 +202,15 @@ export default function SementesPastagemContent() {
               "Implante pastejo rotacionado para maior longevidade e produtividade da pastagem",
               "Evite pastejo excessivo — respeite a altura de entrada e saída dos piquetes",
             ].map((tip, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
                 className="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-card"
               >
                 <div className="w-8 h-8 bg-lime/10 rounded-lg flex items-center justify-center text-lime font-bold text-sm shrink-0">
                   {i + 1}
                 </div>
                 <p className="text-gray-600 text-sm leading-relaxed">{tip}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -238,8 +219,7 @@ export default function SementesPastagemContent() {
       {/* CTA Final */}
       <section className="bg-gray-50 py-16 md:py-24">
         <div className="max-w-[900px] mx-auto px-5 sm:px-8">
-          <motion.div
-            {...fadeUp}
+          <div
             className="relative rounded-3xl p-8 md:p-12 text-center overflow-hidden"
             style={{ backgroundColor: "#0a2010", boxShadow: "0 25px 60px rgba(0,0,0,0.2)" }}
           >
@@ -263,7 +243,7 @@ export default function SementesPastagemContent() {
                 Falar com Consultor
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

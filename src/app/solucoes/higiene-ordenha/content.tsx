@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { getWhatsAppLink } from "@/utils/whatsapp";
 import {
     FaWhatsapp,
@@ -14,13 +13,6 @@ import SectionHeading from "@/components/SectionHeading";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 
-
-const fadeUp = {
-    initial: { opacity: 0, y: 30 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.6 },
-};
 
 export default function HigieneOrdenhaContent() {
     return (
@@ -37,9 +29,7 @@ export default function HigieneOrdenhaContent() {
                 <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/40" />
 
                 <div className="container-main relative">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                    <div
                         className="max-w-3xl"
                     >
                         <span className="inline-flex items-center gap-2 glass-light rounded-full px-5 py-2 text-xs font-bold uppercase tracking-[0.15em] text-lime mb-6">
@@ -64,7 +54,7 @@ export default function HigieneOrdenhaContent() {
                                 Falar com Especialista
                             </a>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -72,7 +62,7 @@ export default function HigieneOrdenhaContent() {
             <section className="bg-white section-padding">
                 <div className="container-main">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <motion.div {...fadeUp}>
+                        <div>
                             <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
                                 Parceria Kersia
                             </span>
@@ -105,10 +95,9 @@ export default function HigieneOrdenhaContent() {
                                     </div>
                                 ))}
                             </div>
-                        </motion.div>
+                        </div>
 
-                        <motion.div
-                            {...fadeUp}
+                        <div
                             className="relative rounded-3xl overflow-hidden aspect-[4/3] bg-gray-100"
                         >
                             {/* Using a placeholder if Kersia generic image isn't available, but we have Dermisan below */}
@@ -122,7 +111,7 @@ export default function HigieneOrdenhaContent() {
                             <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-lg font-bold text-forest shadow-lg">
                                 Tecnologia Kersia
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -142,8 +131,8 @@ export default function HigieneOrdenhaContent() {
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {products
                             .filter((p) => p.category === "Higiene")
-                            .map((product, i) => (
-                                <ProductCard key={product.id} product={product} index={i} />
+                            .map((product) => (
+                                <ProductCard key={product.id} product={product} />
                             ))}
                     </div>
                 </div>
@@ -177,8 +166,7 @@ export default function HigieneOrdenhaContent() {
             {/* CTA Final */}
             <section className="bg-gray-50 py-16 md:py-24">
                 <div className="max-w-[900px] mx-auto px-5 sm:px-8">
-                    <motion.div
-                        {...fadeUp}
+                    <div
                         className="relative rounded-3xl p-8 md:p-12 text-center overflow-hidden"
                         style={{ backgroundColor: "#0a2010", boxShadow: "0 25px 60px rgba(0,0,0,0.2)" }}
                     >
@@ -204,7 +192,7 @@ export default function HigieneOrdenhaContent() {
                                 </a>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
         </>
