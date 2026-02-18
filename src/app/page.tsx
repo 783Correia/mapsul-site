@@ -365,9 +365,6 @@ function Solucoes() {
 
       {/* ── Carousel container ── */}
       <div className="relative overflow-hidden group/carousel">
-        {/* Fade masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#0f1f0f] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#0f1f0f] to-transparent z-10 pointer-events-none" />
 
         {/* Scrolling track */}
         <div className="flex w-max animate-solucoes-scroll group-hover/carousel:[animation-play-state:paused] items-stretch">
