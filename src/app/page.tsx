@@ -173,7 +173,7 @@ function StatsBar() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
         className="container-main"
       >
@@ -387,7 +387,7 @@ function Solucoes() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="text-center mt-12"
         >
           <Link href="/produtos" className="btn-lime">
@@ -602,7 +602,7 @@ function Diferenciais() {
               key={item.title}
               initial={{ opacity: 0, y: 40, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: i * 0.12, duration: 0.5, type: "spring", stiffness: 120 }}
               className="glass-card glass-card-hover p-7 text-center group"
             >
@@ -651,7 +651,7 @@ function MissaoVisaoValores() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
             >
               <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
                 Institucional
@@ -664,7 +664,7 @@ function MissaoVisaoValores() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: 0.1 }}
               className="mt-10 space-y-8"
             >
@@ -690,7 +690,7 @@ function MissaoVisaoValores() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
             className="glass-card p-10"
           >
@@ -701,7 +701,7 @@ function MissaoVisaoValores() {
                   key={v}
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "-100px" }}
                   transition={{ delay: 0.3 + i * 0.08, duration: 0.4 }}
                   className="flex items-center gap-4 bg-white/[0.06] border border-white/[0.08] rounded-2xl p-4 hover:bg-white/[0.1] hover:-translate-y-0.5 transition-all duration-300"
                 >
