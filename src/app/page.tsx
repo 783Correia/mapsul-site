@@ -301,7 +301,7 @@ function Solucoes() {
       title: "Reprodução e IATF",
       subtitle: "Boehringer Ingelheim",
       href: "/solucoes/reproducao-iatf",
-      image: "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=800&q=80",
+      image: "/images/REPRODUÇÃO IATF.png",
       icon: FaDna,
     },
     {
