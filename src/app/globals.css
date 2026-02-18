@@ -13,6 +13,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A1F0F;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a3c2a;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B4D12E;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1a3c2a #0A1F0F;
+}
+
 ::selection {
   background: #B4D12E;
   color: #0A3B1E;
