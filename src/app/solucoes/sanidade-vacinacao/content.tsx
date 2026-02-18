@@ -38,7 +38,7 @@ export default function SanidadeVacinacaoContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-forest pt-32 pb-20 overflow-hidden">
+      <section className="relative bg-forest pt-36 md:pt-40 pb-28 md:pb-32 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
