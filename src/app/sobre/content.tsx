@@ -8,11 +8,10 @@ import {
   FaTrophy,
   FaUsers,
   FaHandshake,
+  FaWhatsapp,
   FaMapMarkerAlt,
-  FaArrowRight,
 } from "react-icons/fa";
 import SectionHeading from "@/components/SectionHeading";
-import Image from "next/image";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -88,11 +87,11 @@ const equipe = [
 ];
 
 const valores = [
-  { icon: FaShieldAlt, label: "Ética", desc: "Compromisso inegociável com a verdade e integridade." },
-  { icon: FaTrophy, label: "Credibilidade", desc: "Confiança construída através de resultados consistentes." },
-  { icon: FaUsers, label: "Transparência", desc: "Clareza em todas as relações comerciais e parcerias." },
-  { icon: FaSeedling, label: "Sustentabilidade", desc: "Respeito ao meio ambiente e futuro do campo." },
-  { icon: FaHandshake, label: "Valorização Humana", desc: "Respeito e desenvolvimento contínuo das pessoas." },
+  { icon: FaShieldAlt, label: "Ética" },
+  { icon: FaTrophy, label: "Credibilidade" },
+  { icon: FaUsers, label: "Transparência" },
+  { icon: FaSeedling, label: "Respeito ao Meio Ambiente" },
+  { icon: FaHandshake, label: "Valorização e Respeito às Pessoas" },
 ];
 
 const galeria = [
@@ -106,172 +105,112 @@ const galeria = [
 
 export default function SobreContent() {
   return (
-    <div className="bg-[#0A0F0D] text-white overflow-hidden">
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-lime/20 rounded-full blur-[120px] animate-pulse-slow" />
-          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-forest/30 rounded-full blur-[150px]" />
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    <>
+      {/* Hero */}
+      <section className="relative bg-forest pt-32 pb-20">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-lime rounded-full translate-y-1/2 -translate-x-1/3 blur-3xl" />
         </div>
-
-        <div className="container-main relative z-10 text-center">
+        <div className="container-main relative text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8 hover:bg-white/10 transition-colors">
-              <span className="w-2 h-2 rounded-full bg-lime animate-pulse" />
-              <span className="text-xs font-bold uppercase tracking-widest text-lime">Institucional</span>
-            </div>
-
-            <h1 className="text-display-lg font-bold tracking-tight mb-8">
-              Inovação que <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50">
-                Transforma o Campo
-              </span>
-            </h1>
-
-            <p className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed mb-12">
-              Há 19 anos conectando tecnologia de ponta, conhecimento técnico e
-              resultados reais para pecuaristas em todo o Rio Grande do Sul.
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
+              Institucional
+            </span>
+            <h1 className="text-display-sm text-white">Sobre a MAPSUL</h1>
+            <p className="text-white/60 text-lg mt-4 max-w-xl mx-auto">
+              Conheça nossa história, missão e os valores que nos guiam há 19
+              anos.
             </p>
           </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <span className="text-xs uppercase tracking-widest">Descubra</span>
-          <div className="w-px h-12 bg-gradient-to-b from-lime/50 to-transparent" />
-        </motion.div>
       </section>
 
-      {/* Stats Section - Glassmorphism */}
-      <section className="py-20 relative z-20 -mt-20">
+      {/* História */}
+      <section className="bg-forest-dark section-padding">
         <div className="container-main">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-            {[
-              { label: "Anos de Mercado", value: "19+" },
-              { label: "Produtores Atendidos", value: "1000+" },
-              { label: "Marcas Parceiras", value: "8+" },
-              { label: "Cobertura no RS", value: "100%" },
-            ].map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="glass-card p-6 md:p-8 text-center hover:bg-white/[0.08] transition-all duration-300 border border-white/5"
-              >
-                <div className="text-3xl md:text-5xl font-bold text-lime mb-2">{stat.value}</div>
-                <div className="text-sm text-white/40 uppercase tracking-wider font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Mission & Vision - Bento Grid */}
-      <section className="py-24 relative bg-zinc-950/50">
-        <div className="container-main">
-          <SectionHeading tag="Essência" title="Nosso Propósito" align="left" light />
-
-          <div className="grid lg:grid-cols-3 gap-6 mt-12">
-            {/* Mission Card - Large */}
-            <motion.div
-              {...fadeUp}
-              className="lg:col-span-2 bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 rounded-3xl p-10 relative overflow-hidden group"
-            >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-lime/10 rounded-full blur-[80px] group-hover:bg-lime/20 transition-all duration-500" />
-              <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <FaTrophy className="text-lime" />
-                Missão
-              </h3>
-              <p className="text-lg text-white/70 leading-relaxed max-w-2xl">
-                Atuar com responsabilidade e excelência na distribuição de produtos e na prestação de serviços,
-                promovendo o conhecimento e a inovação no Agronegócio para impulsionar a produtividade sustentável.
-              </p>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div {...fadeUp}>
+              <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
+                Nossa História
+              </span>
+              <h2 className="text-heading text-white">
+                19 Anos de Dedicação à Pecuária Gaúcha
+              </h2>
+              <div className="mt-8 space-y-4 text-white/60 leading-relaxed">
+                <p>
+                  Fundada em 2007 em Lagoa Vermelha, a MAPSUL Distribuidora
+                  nasceu do compromisso de levar os melhores produtos e serviços
+                  para os pecuaristas do Rio Grande do Sul.
+                </p>
+                <p>
+                  Ao longo de quase duas décadas, construímos parcerias sólidas
+                  com marcas líderes como Boehringer Ingelheim, ATTO, Milk Bar,
+                  Kersia, Agrifirm, Biscayart e Luxembourg.
+                </p>
+                <p>
+                  Hoje, atendemos mais de 1000 produtores em todo o estado, oferecendo
+                  produtos de qualidade, consultoria técnica especializada e
+                  acompanhamento contínuo para maximizar resultados no campo.
+                </p>
+              </div>
             </motion.div>
 
-            {/* Vision Card */}
             <motion.div
               {...fadeUp}
-              className="bg-forest-light/30 border border-white/10 rounded-3xl p-10 relative overflow-hidden group hover:border-lime/30 transition-colors"
+              className="relative"
             >
-              <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <FaSeedling className="text-lime" />
-                Visão
-              </h3>
-              <p className="text-white/70 leading-relaxed">
-                Ser referência em distribuição e consultoria técnica, entregando inovação e conscientizando para o uso eficiente dos recursos.
-              </p>
-            </motion.div>
-
-            {/* Values - Grid */}
-            <motion.div
-              {...fadeUp}
-              className="lg:col-span-3 grid sm:grid-cols-2 lg:grid-cols-5 gap-4"
-            >
-              {valores.map((v) => (
+              <div className="rounded-3xl overflow-hidden aspect-[4/3]">
                 <div
-                  key={v.label}
-                  className="bg-white/[0.03] border border-white/5 rounded-2xl p-6 hover:bg-white/[0.06] transition-all hover:-translate-y-1 group"
-                >
-                  <v.icon className="text-2xl text-white/30 group-hover:text-lime transition-colors mb-4" />
-                  <h4 className="font-bold text-white mb-2">{v.label}</h4>
-                  <p className="text-xs text-white/40 leading-relaxed">{v.desc}</p>
-                </div>
-              ))}
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage:
+                      "url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&q=80')",
+                  }}
+                />
+              </div>
+              <div className="absolute -bottom-6 -left-6 bg-lime text-primary rounded-2xl p-6 shadow-float">
+                <div className="text-4xl font-extrabold tracking-tight">19+</div>
+                <p className="text-sm font-bold">Anos de mercado</p>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Timeline - Futuristic */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-lime/[0.02]" />
-        <div className="container-main max-w-5xl relative">
-          <SectionHeading tag="Trajetória" title="Nossa Evolução" light />
+      {/* Timeline */}
+      <section className="bg-forest section-padding">
+        <div className="container-main max-w-4xl">
+          <SectionHeading tag="Trajetória" title="Nossa Linha do Tempo" light />
 
-          <div className="relative mt-20">
-            {/* Center Line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-lime/30 to-transparent" />
+          <div className="relative">
+            <div className="absolute left-8 top-0 bottom-0 w-px bg-white/10 hidden md:block" />
 
-            <div className="space-y-12">
+            <div className="space-y-8">
               {timeline.map((item, i) => (
                 <motion.div
                   key={item.year}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className={`relative flex items-center gap-8 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                    }`}
+                  transition={{ delay: i * 0.08 }}
+                  className="flex gap-6 items-start md:pl-0"
                 >
-                  {/* Timeline Dot */}
-                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 bg-lime rounded-full shadow-[0_0_20px_rgba(180,209,46,0.6)] z-10">
-                    <div className="absolute inset-0 bg-lime animate-ping opacity-50 rounded-full" />
+                  <div className="shrink-0 w-16 h-16 bg-lime/10 rounded-2xl flex items-center justify-center relative z-10">
+                    <span className="text-lime font-extrabold text-sm">
+                      {item.year}
+                    </span>
                   </div>
-
-                  {/* Content */}
-                  <div className={`w-full md:w-[calc(50%-2rem)] pl-12 md:pl-0 ${i % 2 === 0 ? "md:text-right md:pr-8" : "md:text-left md:pl-8"
-                    }`}>
-                    <div className="text-4xl font-extrabold text-white/5 mb-[-1.5rem] relative z-0">{item.year}</div>
-                    <div className="relative z-10 glass-card p-6 border border-white/10 hover:border-lime/30 transition-colors group">
-                      <h3 className="text-xl font-bold text-white group-hover:text-lime transition-colors">{item.title}</h3>
-                      <p className="text-white/50 text-sm mt-2 leading-relaxed">{item.description}</p>
-                    </div>
+                  <div className="bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6 flex-1">
+                    <h3 className="font-bold text-white text-lg tracking-tight">
+                      {item.title}
+                    </h3>
+                    <p className="text-white/50 text-sm mt-1 leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
-
-                  {/* Empty space for alternating standard */}
-                  <div className="hidden md:block w-[calc(50%-2rem)]" />
                 </motion.div>
               ))}
             </div>
@@ -279,53 +218,122 @@ export default function SobreContent() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-24 relative bg-black/20">
+      {/* Missão & Visão */}
+      <section className="bg-forest-dark section-padding">
         <div className="container-main">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div className="max-w-2xl">
-              <span className="text-lime font-bold uppercase tracking-widest text-sm mb-2 block">Nosso Time</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">Especialistas em Campo</h2>
-            </div>
-            <a href={getWhatsAppLink()} className="btn-lime">
-              Falar com um Consultor
-              <FaArrowRight />
-            </a>
+          <div className="grid lg:grid-cols-2 gap-16">
+            <motion.div {...fadeUp}>
+              <SectionHeading
+                tag="Institucional"
+                title="Missão, Visão & Valores"
+                align="left"
+                light
+              />
+              <div className="space-y-8">
+                <div className="border-l-4 border-lime pl-6">
+                  <h3 className="font-bold text-white text-lg mb-2">Missão</h3>
+                  <p className="text-white/60 leading-relaxed">
+                    Atuar com responsabilidade e excelência na distribuição de
+                    produtos e na prestação de serviços, promovendo o
+                    conhecimento e inovação no Agronegócio.
+                  </p>
+                </div>
+                <div className="border-l-4 border-white/20 pl-6">
+                  <h3 className="font-bold text-white text-lg mb-2">Visão</h3>
+                  <p className="text-white/60 leading-relaxed">
+                    Ser referência na distribuição de produtos e consultoria
+                    técnica no Agronegócio, entregando inovação e
+                    conscientizando para o uso eficiente e sustentável dos
+                    produtos, prezando pela saúde e bem estar dos animais e das
+                    pessoas.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              {...fadeUp}
+              className="bg-white/[0.05] border border-white/[0.08] rounded-3xl p-10"
+            >
+              <h3 className="font-bold text-white text-lg mb-8">
+                Nossos Valores
+              </h3>
+              <div className="space-y-4">
+                {valores.map((v) => (
+                  <div
+                    key={v.label}
+                    className="flex items-center gap-4 bg-white/[0.06] border border-white/[0.06] rounded-2xl p-4"
+                  >
+                    <div className="w-10 h-10 bg-lime/10 rounded-xl flex items-center justify-center text-lime shrink-0">
+                      <v.icon size={18} />
+                    </div>
+                    <span className="font-medium text-white/80">{v.label}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Equipe */}
+      <section className="bg-forest section-padding relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-lime/[0.03] rounded-full blur-[150px]" />
+
+        <div className="container-main relative">
+          <SectionHeading
+            tag="Equipe"
+            title="Nossos Consultores Técnicos"
+            description="ATCs (Assessores Técnicos Comerciais) espalhados por todo o RS, prontos para visitar sua propriedade."
+            light
+          />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {equipe.map((membro, i) => (
               <motion.div
                 key={membro.regiao}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group relative bg-[#151A18] rounded-2xl overflow-hidden border border-white/5 hover:border-lime/50 transition-all duration-500"
+                className="glass-card p-6 text-center group"
               >
-                <div className="p-8">
-                  <div className="w-16 h-16 bg-lime/10 rounded-xl flex items-center justify-center text-lime font-bold text-xl mb-6 group-hover:scale-110 transition-transform duration-500">
-                    {membro.iniciais}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{membro.nome}</h3>
-                  <div className="flex items-center gap-2 text-white/40 text-sm mb-6">
-                    <FaMapMarkerAlt className="text-lime" />
-                    {membro.regiao}
-                  </div>
-                  <div className="w-full h-px bg-white/5 group-hover:bg-lime/20 transition-colors" />
+                <div className="w-20 h-20 bg-lime/10 rounded-full flex items-center justify-center mx-auto mb-4 text-lime font-extrabold text-2xl group-hover:bg-lime group-hover:text-forest transition-all duration-400">
+                  {membro.iniciais}
                 </div>
+                <h3 className="font-bold text-white tracking-tight">
+                  {membro.nome}
+                </h3>
+                <div className="flex items-center justify-center gap-1.5 mt-1 text-white/40 text-sm">
+                  <FaMapMarkerAlt className="text-lime text-[10px]" />
+                  {membro.regiao}
+                </div>
+                <a
+                  href={getWhatsAppLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-lime text-xs font-bold mt-4 hover:underline"
+                >
+                  <FaWhatsapp />
+                  Entrar em contato
+                </a>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Gallery - Masonry Style */}
-      <section className="py-24">
+      {/* Galeria */}
+      <section className="bg-forest-dark section-padding">
         <div className="container-main">
-          <SectionHeading tag="Galeria" title="Mapsul em Ação" light />
+          <SectionHeading
+            tag="Galeria"
+            title="Momentos MAPSUL"
+            description="Eventos, capacitações e visitas técnicas com nossos parceiros produtores."
+            light
+          />
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px]">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {galeria.map((item, i) => (
               <motion.div
                 key={item.label}
@@ -333,25 +341,86 @@ export default function SobreContent() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className={`relative rounded-2xl overflow-hidden group ${i === 0 || i === 3 ? "md:col-span-2 md:row-span-2" : ""
-                  }`}
+                className="relative rounded-2xl overflow-hidden aspect-[4/3] group"
               >
-                <Image
-                  src={item.image}
-                  alt={item.label}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                  style={{ backgroundImage: `url('${item.image}')` }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
-                  <span className="text-lime text-xs font-bold uppercase tracking-wider mb-1 block">Evento</span>
-                  <h4 className="text-white font-bold text-lg">{item.label}</h4>
+                <div className="absolute inset-0 bg-gradient-to-t from-forest/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="text-white text-sm font-bold">{item.label}</p>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-    </div>
+
+      {/* Mapa de Atuação */}
+      <section className="bg-forest section-padding">
+        <div className="container-main">
+          <SectionHeading
+            tag="Cobertura"
+            title="Atuação em Todo o RS"
+            description="Nossos consultores atendem propriedades em todas as regiões do Rio Grande do Sul."
+            light
+          />
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div {...fadeUp}>
+              <div className="space-y-4">
+                {[
+                  { regiao: "Campos de Cima da Serra", cidades: "Vacaria, Bom Jesus, São José dos Ausentes" },
+                  { regiao: "Serra Gaúcha", cidades: "Caxias do Sul, Bento Gonçalves, Farroupilha" },
+                  { regiao: "Noroeste Gaúcho", cidades: "Ijuí, Santa Rosa, Três Passos" },
+                  { regiao: "Região Central", cidades: "Santa Maria, Cruz Alta, Soledade" },
+                  { regiao: "Campanha Gaúcha", cidades: "Bagé, Dom Pedrito, Alegrete" },
+                  { regiao: "Metropolitana / Litoral", cidades: "Porto Alegre, Viamão, Osório" },
+                ].map((item, i) => (
+                  <motion.div
+                    key={item.regiao}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08 }}
+                    className="bg-white/[0.06] border border-white/[0.08] rounded-2xl p-5 hover:bg-white/[0.1] hover:-translate-y-0.5 transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-3">
+                      <FaMapMarkerAlt className="text-lime shrink-0" />
+                      <div>
+                        <h3 className="font-bold text-white text-sm">{item.regiao}</h3>
+                        <p className="text-white/40 text-xs mt-0.5">{item.cidades}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              {...fadeUp}
+              className="bg-forest-dark rounded-3xl p-10 text-center aspect-square flex items-center justify-center"
+            >
+              <div>
+                <div className="text-[8rem] font-extrabold text-lime/20 leading-none">RS</div>
+                <p className="text-white/40 text-sm mt-4">Cobertura em todo o estado</p>
+                <div className="flex items-center justify-center gap-6 mt-8">
+                  <div className="text-center">
+                    <div className="text-3xl font-extrabold text-lime">6</div>
+                    <p className="text-white/30 text-xs">Regiões</p>
+                  </div>
+                  <div className="w-px h-10 bg-white/10" />
+                  <div className="text-center">
+                    <div className="text-3xl font-extrabold text-lime">1000+</div>
+                    <p className="text-white/30 text-xs">Produtores</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
