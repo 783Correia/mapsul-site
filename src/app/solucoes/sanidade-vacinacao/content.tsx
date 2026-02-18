@@ -181,37 +181,38 @@ export default function SanidadeVacinacaoContent() {
       </section >
 
       {/* CTA Final */}
-      < section className="bg-white section-padding" >
-        <div className="container-main">
+      <section className="bg-gray-50 py-16 md:py-24">
+        <div className="max-w-[900px] mx-auto px-5 sm:px-8">
           <motion.div
             {...fadeUp}
-            className="bg-forest rounded-3xl p-10 md:p-16 text-center relative overflow-hidden"
+            className="relative rounded-3xl p-8 md:p-12 text-center overflow-hidden"
+            style={{ backgroundColor: "#0a2010", boxShadow: "0 25px 60px rgba(0,0,0,0.2)" }}
           >
-            <div className="absolute top-0 right-0 w-60 h-60 bg-lime/[0.06] rounded-full -translate-y-1/2 translate-x-1/3 blur-[80px]" />
+            <div className="absolute top-0 right-0 w-72 h-72 bg-lime/[0.08] rounded-full translate-x-1/3 -translate-y-1/3 blur-[100px]" />
             <div className="relative">
-              <FaShieldAlt className="text-lime text-4xl mx-auto mb-6" />
-              <h2 className="text-display-sm text-white max-w-2xl mx-auto">
+              <FaShieldAlt className="text-lime text-3xl mx-auto mb-4" />
+              <h2 className="text-heading text-white max-w-xl mx-auto">
                 Monte o calendário sanitário da sua propriedade
               </h2>
-              <p className="text-white/50 mt-4 max-w-lg mx-auto leading-relaxed">
+              <p className="text-white/50 mt-3 max-w-md mx-auto leading-relaxed text-sm">
                 Nosso consultor técnico avalia a situação sanitária do seu rebanho
                 e monta um programa personalizado de vacinação e controle parasitário.
               </p>
-              <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <div className="flex flex-wrap justify-center gap-3 mt-6">
                 <a
                   href={getWhatsAppLink("Olá! Quero montar o calendário sanitário da minha propriedade.")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-lime shadow-glow-lime"
+                  className="bg-lime text-forest font-bold px-5 py-2.5 rounded-full text-xs tracking-wide uppercase inline-flex items-center gap-2 hover:shadow-glow-lime hover:scale-[1.03] transition-all"
                 >
-                  <FaWhatsapp className="text-lg" />
+                  <FaWhatsapp className="text-sm" />
                   Falar com Consultor
                 </a>
               </div>
             </div>
           </motion.div>
         </div>
-      </section >
+      </section>
     </>
   );
 }
