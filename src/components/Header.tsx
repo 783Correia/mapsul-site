@@ -67,21 +67,17 @@ export default function Header() {
   const isSolucoesActive = pathname.startsWith("/solucoes");
 
   return (
-    <header
-      className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "top-2 md:top-4" : "top-3 md:top-6"
-      }`}
-    >
-      <div className="px-3 sm:px-6 lg:px-12">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <div className="container-main pt-8 pb-2">
         <div
-          className={`flex items-center justify-between px-4 md:px-10 h-14 md:h-[68px] max-w-[1120px] mx-auto rounded-full transition-all duration-500 ${scrolled
-            ? "bg-forest-dark/85 backdrop-blur-2xl shadow-float border border-white/[0.08]"
-            : "bg-forest/50 backdrop-blur-xl border border-white/[0.1]"
+          className={`flex items-center justify-between px-6 h-16 max-w-5xl mx-auto rounded-full transition-all duration-500 ${scrolled
+            ? "bg-forest-dark/90 backdrop-blur-2xl shadow-float border border-white/[0.06]"
+            : "bg-forest/80 backdrop-blur-xl border border-white/[0.08]"
             }`}
         >
           {/* Logo */}
           <Link href="/" className="shrink-0">
-            <Image src="/logos/mapsul-alt.png" alt="MAP Sul" width={110} height={36} className="h-6 md:h-8 w-auto" />
+            <Image src="/logos/mapsul-alt.png" alt="MAP Sul" width={130} height={44} className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
