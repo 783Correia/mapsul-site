@@ -26,6 +26,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import { AgrifirmLogo, BiscayartLogo, KersiaLogo, BoehringerLogo, MilkBarLogo } from "@/components/Logos";
 /* ═══════════════════════════════════════════════
    HERO — Rutivo Style (Wide/Clean/Centered)
@@ -178,12 +179,14 @@ function StatsBar() {
       >
         <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-8 flex flex-wrap md:flex-nowrap justify-between items-center gap-4 md:gap-8 shadow-2xl mx-auto max-w-5xl">
           {[
-            { number: "19+", label: "Anos de Experiência" },
-            { number: "1000+", label: "Produtores Atendidos" },
-            { number: "100%", label: "Cobertura no RS" },
+            { target: 19, suffix: "+", label: "Anos de Experiência" },
+            { target: 1000, suffix: "+", label: "Produtores Atendidos" },
+            { target: 100, suffix: "%", label: "Cobertura no RS" },
           ].map((stat, i) => (
             <div key={i} className="flex-1 text-center md:text-left md:border-r last:border-0 border-gray-200 md:pr-8 last:pr-0">
-              <div className="text-xl md:text-2xl font-extrabold text-primary mb-0.5">{stat.number}</div>
+              <div className="text-xl md:text-2xl font-extrabold text-primary mb-0.5">
+                <AnimatedCounter target={stat.target} suffix={stat.suffix} duration={1800 + i * 400} />
+              </div>
               <div className="text-[10px] md:text-sm text-gray-500 font-medium uppercase tracking-wide">{stat.label}</div>
             </div>
           ))}
