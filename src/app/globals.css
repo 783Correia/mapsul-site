@@ -15,23 +15,26 @@ body {
 
 /* ─── Custom Scrollbar ─── */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #0A1F0F;
+  background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #1a3c2a;
+  background: #B4D12E;
   border-radius: 999px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #B4D12E;
+  background: #c8e63a;
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #1a3c2a #0A1F0F;
+  scrollbar-color: #B4D12E transparent;
 }
 
 ::selection {
@@ -40,52 +43,46 @@ body {
 }
 
 @layer components {
+
   /* ─── Buttons ─── */
   .btn-lime {
-    @apply bg-lime text-forest font-bold px-6 py-3 md:px-8 md:py-4 rounded-full
-           hover:shadow-glow-lime transition-all duration-300
-           inline-flex items-center gap-2 text-xs md:text-sm tracking-wide uppercase
-           hover:scale-[1.03] active:scale-[0.98];
+    @apply bg-lime text-forest font-bold px-6 py-3 md:px-8 md:py-4 rounded-full hover:shadow-glow-lime transition-all duration-300 inline-flex items-center gap-2 text-xs md:text-sm tracking-wide uppercase hover:scale-[1.03] active:scale-[0.98];
   }
+
   .btn-outline {
-    @apply border-2 border-white/30 text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-full
-           hover:bg-white hover:text-forest transition-all duration-300
-           inline-flex items-center gap-2 text-xs md:text-sm tracking-wide uppercase
-           hover:scale-[1.03] active:scale-[0.98];
+    @apply border-2 border-white/30 text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-white hover:text-forest transition-all duration-300 inline-flex items-center gap-2 text-xs md:text-sm tracking-wide uppercase hover:scale-[1.03] active:scale-[0.98];
   }
+
   .btn-dark {
-    @apply bg-dark text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-full
-           hover:bg-dark-light transition-all duration-300
-           inline-flex items-center gap-2 text-xs md:text-sm tracking-wide uppercase
-           hover:scale-[1.03] active:scale-[0.98];
+    @apply bg-dark text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-dark-light transition-all duration-300 inline-flex items-center gap-2 text-xs md:text-sm tracking-wide uppercase hover:scale-[1.03] active:scale-[0.98];
   }
+
   .btn-ghost {
-    @apply text-white/70 font-bold px-6 py-3 rounded-full
-           hover:bg-white/10 hover:text-white transition-all duration-300
-           inline-flex items-center gap-2 text-sm tracking-wide;
+    @apply text-white/70 font-bold px-6 py-3 rounded-full hover:bg-white/10 hover:text-white transition-all duration-300 inline-flex items-center gap-2 text-sm tracking-wide;
   }
 
   /* ─── Glass ─── */
   .glass {
     @apply bg-white/[0.07] backdrop-blur-xl border border-white/[0.12];
   }
+
   .glass-light {
     @apply bg-white/[0.12] backdrop-blur-xl border border-white/[0.18];
   }
+
   .glass-card {
-    @apply bg-white/[0.07] backdrop-blur-xl border border-white/[0.12]
-           rounded-3xl shadow-glass;
+    @apply bg-white/[0.07] backdrop-blur-xl border border-white/[0.12] rounded-3xl shadow-glass;
   }
+
   .glass-card-hover {
-    @apply hover:bg-white/[0.12] hover:border-white/[0.22]
-           hover:shadow-glow-lime hover:-translate-y-1
-           transition-all duration-500;
+    @apply hover:bg-white/[0.12] hover:border-white/[0.22] hover:shadow-glow-lime hover:-translate-y-1 transition-all duration-500;
   }
 
   /* ─── Layout ─── */
   .section-padding {
     @apply py-16 md:py-24 lg:py-32;
   }
+
   .container-main {
     @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-12;
   }
@@ -95,6 +92,7 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
