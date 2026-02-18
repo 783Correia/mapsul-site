@@ -142,8 +142,8 @@ export default function HigieneOrdenhaContent() {
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {products
                             .filter((p) => p.category === "Higiene")
-                            .map((product) => (
-                                <ProductCard key={product.id} product={product} />
+                            .map((product, i) => (
+                                <ProductCard key={product.id} product={product} index={i} />
                             ))}
                     </div>
                 </div>

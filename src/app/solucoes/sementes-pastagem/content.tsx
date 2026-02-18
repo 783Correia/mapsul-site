@@ -169,8 +169,8 @@ export default function SementesPastagemContent() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {products
               .filter((p) => p.category === "Sementes")
-              .map((product) => (
-                <ProductCard key={product.id} product={product} />
+              .map((product, i) => (
+                <ProductCard key={product.id} product={product} index={i} />
               ))}
           </div>
 

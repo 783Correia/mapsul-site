@@ -63,36 +63,77 @@ function Hero() {
       <div className="hidden md:block absolute bottom-20 right-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] z-10 opacity-50" />
 
       <div className="container-main relative z-20 text-center pt-24 md:pt-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="max-w-4xl mx-auto"
-        >
+        <div className="max-w-4xl mx-auto">
           {/* Tag */}
-          <div className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-5">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-5"
+          >
             <div className="w-2 h-2 rounded-full bg-lime animate-pulse" />
             <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-white">Distribuidora referência no RS desde 2007</span>
-          </div>
+          </motion.div>
 
-          {/* Headline */}
+          {/* Headline — staggered words */}
           <h1 className="text-[clamp(1.8rem,5vw,3.8rem)] font-bold text-white leading-[1.1] tracking-tight mb-4">
-            Produtos veterinários e<br />
-            <span className="text-lime inline-block relative">
+            {["Produtos", "veterinários", "e"].map((word, i) => (
+              <motion.span
+                key={word}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
+                className="inline-block mr-[0.3em]"
+              >
+                {word}
+              </motion.span>
+            ))}
+            <br />
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-lime inline-block relative"
+            >
               nutrição animal no RS.
-              <svg className="absolute w-full h-2 -bottom-0.5 left-0 text-lime opacity-40" viewBox="0 0 100 10" preserveAspectRatio="none">
-                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
-              </svg>
-            </span>
+              <motion.svg
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ pathLength: 1, opacity: 0.4 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+                className="absolute w-full h-2 -bottom-0.5 left-0 text-lime"
+                viewBox="0 0 100 10"
+                preserveAspectRatio="none"
+              >
+                <motion.path
+                  d="M0 5 Q 50 10 100 5"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 0.8, delay: 0.9 }}
+                />
+              </motion.svg>
+            </motion.span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xs md:text-base text-white/80 max-w-lg mx-auto leading-relaxed mb-6 font-normal px-2">
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="text-xs md:text-base text-white/80 max-w-lg mx-auto leading-relaxed mb-6 font-normal px-2"
+          >
             Medicamentos, sementes de pastagem e suplementação para pecuaristas de todo o Rio Grande do Sul. Consultoria técnica especializada e entrega em todas as regiões.
-          </p>
+          </motion.p>
 
-          {/* CTA */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          {/* CTA — buttons enter from below with spring */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.9, type: "spring", stiffness: 150 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-3"
+          >
             <a
               href={getWhatsAppLink("Olá! Gostaria de falar com um veterinário da MAPSUL.")}
               target="_blank"
@@ -107,8 +148,8 @@ function Hero() {
             >
               Ver todos os Produtos
             </Link>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Scroll Light Indicator — desktop only */}
@@ -559,15 +600,19 @@ function Diferenciais() {
           {items.map((item, i) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.12, duration: 0.5, type: "spring", stiffness: 120 }}
               className="glass-card glass-card-hover p-7 text-center group"
             >
-              <div className="w-14 h-14 glass rounded-2xl flex items-center justify-center mx-auto mb-5 text-lime group-hover:bg-lime group-hover:text-forest transition-all duration-400">
+              <motion.div
+                whileHover={{ rotate: [0, -10, 10, 0], scale: 1.15 }}
+                transition={{ duration: 0.5 }}
+                className="w-14 h-14 glass rounded-2xl flex items-center justify-center mx-auto mb-5 text-lime group-hover:bg-lime group-hover:text-forest transition-all duration-400"
+              >
                 <item.icon size={22} />
-              </div>
+              </motion.div>
               <h3 className="font-bold text-white text-lg mb-2 tracking-tight">
                 {item.title}
               </h3>
@@ -652,15 +697,19 @@ function MissaoVisaoValores() {
             <h3 className="font-bold text-white text-lg mb-8">Nossos Valores</h3>
             <div className="space-y-3">
               {valores.map((v, i) => (
-                <div
+                <motion.div
                   key={v}
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + i * 0.08, duration: 0.4 }}
                   className="flex items-center gap-4 bg-white/[0.06] border border-white/[0.08] rounded-2xl p-4 hover:bg-white/[0.1] hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <div className="w-10 h-10 bg-lime/15 rounded-xl flex items-center justify-center text-lime font-extrabold text-sm shrink-0">
                     {String(i + 1).padStart(2, "0")}
                   </div>
                   <span className="font-medium text-white">{v}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -708,18 +757,25 @@ function Depoimentos() {
 
             <motion.div
               key={active}
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4 }}
+              initial={{ opacity: 0, x: 40, filter: "blur(4px)" }}
+              animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, x: -40, filter: "blur(4px)" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="relative"
             >
               <p className="text-white/70 text-lg md:text-xl leading-relaxed italic">
                 &quot;{depoimentos[active].text}&quot;
               </p>
               <div className="mt-8 flex items-center gap-4">
-                <div className="w-12 h-12 bg-lime rounded-full flex items-center justify-center text-forest font-extrabold">
+                <motion.div
+                  key={`avatar-${active}`}
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                  className="w-12 h-12 bg-lime rounded-full flex items-center justify-center text-forest font-extrabold"
+                >
                   {depoimentos[active].name[0]}
-                </div>
+                </motion.div>
                 <div>
                   <p className="font-bold text-white">{depoimentos[active].name}</p>
                   <p className="text-white/40 text-sm">{depoimentos[active].role}</p>
