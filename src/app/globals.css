@@ -21,21 +21,21 @@ body {
 @layer components {
   /* ─── Buttons ─── */
   .btn-lime {
-    @apply bg-lime text-forest font-bold px-8 py-4 rounded-full
+    @apply bg-lime text-forest font-bold px-6 py-3 md:px-8 md:py-4 rounded-full
            hover:shadow-glow-lime transition-all duration-300
-           inline-flex items-center gap-2.5 text-sm tracking-wide uppercase
+           inline-flex items-center gap-2 text-xs md:text-sm tracking-wide uppercase
            hover:scale-[1.03] active:scale-[0.98];
   }
   .btn-outline {
-    @apply border-2 border-white/30 text-white font-bold px-8 py-4 rounded-full
+    @apply border-2 border-white/30 text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-full
            hover:bg-white hover:text-forest transition-all duration-300
-           inline-flex items-center gap-2.5 text-sm tracking-wide uppercase
+           inline-flex items-center gap-2 text-xs md:text-sm tracking-wide uppercase
            hover:scale-[1.03] active:scale-[0.98];
   }
   .btn-dark {
-    @apply bg-dark text-white font-bold px-8 py-4 rounded-full
+    @apply bg-dark text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-full
            hover:bg-dark-light transition-all duration-300
-           inline-flex items-center gap-2.5 text-sm tracking-wide uppercase
+           inline-flex items-center gap-2 text-xs md:text-sm tracking-wide uppercase
            hover:scale-[1.03] active:scale-[0.98];
   }
   .btn-ghost {
@@ -63,7 +63,7 @@ body {
 
   /* ─── Layout ─── */
   .section-padding {
-    @apply py-24 md:py-32;
+    @apply py-16 md:py-24 lg:py-32;
   }
   .container-main {
     @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-12;

@@ -69,19 +69,19 @@ export default function Header() {
   return (
     <header
       className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "top-4 md:top-5" : "top-7 md:top-8"
+        scrolled ? "top-2 md:top-4" : "top-3 md:top-6"
       }`}
     >
-      <div className="px-5 sm:px-8 lg:px-12">
+      <div className="px-3 sm:px-6 lg:px-12">
         <div
-          className={`flex items-center justify-between px-6 md:px-10 h-16 md:h-[68px] max-w-[1120px] mx-auto rounded-full transition-all duration-500 ${scrolled
+          className={`flex items-center justify-between px-4 md:px-10 h-14 md:h-[68px] max-w-[1120px] mx-auto rounded-full transition-all duration-500 ${scrolled
             ? "bg-forest-dark/85 backdrop-blur-2xl shadow-float border border-white/[0.08]"
             : "bg-forest/50 backdrop-blur-xl border border-white/[0.1]"
             }`}
         >
           {/* Logo */}
           <Link href="/" className="shrink-0">
-            <Image src="/logos/mapsul-alt.png" alt="MAP Sul" width={110} height={36} className="h-8 w-auto" />
+            <Image src="/logos/mapsul-alt.png" alt="MAP Sul" width={110} height={36} className="h-6 md:h-8 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
@@ -211,7 +211,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.98 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden mx-5 sm:mx-8 lg:mx-12"
+            className="lg:hidden mx-3 sm:mx-6"
           >
             <div className="bg-forest-dark/95 backdrop-blur-2xl border border-white/[0.08] rounded-3xl p-5 mt-2 shadow-float">
               <Link

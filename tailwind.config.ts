@@ -39,11 +39,11 @@ const config: Config = {
         sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
       },
       fontSize: {
-        "display": ["4.5rem", { lineHeight: "1.02", letterSpacing: "-0.04em", fontWeight: "800" }],
-        "display-sm": ["3.5rem", { lineHeight: "1.08", letterSpacing: "-0.03em", fontWeight: "800" }],
-        "heading": ["2.5rem", { lineHeight: "1.12", letterSpacing: "-0.025em", fontWeight: "700" }],
-        "heading-sm": ["1.75rem", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
-        "subheading": ["1.25rem", { lineHeight: "1.6", fontWeight: "400" }],
+        "display": ["clamp(2.5rem, 5vw, 4.5rem)", { lineHeight: "1.05", letterSpacing: "-0.04em", fontWeight: "800" }],
+        "display-sm": ["clamp(2rem, 4vw, 3.5rem)", { lineHeight: "1.08", letterSpacing: "-0.03em", fontWeight: "800" }],
+        "heading": ["clamp(1.6rem, 3vw, 2.5rem)", { lineHeight: "1.15", letterSpacing: "-0.025em", fontWeight: "700" }],
+        "heading-sm": ["clamp(1.3rem, 2.5vw, 1.75rem)", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "subheading": ["clamp(1rem, 1.5vw, 1.25rem)", { lineHeight: "1.6", fontWeight: "400" }],
       },
       borderRadius: {
         "2xl": "1rem",
