@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-
 import { usePathname } from "next/navigation";
+import Logo from "@/components/Logo";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaBars,
@@ -76,9 +76,7 @@ export default function Header() {
             }`}
         >
           {/* Logo */}
-          <Link href="/" className="shrink-0">
-            <span className="text-white font-extrabold text-xl tracking-tight">Vet<span className="text-lime">Sul</span>Vet</span>
-          </Link>
+          <Logo size="sm" />
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-0.5">
