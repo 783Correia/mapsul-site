@@ -46,9 +46,17 @@ function Hero() {
     <section
       className="relative min-h-[85vh] md:min-h-[92vh] flex flex-col justify-center overflow-hidden bg-forest"
     >
-      {/* Background — static, no parallax for performance */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/40 via-forest to-forest-dark" />
+      {/* Background with video */}
+      <div className="absolute inset-0 z-0 bg-forest-dark">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          src="https://videos.pexels.com/video-files/855018/855018-hd_1920_1080_30fps.mp4"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/60 via-forest/80 to-forest-dark/90" />
         <div className="absolute inset-0 bg-forest/30 bg-gradient-to-t from-forest via-transparent to-forest/20" />
         {/* Decorative pattern */}
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
