@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import { FaPaperPlane } from "react-icons/fa";
+import { FaPaperPlane, FaSeedling, FaHorse } from "react-icons/fa";
 
 export default function NewsletterSection() {
     const [email, setEmail] = useState("");
@@ -27,18 +26,15 @@ export default function NewsletterSection() {
             <div className="container-main relative">
                 <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-10">
 
-                    {/* Left Image */}
+                    {/* Left Placeholder */}
                     <div className="hidden md:flex flex-col gap-4 w-60 shrink-0">
                         <div className="relative group">
                             <div className="absolute -inset-3 bg-lime/15 rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <div className="aspect-[3/4] rounded-[2rem] overflow-hidden relative shadow-xl ring-1 ring-black/[0.04]">
-                                <Image
-                                    src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80"
-                                    alt="Pastagem sustentável"
-                                    width={400}
-                                    height={600}
-                                    className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
-                                />
+                            <div className="aspect-[3/4] rounded-[2rem] overflow-hidden relative shadow-xl ring-1 ring-black/[0.04] bg-gradient-to-br from-green-100 to-emerald-50 flex flex-col items-center justify-center gap-3">
+                                <div className="w-16 h-16 rounded-2xl bg-lime/20 flex items-center justify-center">
+                                    <FaSeedling className="text-forest text-2xl" />
+                                </div>
+                                <span className="text-forest/40 text-xs font-bold uppercase tracking-wider">Pastagem</span>
                             </div>
                         </div>
                         <p className="text-[11px] text-gray-400 text-center tracking-wide uppercase font-medium">Pastagem sustentável</p>
@@ -100,18 +96,15 @@ export default function NewsletterSection() {
                         </div>
                     </div>
 
-                    {/* Right Image */}
+                    {/* Right Placeholder */}
                     <div className="hidden md:flex flex-col gap-4 w-64 shrink-0">
                         <div className="relative group">
                             <div className="absolute -inset-3 bg-forest/10 rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <div className="aspect-[3/4] rounded-[2rem] overflow-hidden relative shadow-xl ring-1 ring-black/[0.04]">
-                                <Image
-                                    src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&q=80"
-                                    alt="Pecuária gaúcha"
-                                    width={400}
-                                    height={600}
-                                    className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
-                                />
+                            <div className="aspect-[3/4] rounded-[2rem] overflow-hidden relative shadow-xl ring-1 ring-black/[0.04] bg-gradient-to-br from-amber-50 to-orange-50 flex flex-col items-center justify-center gap-3">
+                                <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center">
+                                    <FaHorse className="text-amber-700 text-2xl" />
+                                </div>
+                                <span className="text-amber-700/40 text-xs font-bold uppercase tracking-wider">Pecuária</span>
                             </div>
                         </div>
                         <p className="text-[11px] text-gray-400 text-center tracking-wide uppercase font-medium">Pecuária gaúcha</p>

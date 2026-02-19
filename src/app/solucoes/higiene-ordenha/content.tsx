@@ -22,8 +22,7 @@ export default function HigieneOrdenhaContent() {
                 <div
                     className="absolute inset-0 bg-cover bg-center opacity-20"
                     style={{
-                        backgroundImage:
-                            "url('https://images.unsplash.com/photo-1596733430284-f74377bc21a6?w=1920&q=80')",
+                        backgroundImage: "none",
                     }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/40" />
@@ -101,13 +100,11 @@ export default function HigieneOrdenhaContent() {
                             className="relative rounded-3xl overflow-hidden aspect-[4/3] bg-gray-100"
                         >
                             {/* Using a placeholder if Kersia generic image isn't available, but we have Dermisan below */}
-                            <div
-                                className="absolute inset-0 bg-cover bg-center"
-                                style={{
-                                    backgroundImage:
-                                        "url('https://images.unsplash.com/photo-1628151015968-3a4429e9ef04?w=800&q=80')",
-                                }}
-                            />
+                            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-cyan-900/40 flex flex-col items-center justify-center gap-4">
+                                <div className="w-24 h-24 rounded-3xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                                    <FaHandSparkles className="text-lime text-5xl" />
+                                </div>
+                            </div>
                             <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-lg font-bold text-forest shadow-lg">
                                 Tecnologia Kersia
                             </div>

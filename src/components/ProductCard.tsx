@@ -1,8 +1,7 @@
 "use client";
 
-import { memo, useState } from "react";
+import { memo } from "react";
 import { FaArrowRight, FaShieldAlt, FaAppleAlt, FaSeedling, FaBug, FaHandSparkles, FaDna } from "react-icons/fa";
-import Image from "next/image";
 import { Product } from "@/data/products";
 import { getWhatsAppLink } from "@/utils/whatsapp";
 
@@ -47,29 +46,15 @@ interface ProductCardProps {
 function ProductCard({ product }: ProductCardProps) {
     const whatsappMessage = `Olá! Tenho interesse no produto ${product.name} que vi no site.`;
     const whatsappLink = getWhatsAppLink(whatsappMessage);
-    const [imgError, setImgError] = useState(false);
-
-    const isLocalImage = product.image.startsWith("/images/");
 
     return (
         <div
             className="group relative rounded-3xl overflow-hidden border border-white/[0.12] shadow-lg transition-all duration-300 hover:border-lime/50 hover:shadow-[0_20px_50px_rgba(180,209,46,0.15)] hover:-translate-y-2 flex flex-col h-full w-full"
             style={{ backgroundColor: "#1a3c2a" }}
         >
-            {/* Imagem */}
+            {/* Imagem (Agora sempre ícone) */}
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-forest-dark flex items-center justify-center">
-                {isLocalImage && !imgError ? (
-                    <Image
-                        src={product.image}
-                        alt={product.name}
-                        fill
-                        className="z-10 object-contain group-hover:scale-110 transition-transform duration-700 bg-white p-6"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        onError={() => setImgError(true)}
-                    />
-                ) : (
-                    <PlaceholderImage category={product.category} name={product.name} />
-                )}
+                <PlaceholderImage category={product.category} name={product.name} />
             </div>
 
             {/* Conteúdo */}

@@ -23,8 +23,7 @@ export default function NutricaoAnimalContent() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1549420063-e382d6da5722?w=1920&q=80')",
+            backgroundImage: "none",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/40" />
@@ -99,13 +98,11 @@ export default function NutricaoAnimalContent() {
                 boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
               }}
             >
-              <Image
-                src="https://images.unsplash.com/photo-1549420063-e382d6da5722?w=800&q=80"
-                alt="Bezerras em alimentação — Nutrição Animal"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-amber-900/40 flex flex-col items-center justify-center gap-4">
+                <div className="w-24 h-24 rounded-3xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                  <FaAppleAlt className="text-lime text-5xl" />
+                </div>
+              </div>
             </div>
           </div>
         </div>

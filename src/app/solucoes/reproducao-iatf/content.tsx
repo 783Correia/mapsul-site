@@ -22,8 +22,7 @@ export default function ReproducaoIATFContent() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1560493676-04071c5f467b?w=1920&q=80')",
+            backgroundImage: "none",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/40" />
@@ -104,13 +103,11 @@ export default function ReproducaoIATFContent() {
                 boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
               }}
             >
-              <Image
-                src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=800&q=80"
-                alt="Gado em manejo reprodutivo — IATF"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-pink-900/40 flex flex-col items-center justify-center gap-4">
+                <div className="w-24 h-24 rounded-3xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                  <FaDna className="text-lime text-5xl" />
+                </div>
+              </div>
             </div>
           </div>
         </div>

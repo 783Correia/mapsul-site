@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FaArrowRight, FaCalendarAlt } from "react-icons/fa";
+import { FaArrowRight, FaCalendarAlt, FaDna, FaAppleAlt, FaShieldAlt, FaFileAlt } from "react-icons/fa";
 
 const artigos = [
   {
@@ -32,6 +32,18 @@ const artigos = [
     image: "https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=800&q=80",
   },
 ];
+
+const categoryIcons: Record<string, React.ElementType> = {
+  "Reprodução": FaDna,
+  "Nutrição": FaAppleAlt,
+  "Sanidade": FaShieldAlt,
+};
+
+const categoryColors: Record<string, string> = {
+  "Reprodução": "from-pink-500/20 to-pink-900/40",
+  "Nutrição": "from-amber-500/20 to-amber-900/40",
+  "Sanidade": "from-emerald-500/20 to-emerald-900/40",
+};
 
 export default function BlogListContent() {
   return (
@@ -69,10 +81,12 @@ export default function BlogListContent() {
               >
                 <Link href={`/blog/${artigo.slug}`}>
                   <div className="relative aspect-[16/10] overflow-hidden">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                      style={{ backgroundImage: `url('${artigo.image}')` }}
-                    />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${categoryColors[artigo.tags[0]] || "from-gray-500/20 to-gray-900/40"} transition-transform duration-700 group-hover:scale-105 flex items-center justify-center`}>
+                      {(() => {
+                        const Icon = categoryIcons[artigo.tags[0]] || FaFileAlt;
+                        return <Icon className="text-lime text-5xl opacity-50" />;
+                      })()}
+                    </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
                       {artigo.tags.map((tag) => (

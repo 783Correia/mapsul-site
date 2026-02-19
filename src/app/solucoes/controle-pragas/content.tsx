@@ -13,8 +13,7 @@ export default function ControlePragasContent() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1920&q=80')",
+            backgroundImage: "none",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/40" />
@@ -84,13 +83,11 @@ export default function ControlePragasContent() {
             <div
               className="relative rounded-3xl overflow-hidden aspect-[4/3]"
             >
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{
-                  backgroundImage:
-                    "url('https://images.unsplash.com/photo-1549420063-e382d6da5722?w=800&q=80')",
-                }}
-              />
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/20 to-yellow-900/40 flex flex-col items-center justify-center gap-4">
+                <div className="w-24 h-24 rounded-3xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                  <FaBug className="text-lime text-5xl" />
+                </div>
+              </div>
             </div>
           </div>
         </div>

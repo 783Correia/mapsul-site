@@ -10,6 +10,12 @@ import {
   FaHandshake,
   FaWhatsapp,
   FaMapMarkerAlt,
+  FaCalendarAlt,
+  FaDna,
+  FaGraduationCap,
+  FaHome,
+  FaStore,
+  FaAppleAlt,
 } from "react-icons/fa";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -95,12 +101,12 @@ const valores = [
 ];
 
 const galeria = [
-  { label: "Evento Criação de Bezerras", image: "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=600&q=80" },
-  { label: "Dia de Campo — IATF", image: "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=600&q=80" },
-  { label: "Capacitação Técnica", image: "https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=600&q=80" },
-  { label: "Visita a Propriedade", image: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&q=80" },
-  { label: "Feira Agropecuária", image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80" },
-  { label: "Seminário Nutrição", image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=600&q=80" },
+  { label: "Evento Criação de Bezerras", icon: FaAppleAlt, color: "from-amber-500/20 to-amber-900/40" },
+  { label: "Dia de Campo — IATF", icon: FaDna, color: "from-pink-500/20 to-pink-900/40" },
+  { label: "Capacitação Técnica", icon: FaGraduationCap, color: "from-blue-500/20 to-blue-900/40" },
+  { label: "Visita a Propriedade", icon: FaHome, color: "from-emerald-500/20 to-emerald-900/40" },
+  { label: "Feira Agropecuária", icon: FaStore, color: "from-green-500/20 to-green-900/40" },
+  { label: "Seminário Nutrição", icon: FaCalendarAlt, color: "from-cyan-500/20 to-cyan-900/40" },
 ];
 
 export default function SobreContent() {
@@ -163,13 +169,11 @@ export default function SobreContent() {
               className="relative"
             >
               <div className="rounded-3xl overflow-hidden aspect-[4/3]">
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage:
-                      "url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&q=80')",
-                  }}
-                />
+                <div className="absolute inset-0 bg-gradient-to-br from-lime/20 to-lime/40 flex flex-col items-center justify-center gap-4">
+                  <div className="w-24 h-24 rounded-3xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                    <FaStore className="text-lime text-5xl" />
+                  </div>
+                </div>
               </div>
               <div className="absolute -bottom-6 -left-6 bg-lime text-primary rounded-2xl p-6 shadow-float">
                 <div className="text-4xl font-extrabold tracking-tight">19+</div>
@@ -343,10 +347,11 @@ export default function SobreContent() {
                 transition={{ delay: i * 0.08 }}
                 className="relative rounded-2xl overflow-hidden aspect-[4/3] group"
               >
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                  style={{ backgroundImage: `url('${item.image}')` }}
-                />
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.color} flex items-center justify-center`}>
+                  <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                    <item.icon className="text-lime text-3xl" />
+                  </div>
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-forest/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                   <p className="text-white text-sm font-bold">{item.label}</p>

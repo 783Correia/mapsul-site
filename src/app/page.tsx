@@ -48,14 +48,10 @@ function Hero() {
     >
       {/* Background — static, no parallax for performance */}
       <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=70')",
-          }}
-        />
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/40 via-forest to-forest-dark" />
         <div className="absolute inset-0 bg-forest/30 bg-gradient-to-t from-forest via-transparent to-forest/20" />
+        {/* Decorative pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
       </div>
 
       {/* Decorative Orbs — hidden on mobile for performance */}
