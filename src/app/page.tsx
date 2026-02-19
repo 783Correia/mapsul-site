@@ -54,7 +54,7 @@ function Hero() {
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-30"
-          src="https://videos.pexels.com/video-files/855018/855018-hd_1920_1080_30fps.mp4"
+          src="/hero-video.mp4"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/60 via-forest/80 to-forest-dark/90" />
         <div className="absolute inset-0 bg-forest/30 bg-gradient-to-t from-forest via-transparent to-forest/20" />
