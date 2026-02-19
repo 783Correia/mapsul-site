@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+
 import {
   FaWhatsapp,
   FaInstagram,
@@ -19,7 +19,7 @@ export default function Footer() {
             {/* Brand */}
             <div className="col-span-2 md:col-span-1">
               <div className="mb-6">
-                <Image src="/logos/vetsulvet.png" alt="VetSulVet" width={140} height={100} className="h-16 w-auto" />
+                <span className="text-white font-extrabold text-2xl tracking-tight">Vet<span className="text-lime">Sul</span>Vet</span>
               </div>
               <p className="text-white/30 text-sm leading-relaxed max-w-xs">
                 Há 19 anos levando saúde e produtividade para a pecuária gaúcha.

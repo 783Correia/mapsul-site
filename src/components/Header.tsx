@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
+
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -77,7 +77,7 @@ export default function Header() {
         >
           {/* Logo */}
           <Link href="/" className="shrink-0">
-            <Image src="/logos/vetsulvet-alt.png" alt="VetSulVet" width={130} height={44} className="h-10 w-auto" />
+            <span className="text-white font-extrabold text-xl tracking-tight">Vet<span className="text-lime">Sul</span>Vet</span>
           </Link>
 
           {/* Desktop Nav */}
