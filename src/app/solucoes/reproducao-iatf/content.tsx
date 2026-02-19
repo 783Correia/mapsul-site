@@ -11,7 +11,7 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import Link from "next/link";
-import Image from "next/image";
+
 import SectionHeading from "@/components/SectionHeading";
 
 export default function ReproducaoIATFContent() {
