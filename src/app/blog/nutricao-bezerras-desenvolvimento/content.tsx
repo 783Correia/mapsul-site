@@ -12,8 +12,7 @@ export default function ArtigoNutricaoContent() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=1920&q=80')",
+            backgroundImage: "none",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-forest/60 to-forest" />
