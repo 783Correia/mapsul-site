@@ -12,8 +12,7 @@ export default function ArtigoIATFContent() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1560493676-04071c5f467b?w=1920&q=80')",
+            backgroundImage: "none",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-forest/60 to-forest" />
