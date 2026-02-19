@@ -411,7 +411,7 @@ function ProdutosDestaque() {
       brand: "Boehringer Ingelheim",
       description:
         "O padrão ouro em controle parasitário. Formulação tixotrópica com Ivermectina 3,15%. Proteção por até 12 semanas contra berne e carrapatos, garantindo maior ganho de peso e pastos limpos.",
-      image: "https://vetsulvet.com.br/wp-content/uploads/2019/07/Ivomec-Gold-1.jpg",
+      image: "https://images.unsplash.com/photo-1615671524827-eab8cdb7f3c8?w=800&q=80",
       badge: "Líder de Mercado",
     },
     {
@@ -419,7 +419,7 @@ function ProdutosDestaque() {
       brand: "Agrifirm",
       description:
         "Substituto de leite premium para bezerras. Digestão rápida, excelente desenvolvimento ruminal e crescimento juvenil acelerado. Tecnologia holandesa para sua recria.",
-      image: "https://vetsulvet.com.br/wp-content/uploads/2025/05/Sem-titulo-1-2.png",
+      image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800&q=80",
       badge: "Alta Performance",
     },
     {

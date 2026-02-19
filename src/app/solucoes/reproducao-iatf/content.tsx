@@ -105,8 +105,8 @@ export default function ReproducaoIATFContent() {
               }}
             >
               <Image
-                src="/images/iatf.png"
-                alt="Reprodução e IATF - VetSulVet"
+                src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=800&q=80"
+                alt="Gado em manejo reprodutivo — IATF"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"

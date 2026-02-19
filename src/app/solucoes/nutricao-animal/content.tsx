@@ -100,8 +100,8 @@ export default function NutricaoAnimalContent() {
               }}
             >
               <Image
-                src="/images/vetsulvet-nutri-animal.png"
-                alt="Nutrição Animal VetSulVet"
+                src="https://images.unsplash.com/photo-1549420063-e382d6da5722?w=800&q=80"
+                alt="Bezerras em alimentação — Nutrição Animal"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
