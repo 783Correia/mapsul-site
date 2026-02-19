@@ -20,6 +20,14 @@ export default function ReproducaoIATFContent() {
       {/* Hero */}
       <section className="relative bg-forest pt-36 md:pt-40 pb-28 md:pb-32 overflow-hidden">
 
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          src="https://videos.pexels.com/video-files/855018/855018-hd_1920_1080_30fps.mp4"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/40" />
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-lime/[0.06] rounded-full translate-y-1/2 translate-x-1/3 blur-[100px]" />
 
