@@ -1,10 +1,44 @@
 "use client";
 
-import { memo } from "react";
-import { FaArrowRight } from "react-icons/fa";
+import { memo, useState } from "react";
+import { FaArrowRight, FaShieldAlt, FaAppleAlt, FaSeedling, FaBug, FaHandSparkles, FaDna } from "react-icons/fa";
 import Image from "next/image";
 import { Product } from "@/data/products";
 import { getWhatsAppLink } from "@/utils/whatsapp";
+
+const categoryIcons: Record<string, React.ElementType> = {
+    Sanidade: FaShieldAlt,
+    Nutrição: FaAppleAlt,
+    Sementes: FaSeedling,
+    Pragas: FaBug,
+    Higiene: FaHandSparkles,
+    Reprodução: FaDna,
+};
+
+const categoryColors: Record<string, string> = {
+    Sanidade: "from-emerald-500/20 to-emerald-900/40",
+    Nutrição: "from-amber-500/20 to-amber-900/40",
+    Sementes: "from-green-500/20 to-green-900/40",
+    Pragas: "from-yellow-500/20 to-yellow-900/40",
+    Higiene: "from-cyan-500/20 to-cyan-900/40",
+    Reprodução: "from-pink-500/20 to-pink-900/40",
+};
+
+function PlaceholderImage({ category, name }: { category: string; name: string }) {
+    const Icon = categoryIcons[category] || FaShieldAlt;
+    const gradient = categoryColors[category] || "from-gray-500/20 to-gray-900/40";
+
+    return (
+        <div className={`absolute inset-0 bg-gradient-to-br ${gradient} flex flex-col items-center justify-center gap-3`}>
+            <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                <Icon className="text-lime text-2xl" />
+            </div>
+            <span className="text-white/50 text-xs font-bold uppercase tracking-wider text-center px-4 line-clamp-1">
+                {name}
+            </span>
+        </div>
+    );
+}
 
 interface ProductCardProps {
     product: Product;
@@ -13,6 +47,9 @@ interface ProductCardProps {
 function ProductCard({ product }: ProductCardProps) {
     const whatsappMessage = `Olá! Tenho interesse no produto ${product.name} que vi no site.`;
     const whatsappLink = getWhatsAppLink(whatsappMessage);
+    const [imgError, setImgError] = useState(false);
+
+    const isLocalImage = product.image.startsWith("/images/");
 
     return (
         <div
@@ -20,18 +57,19 @@ function ProductCard({ product }: ProductCardProps) {
             style={{ backgroundColor: "#1a3c2a" }}
         >
             {/* Imagem */}
-            <div className="relative aspect-[4/3] w-full overflow-hidden bg-white p-6 flex items-center justify-center">
-                <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="z-10 object-contain group-hover:scale-110 transition-transform duration-700"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-
-                <div className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 group-hover:text-red-500 transition-colors shadow-sm">
-                    <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
-                </div>
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-forest-dark flex items-center justify-center">
+                {isLocalImage && !imgError ? (
+                    <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        className="z-10 object-contain group-hover:scale-110 transition-transform duration-700 bg-white p-6"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        onError={() => setImgError(true)}
+                    />
+                ) : (
+                    <PlaceholderImage category={product.category} name={product.name} />
+                )}
             </div>
 
             {/* Conteúdo */}

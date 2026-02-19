@@ -18,13 +18,12 @@ import {
   FaChevronRight,
   FaDna,
   FaAppleAlt,
-
+  FaShieldAlt,
   FaBug,
   FaSeedling,
   FaHandSparkles,
 } from "react-icons/fa";
 import Link from "next/link";
-import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { AgrifirmLogo, BiscayartLogo, KersiaLogo, BoehringerLogo, MilkBarLogo } from "@/components/Logos";
@@ -37,8 +36,8 @@ const heroBrands = [
   { name: "Kersia", component: KersiaLogo },
   { name: "Boehringer Ingelheim", component: BoehringerLogo },
   { name: "Milk Bar", component: MilkBarLogo },
-  { name: "ATTO", logo: "/logos/atto.png" },
-  { name: "Luxembourg", logo: "/logos/luxembourg.jpg" },
+  { name: "ATTO", component: ({ className }: { className?: string }) => <span className={`font-extrabold text-forest tracking-tight text-2xl ${className || ""}`}>ATTO</span> },
+  { name: "Luxembourg", component: ({ className }: { className?: string }) => <span className={`font-extrabold text-forest tracking-tight text-xl ${className || ""}`}>Luxembourg</span> },
 ];
 const carouselBrands = [...heroBrands, ...heroBrands];
 
@@ -198,17 +197,7 @@ function StatsBar() {
             <div className="flex animate-infinite-scroll w-max hover:[animation-play-state:paused] items-center">
               {carouselBrands.map((brand, index) => (
                 <div key={`${brand.name}-${index}`} className="flex items-center justify-center mx-8 shrink-0 opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
-                  {brand.component ? (
-                    <brand.component className="h-10 w-auto" />
-                  ) : (
-                    <Image
-                      src={brand.logo ?? ""}
-                      alt={brand.name}
-                      width={120}
-                      height={40}
-                      className="h-10 w-auto object-contain mix-blend-multiply"
-                    />
-                  )}
+                  <brand.component className="h-10 w-auto" />
                 </div>
               ))}
             </div>
@@ -225,32 +214,8 @@ function StatsBar() {
 /* ═══════════════════════════════════════════════
    SOLUÇÕES — Carrossel infinito (6 cards)
    ═══════════════════════════════════════════════ */
-function SolucaoCard({ sol }: { sol: { type: string; title: string; subtitle: string; href: string; bg?: string; image?: string; icon?: React.ElementType; iconColor?: string; tags?: string[] } }) {
+function SolucaoCard({ sol }: { sol: { type: string; title: string; subtitle: string; href: string; bg?: string; icon?: React.ElementType; iconColor?: string; tags?: string[] } }) {
   const Icon = sol.icon;
-
-  /* ── Image card ── */
-  if (sol.type === "image") {
-    return (
-      <Link href={sol.href} className="block h-full group">
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-          style={{ backgroundImage: `url('${sol.image}')` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-        {Icon && (
-          <div className="absolute top-5 left-5 w-10 h-10 rounded-xl bg-lime/90 flex items-center justify-center text-forest">
-            <Icon size={16} />
-          </div>
-        )}
-        <div className="absolute bottom-0 left-0 right-0 p-7">
-          <h3 className="text-lg md:text-[24px] font-bold text-white tracking-tight leading-tight" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
-            {sol.title}
-          </h3>
-          <p className="text-white/60 text-sm mt-1.5">{sol.subtitle}</p>
-        </div>
-      </Link>
-    );
-  }
 
   /* ── Solid color card with tags ── */
   if (sol.type === "tags") {
@@ -297,20 +262,22 @@ function SolucaoCard({ sol }: { sol: { type: string; title: string; subtitle: st
 function Solucoes() {
   const cards = [
     {
-      type: "image",
+      type: "icon",
       title: "Reprodução e IATF",
       subtitle: "Boehringer Ingelheim",
       href: "/solucoes/reproducao-iatf",
-      image: "/images/reproducao-iatf.png",
+      bg: "#1a3c2a",
       icon: FaDna,
+      iconColor: "text-pink-400",
     },
     {
-      type: "image",
+      type: "icon",
       title: "Nutrição Animal",
       subtitle: "Milk Bar + Agrifirm",
       href: "/solucoes/nutricao-animal",
-      image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+      bg: "#2d1b00",
       icon: FaAppleAlt,
+      iconColor: "text-amber-400",
     },
     {
       type: "tags",
@@ -330,12 +297,13 @@ function Solucoes() {
       iconColor: "text-yellow-700",
     },
     {
-      type: "image",
+      type: "icon",
       title: "Sementes de Pastagem",
       subtitle: "Biscayart + ATTO",
       href: "/solucoes/sementes-pastagem",
-      image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+      bg: "#1a3c2a",
       icon: FaSeedling,
+      iconColor: "text-green-400",
     },
     {
       type: "icon",
@@ -411,7 +379,8 @@ function ProdutosDestaque() {
       brand: "Boehringer Ingelheim",
       description:
         "O padrão ouro em controle parasitário. Formulação tixotrópica com Ivermectina 3,15%. Proteção por até 12 semanas contra berne e carrapatos, garantindo maior ganho de peso e pastos limpos.",
-      image: "https://images.unsplash.com/photo-1615671524827-eab8cdb7f3c8?w=800&q=80",
+      icon: FaShieldAlt,
+      color: "from-emerald-900 to-forest-dark",
       badge: "Líder de Mercado",
     },
     {
@@ -419,7 +388,8 @@ function ProdutosDestaque() {
       brand: "Agrifirm",
       description:
         "Substituto de leite premium para bezerras. Digestão rápida, excelente desenvolvimento ruminal e crescimento juvenil acelerado. Tecnologia holandesa para sua recria.",
-      image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800&q=80",
+      icon: FaAppleAlt,
+      color: "from-amber-900 to-forest-dark",
       badge: "Alta Performance",
     },
     {
@@ -427,7 +397,8 @@ function ProdutosDestaque() {
       brand: "Milk Bar",
       description:
         "Alimentador individual com bico de fluxo controlado. Promove sucção lenta e natural, melhorando a digestão e reduzindo problemas respiratórios em bezerros.",
-      image: "/images/products/milkbar/balde-individual.jpg",
+      icon: FaAppleAlt,
+      color: "from-cyan-900 to-forest-dark",
       badge: "Nutrição",
     },
     {
@@ -435,7 +406,8 @@ function ProdutosDestaque() {
       brand: "Kersia",
       description:
         "Solução premium para higiene e proteção do úbere. Pré e pós-dipping de alta eficácia, garantindo qualidade do leite e saúde do rebanho.",
-      image: "/images/products/higiene/dermisan.jpg",
+      icon: FaHandSparkles,
+      color: "from-sky-900 to-forest-dark",
       badge: "Higiene",
     },
     {
@@ -443,7 +415,8 @@ function ProdutosDestaque() {
       brand: "Luxembourg",
       description:
         "Armadilha adesiva ecológica para controle de moscas. Não tóxico, ideal para instalações pecuárias. Captura eficaz sem uso de venenos.",
-      image: "/images/products/pragas/amarillo.jpg",
+      icon: FaBug,
+      color: "from-yellow-900 to-forest-dark",
       badge: "Sustentável",
     },
   ];
@@ -476,10 +449,13 @@ function ProdutosDestaque() {
               className="relative rounded-3xl overflow-hidden aspect-[4/3]"
             >
               <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url('${current.image}')` }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark/30 to-transparent" />
+                className={`absolute inset-0 bg-gradient-to-br ${current.color} flex flex-col items-center justify-center gap-4`}
+              >
+                <div className="w-24 h-24 rounded-3xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                  <current.icon className="text-lime text-5xl" />
+                </div>
+                <span className="text-white/30 text-xs font-bold uppercase tracking-widest">{current.name}</span>
+              </div>
 
               <div className="absolute top-6 left-6">
                 <span className="text-white/20 text-[6rem] font-extrabold leading-none tracking-tighter">
