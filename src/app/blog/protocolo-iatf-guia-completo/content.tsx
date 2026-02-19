@@ -140,7 +140,7 @@ export default function ArtigoIATFContent() {
                 prejuízo financeiro.
               </p>
               <p>
-                A MAPSUL distribui a <strong className="text-dark">linha hormonal completa da
+                A VetSulVet distribui a <strong className="text-dark">linha hormonal completa da
                   Boehringer Ingelheim</strong>, líder mundial em saúde animal reprodutiva. Todos
                 os produtos são armazenados e transportados em condições ideais de temperatura,
                 garantindo a máxima eficácia no campo.
@@ -209,7 +209,7 @@ export default function ArtigoIATFContent() {
                 protocolo e ajustar as variáveis que influenciam o resultado.
               </p>
               <p>
-                Os ATCs (Assessores Técnicos Comerciais) da MAPSUL visitam propriedades em todo
+                Os ATCs (Assessores Técnicos Comerciais) da VetSulVet visitam propriedades em todo
                 o Rio Grande do Sul, auxiliando pecuaristas na escolha do protocolo ideal,
                 na logística dos hormônios e no acompanhamento dos resultados.
               </p>
@@ -220,7 +220,7 @@ export default function ArtigoIATFContent() {
                   Quer orientação técnica personalizada?
                 </p>
                 <p className="text-white/50 text-sm mb-6">
-                  Fale com um consultor MAPSUL da sua região.
+                  Fale com um consultor VetSulVet da sua região.
                 </p>
                 <a
                   href={getWhatsAppLink("Olá! Li o guia de IATF no blog e gostaria de consultoria para meu rebanho.")}

@@ -31,7 +31,7 @@ const timeline = [
     year: "2007",
     title: "Fundação Oficial",
     description:
-      "MAPSUL Distribuidora é formalmente constituída em Lagoa Vermelha, RS, com foco em medicamentos veterinários.",
+      "VetSulVet Distribuidora é formalmente constituída em Passo Fundo, RS, com foco em medicamentos veterinários.",
   },
   {
     year: "2010",
@@ -119,7 +119,7 @@ export default function SobreContent() {
             <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
               Institucional
             </span>
-            <h1 className="text-display-sm text-white">Sobre a MAPSUL</h1>
+            <h1 className="text-display-sm text-white">Sobre a VetSulVet</h1>
             <p className="text-white/60 text-lg mt-4 max-w-xl mx-auto">
               Conheça nossa história, missão e os valores que nos guiam há 19
               anos.
@@ -141,7 +141,7 @@ export default function SobreContent() {
               </h2>
               <div className="mt-8 space-y-4 text-white/60 leading-relaxed">
                 <p>
-                  Fundada em 2007 em Lagoa Vermelha, a MAPSUL Distribuidora
+                  Fundada em 2007 em Passo Fundo, a VetSulVet Distribuidora
                   nasceu do compromisso de levar os melhores produtos e serviços
                   para os pecuaristas do Rio Grande do Sul.
                 </p>
@@ -328,7 +328,7 @@ export default function SobreContent() {
         <div className="container-main">
           <SectionHeading
             tag="Galeria"
-            title="Momentos MAPSUL"
+            title="Momentos VetSulVet"
             description="Eventos, capacitações e visitas técnicas com nossos parceiros produtores."
             light
           />

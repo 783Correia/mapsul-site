@@ -17,19 +17,19 @@ const anosAtuacao = new Date().getFullYear() - 2007;
 
 export const metadata: Metadata = {
   title: {
-    default: "MAPSUL Distribuidora | Produtos Veterinários e Nutrição Animal no RS",
-    template: "%s | MAPSUL Distribuidora",
+    default: "VetSulVet Distribuidora | Produtos Veterinários e Nutrição Animal no RS",
+    template: "%s | VetSulVet Distribuidora",
   },
   description:
-    `Há ${anosAtuacao} anos distribuindo produtos veterinários, nutrição animal e sementes de pastagem para pecuaristas do Rio Grande do Sul. Distribuidora oficial Boehringer Ingelheim, Agrifirm e Milk Bar em Lagoa Vermelha, RS. Consultoria técnica especializada.`,
+    `Há ${anosAtuacao} anos distribuindo produtos veterinários, nutrição animal e sementes de pastagem para pecuaristas do Rio Grande do Sul. Distribuidora oficial Boehringer Ingelheim, Agrifirm e Milk Bar em Passo Fundo, RS. Consultoria técnica especializada.`,
   keywords:
-    "produtos veterinários RS, nutrição animal bovinos, sementes pastagem Rio Grande do Sul, distribuidora pecuária Lagoa Vermelha, Ivomec Gold comprar, Kalvolac preço, IATF bovinos, sanidade animal RS, Boehringer Ingelheim RS, MAPSUL distribuidora",
-  metadataBase: new URL("https://mapsul.com.br"),
+    "produtos veterinários RS, nutrição animal bovinos, sementes pastagem Rio Grande do Sul, distribuidora pecuária Passo Fundo, Ivomec Gold comprar, Kalvolac preço, IATF bovinos, sanidade animal RS, Boehringer Ingelheim RS, VetSulVet distribuidora",
+  metadataBase: new URL("https://vetsulvet.com.br"),
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    siteName: "MAPSUL Distribuidora",
-    title: "MAPSUL Distribuidora | Produtos Veterinários e Nutrição Animal no RS",
+    siteName: "VetSulVet Distribuidora",
+    title: "VetSulVet Distribuidora | Produtos Veterinários e Nutrição Animal no RS",
     description:
       `Há ${anosAtuacao} anos distribuindo produtos veterinários, nutrição animal e sementes de pastagem para pecuaristas do Rio Grande do Sul. Consultoria técnica e entrega em todas as regiões.`,
   },
@@ -49,42 +49,42 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "MAPSUL Distribuidora",
-  url: "https://mapsul.com.br",
-  logo: "https://mapsul.com.br/logo.png",
+  name: "VetSulVet Distribuidora",
+  url: "https://vetsulvet.com.br",
+  logo: "https://vetsulvet.com.br/logo.png",
   description:
     "Distribuição de produtos veterinários, nutrição animal e sementes de pastagem para pecuaristas do Rio Grande do Sul.",
   foundingDate: "2007",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Rua Buarque de Macedo, 189",
-    addressLocality: "Lagoa Vermelha",
+    addressLocality: "Passo Fundo",
     addressRegion: "RS",
-    postalCode: "95300-000",
+    postalCode: "99010-000",
     addressCountry: "BR",
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+55-54-99635-6819",
+    telephone: "+55-51-99000-0000",
     contactType: "sales",
     availableLanguage: "Portuguese",
   },
-  sameAs: ["https://instagram.com/mapsul_distribuidora"],
+  sameAs: ["https://instagram.com/vetsulvet_distribuidora"],
 };
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "MAPSUL Distribuidora",
-  image: "https://mapsul.com.br/logo.png",
-  url: "https://mapsul.com.br",
-  telephone: "+55-54-3358-1151",
+  name: "VetSulVet Distribuidora",
+  image: "https://vetsulvet.com.br/logo.png",
+  url: "https://vetsulvet.com.br",
+  telephone: "+55-51-3333-0000",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Rua Buarque de Macedo, 189",
-    addressLocality: "Lagoa Vermelha",
+    addressLocality: "Passo Fundo",
     addressRegion: "RS",
-    postalCode: "95300-000",
+    postalCode: "99010-000",
     addressCountry: "BR",
   },
   geo: {
@@ -112,8 +112,8 @@ const localBusinessSchema = {
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Produtos em Destaque — MAPSUL Distribuidora",
-  description: "Principais produtos veterinários e de nutrição animal distribuídos pela MAPSUL no RS.",
+  name: "Produtos em Destaque — VetSulVet Distribuidora",
+  description: "Principais produtos veterinários e de nutrição animal distribuídos pela VetSulVet no RS.",
   numberOfItems: 5,
   itemListElement: [
     {
@@ -177,7 +177,7 @@ const productSchema = {
 const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "MAPSUL Distribuidora",
+  name: "VetSulVet Distribuidora",
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "5",
@@ -191,19 +191,19 @@ const reviewSchema = {
       "@type": "Review",
       author: { "@type": "Person", name: "Carlos Mendes" },
       reviewRating: { "@type": "Rating", ratingValue: "5" },
-      reviewBody: "A MAPSUL sempre nos atendeu com agilidade e produtos de qualidade. A consultoria técnica faz toda a diferença.",
+      reviewBody: "A VetSulVet sempre nos atendeu com agilidade e produtos de qualidade. A consultoria técnica faz toda a diferença.",
     },
     {
       "@type": "Review",
       author: { "@type": "Person", name: "Ana Paula Silva" },
       reviewRating: { "@type": "Rating", ratingValue: "5" },
-      reviewBody: "Trabalhamos com a MAPSUL há mais de 10 anos. A confiança na qualidade dos produtos é o que nos mantém parceiros.",
+      reviewBody: "Trabalhamos com a VetSulVet há mais de 10 anos. A confiança na qualidade dos produtos é o que nos mantém parceiros.",
     },
     {
       "@type": "Review",
       author: { "@type": "Person", name: "Roberto Ferreira" },
       reviewRating: { "@type": "Rating", ratingValue: "5" },
-      reviewBody: "As sementes que compramos pela MAPSUL transformaram nossas pastagens. O suporte técnico é excepcional.",
+      reviewBody: "As sementes que compramos pela VetSulVet transformaram nossas pastagens. O suporte técnico é excepcional.",
     },
   ],
 };

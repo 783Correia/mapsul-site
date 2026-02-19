@@ -102,7 +102,7 @@ export default function ArtigoNutricaoContent() {
               </p>
               <p>
                 O <strong className="text-dark">sistema Milk Bar</strong>, desenvolvido na Nova
-                Zelândia e distribuído pela MAPSUL, simula a amamentação natural da mãe. Os bicos
+                Zelândia e distribuído pela VetSulVet, simula a amamentação natural da mãe. Os bicos
                 com fluxo controlado fazem a bezerra sugar com força, o que:
               </p>
               <ul className="list-disc pl-6 space-y-2">
@@ -183,10 +183,10 @@ export default function ArtigoNutricaoContent() {
               </p>
 
               <h2 className="text-heading-sm text-dark mt-12">
-                O papel da MAPSUL na nutrição de bezerras
+                O papel da VetSulVet na nutrição de bezerras
               </h2>
               <p>
-                A MAPSUL trabalha em parceria com a <strong className="text-dark">Agrifirm</strong> e
+                A VetSulVet trabalha em parceria com a <strong className="text-dark">Agrifirm</strong> e
                 distribui o <strong className="text-dark">sistema Milk Bar</strong>, oferecendo
                 soluções completas para a fase de cria. Nossos consultores técnicos visitam
                 propriedades para avaliar o sistema de criação e recomendar ajustes nutricionais
@@ -205,7 +205,7 @@ export default function ArtigoNutricaoContent() {
                   Quer orientação técnica personalizada?
                 </p>
                 <p className="text-white/50 text-sm mb-6">
-                  Fale com um consultor MAPSUL da sua região.
+                  Fale com um consultor VetSulVet da sua região.
                 </p>
                 <a
                   href={getWhatsAppLink("Olá! Li o artigo sobre nutrição de bezerras e gostaria de consultoria.")}

@@ -58,7 +58,7 @@ export default function SanidadeVacinacaoContent() {
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <a
-                href="https://wa.me/5554996356819?text=Olá! Quero montar o calendário sanitário da minha propriedade."
+                href="https://wa.me/5551990000000?text=Olá! Quero montar o calendário sanitário da minha propriedade."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-lime shadow-glow-lime"

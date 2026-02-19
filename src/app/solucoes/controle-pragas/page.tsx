@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ControlePragasContent from "./content";
 
 export const metadata: Metadata = {
-  title: "Controle de Pragas | Soluções MAPSUL Distribuidora",
+  title: "Controle de Pragas | Soluções VetSulVet Distribuidora",
   description:
     "Armadilha adesiva ecológica Amarillo para controle de moscas em instalações pecuárias. Solução prática, sem veneno e eficiente para o manejo de pragas.",
   keywords:

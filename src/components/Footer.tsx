@@ -19,14 +19,14 @@ export default function Footer() {
             {/* Brand */}
             <div className="col-span-2 md:col-span-1">
               <div className="mb-6">
-                <Image src="/logos/mapsul.png" alt="MAP Sul" width={140} height={100} className="h-16 w-auto" />
+                <Image src="/logos/vetsulvet.png" alt="VetSulVet" width={140} height={100} className="h-16 w-auto" />
               </div>
               <p className="text-white/30 text-sm leading-relaxed max-w-xs">
                 Há 19 anos levando saúde e produtividade para a pecuária gaúcha.
               </p>
               <div className="flex gap-2.5 mt-6">
                 <a
-                  href="https://instagram.com/mapsul_distribuidora"
+                  href="https://instagram.com/vetsulvet_distribuidora"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 bg-white/[0.05] hover:bg-lime hover:text-forest rounded-xl flex items-center justify-center text-white/30 transition-all duration-300"
@@ -105,16 +105,16 @@ export default function Footer() {
                   <span className="text-white/40 text-sm">
                     Rua Buarque de Macedo, 189
                     <br />
-                    Centro, Lagoa Vermelha - RS
+                    Centro, Passo Fundo - RS
                   </span>
                 </li>
                 <li>
                   <a
-                    href="tel:+555433581151"
+                    href="tel:+555133330000"
                     className="flex items-center gap-2.5 text-white/40 hover:text-lime text-sm transition-colors"
                   >
                     <FaPhoneAlt className="text-lime text-xs" />
-                    (54) 3358-1151
+                    (51) 3333-0000
                   </a>
                 </li>
                 <li>
@@ -125,7 +125,7 @@ export default function Footer() {
                     className="flex items-center gap-2.5 text-white/40 hover:text-lime text-sm transition-colors"
                   >
                     <FaWhatsapp className="text-lime text-xs" />
-                    (54) 99635-6819
+                    (51) 99000-0000
                   </a>
                 </li>
               </ul>
@@ -137,11 +137,11 @@ export default function Footer() {
         <div className="border-t border-white/[0.05]">
           <div className="container-main py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-white/15 text-xs">
-              &copy; {new Date().getFullYear()} MAPSUL Distribuidora. Todos os
+              &copy; {new Date().getFullYear()} VetSulVet Distribuidora. Todos os
               direitos reservados.
             </p>
             <p className="text-white/15 text-xs">
-              Lagoa Vermelha, RS — Desde 2007
+              Passo Fundo, RS — Desde 2007
             </p>
           </div>
         </div>

@@ -16,7 +16,7 @@ export const products: Product[] = [
         brand: "Boehringer Ingelheim",
         category: "Sanidade",
         description: "Ivermectina 3,15% tixotrópica. O padrão ouro no controle de parasitas internos e externos.",
-        image: "https://mapsul.com.br/wp-content/uploads/2019/07/Ivomec-Gold-1.jpg",
+        image: "https://vetsulvet.com.br/wp-content/uploads/2019/07/Ivomec-Gold-1.jpg",
         slug: "ivomec-gold",
     },
     {
@@ -43,7 +43,7 @@ export const products: Product[] = [
         brand: "Boehringer Ingelheim",
         category: "Sanidade",
         description: "Vacina contra mastite ambiental. Proteção contra E. coli e Salmonella.",
-        image: "https://mapsul.com.br/wp-content/uploads/2019/07/J-Vac.jpg",
+        image: "https://vetsulvet.com.br/wp-content/uploads/2019/07/J-Vac.jpg",
         slug: "j-vac",
     },
     // NUTRIÇÃO (Agrifirm / Milk Bar)
@@ -53,7 +53,7 @@ export const products: Product[] = [
         brand: "Agrifirm",
         category: "Nutrição",
         description: "Sucedâneo lácteo premium. Tecnologia holandesa para máximo desenvolvimento de bezerras.",
-        image: "https://mapsul.com.br/wp-content/uploads/2025/05/Sem-titulo-1-2.png",
+        image: "https://vetsulvet.com.br/wp-content/uploads/2025/05/Sem-titulo-1-2.png",
         slug: "kalvolac-quick",
     },
     {
@@ -109,7 +109,7 @@ export const products: Product[] = [
         brand: "Biscayart",
         category: "Sementes",
         description: "Tetraplóide de ciclo longo. Alta produção de massa verde e resistência.",
-        image: "https://mapsul.com.br/wp-content/uploads/2019/07/Azeve%CC%81m-Baqueano-Vetorizado.png",
+        image: "https://vetsulvet.com.br/wp-content/uploads/2019/07/Azeve%CC%81m-Baqueano-Vetorizado.png",
         slug: "azevem-baqueano",
     },
     {

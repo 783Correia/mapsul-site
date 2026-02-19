@@ -278,7 +278,7 @@ export default function ArtigoCalendarioContent() {
                   Quer orientação técnica personalizada?
                 </p>
                 <p className="text-white/50 text-sm mb-6">
-                  Fale com um consultor MAPSUL da sua região.
+                  Fale com um consultor VetSulVet da sua região.
                 </p>
                 <a
                   href={getWhatsAppLink("Olá! Li o calendário sanitário no blog e gostaria de montar o programa da minha propriedade.")}

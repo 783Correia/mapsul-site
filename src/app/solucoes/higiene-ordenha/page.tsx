@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     keywords:
         "higiene ordenha, pré-dipping, pós-dipping, Dermisan, Kersia, qualidade do leite, mastite, pecuária leiteira RS",
     openGraph: {
-        title: "Higiene de Ordenha | MAPSUL Distribuidora",
+        title: "Higiene de Ordenha | VetSulVet Distribuidora",
         description:
             "Soluções completas para higiene de ordenha e qualidade do leite. Produtos Kersia com entrega em todo o RS.",
     },

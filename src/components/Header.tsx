@@ -77,7 +77,7 @@ export default function Header() {
         >
           {/* Logo */}
           <Link href="/" className="shrink-0">
-            <Image src="/logos/mapsul-alt.png" alt="MAP Sul" width={130} height={44} className="h-10 w-auto" />
+            <Image src="/logos/vetsulvet-alt.png" alt="VetSulVet" width={130} height={44} className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Nav */}

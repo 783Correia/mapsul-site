@@ -49,7 +49,7 @@ export default function NewsletterSection() {
                         {/* Trust badge */}
                         <div className="inline-flex items-center gap-2 bg-forest/[0.06] rounded-full px-5 py-2 mb-8">
                             <div className="w-1.5 h-1.5 bg-lime rounded-full"></div>
-                            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-forest/70">Desde 2007 · Lagoa Vermelha, RS</span>
+                            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-forest/70">Desde 2007 · Passo Fundo, RS</span>
                         </div>
 
                         <h2 className="text-[2.5rem] md:text-[3.2rem] leading-[1.05] font-bold text-dark tracking-tight">

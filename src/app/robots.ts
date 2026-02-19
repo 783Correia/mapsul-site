@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://mapsul.com.br/sitemap.xml",
+    sitemap: "https://vetsulvet.com.br/sitemap.xml",
   };
 }

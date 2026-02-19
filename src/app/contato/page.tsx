@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import ContatoContent from "./content";
 
 export const metadata: Metadata = {
-  title: "Contato | MAPSUL Distribuidora — Fale Conosco",
+  title: "Contato | VetSulVet Distribuidora — Fale Conosco",
   description:
-    "Entre em contato com a MAPSUL Distribuidora. WhatsApp (54) 99635-6819, formulário de contato, localização em Lagoa Vermelha/RS. Atendimento para pecuaristas de todo o RS.",
+    "Entre em contato com a VetSulVet Distribuidora. WhatsApp (51) 99000-0000, formulário de contato, localização em Passo Fundo/RS. Atendimento para pecuaristas de todo o RS.",
   keywords:
-    "contato MAPSUL, WhatsApp MAPSUL, Lagoa Vermelha RS, distribuidora veterinária contato, pecuária RS",
+    "contato VetSulVet, WhatsApp VetSulVet, Passo Fundo RS, distribuidora veterinária contato, pecuária RS",
 };
 
 export default function Page() {

@@ -9,7 +9,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "mapsul.com.br",
+        hostname: "vetsulvet.com.br",
       },
     ],
   },

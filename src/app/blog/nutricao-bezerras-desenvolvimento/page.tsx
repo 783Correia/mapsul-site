@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ArtigoNutricaoContent from "./content";
 
 export const metadata: Metadata = {
-  title: "Nutrição de Bezerras: Como Garantir o Melhor Desenvolvimento | Blog MAPSUL",
+  title: "Nutrição de Bezerras: Como Garantir o Melhor Desenvolvimento | Blog VetSulVet",
   description:
     "Guia completo sobre nutrição de bezerras nos primeiros meses de vida. Aleitamento, desmame, concentrado e manejo nutricional para máximo desempenho futuro.",
   keywords:

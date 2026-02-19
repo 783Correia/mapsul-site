@@ -106,7 +106,7 @@ export default function ReproducaoIATFContent() {
             >
               <Image
                 src="/images/iatf.png"
-                alt="Reprodução e IATF - MAPSUL"
+                alt="Reprodução e IATF - VetSulVet"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -144,7 +144,7 @@ export default function ReproducaoIATFContent() {
                 Linha Hormonal Boehringer Ingelheim
               </h2>
               <p className="text-gray-500 leading-relaxed mt-6">
-                A MAPSUL é distribuidora oficial da linha reprodutiva da Boehringer
+                A VetSulVet é distribuidora oficial da linha reprodutiva da Boehringer
                 Ingelheim, líder mundial em saúde animal. Trabalhamos com toda a linha
                 de hormônios para IATF, incluindo:
               </p>

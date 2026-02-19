@@ -71,7 +71,7 @@ export default function HigieneOrdenhaContent() {
                             </h2>
                             <div className="mt-6 space-y-4 text-gray-500 leading-relaxed">
                                 <p>
-                                    A MAPSUL traz para a sua propriedade a tecnologia da <strong className="text-dark">Kersia</strong>,
+                                    A VetSulVet traz para a sua propriedade a tecnologia da <strong className="text-dark">Kersia</strong>,
                                     referência global em segurança alimentar e biossegurança. Oferecemos uma linha completa
                                     de detergentes, desinfetantes e produtos para pré e pós-dipping.
                                 </p>

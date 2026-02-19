@@ -78,7 +78,7 @@ export default function NutricaoAnimalContent() {
                   produção de leite na vida adulta.
                 </p>
                 <p>
-                  A MAPSUL promove eventos e capacitações sobre criação de bezerras, como
+                  A VetSulVet promove eventos e capacitações sobre criação de bezerras, como
                   o seminário <strong className="text-dark">&quot;Criação de Bezerras — O melhor
                     começo para um futuro produtivo&quot;</strong>, onde especialistas compartilham
                   as melhores práticas de manejo nutricional desde o nascimento.
@@ -100,8 +100,8 @@ export default function NutricaoAnimalContent() {
               }}
             >
               <Image
-                src="/images/mapsul-nutri-animal.png"
-                alt="Nutrição Animal MAPSUL"
+                src="/images/vetsulvet-nutri-animal.png"
+                alt="Nutrição Animal VetSulVet"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -189,12 +189,12 @@ export default function NutricaoAnimalContent() {
               Eventos e Capacitações
             </h2>
             <p className="text-white/50 mt-4 leading-relaxed">
-              A MAPSUL realiza periodicamente eventos técnicos sobre nutrição animal,
+              A VetSulVet realiza periodicamente eventos técnicos sobre nutrição animal,
               incluindo o seminário &quot;Criação de Bezerras — O melhor começo para
               um futuro produtivo&quot;. Fique atento às próximas datas e participe!
             </p>
             <a
-              href={getWhatsAppLink("Olá! Quero saber sobre os próximos eventos de nutrição animal da MAPSUL.")}
+              href={getWhatsAppLink("Olá! Quero saber sobre os próximos eventos de nutrição animal da VetSulVet.")}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-lime mt-8"

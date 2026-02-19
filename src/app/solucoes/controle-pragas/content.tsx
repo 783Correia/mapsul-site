@@ -178,7 +178,7 @@ export default function ControlePragasContent() {
                 quantidade e posicionamento ideal das armadilhas Amarillo.
               </p>
               <a
-                href="https://wa.me/5554996356819?text=Ol%C3%A1!%20Quero%20orienta%C3%A7%C3%A3o%20sobre%20controle%20de%20pragas%20com%20Amarillo."
+                href="https://wa.me/5551990000000?text=Ol%C3%A1!%20Quero%20orienta%C3%A7%C3%A3o%20sobre%20controle%20de%20pragas%20com%20Amarillo."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-lime text-forest font-bold px-5 py-2.5 rounded-full text-xs tracking-wide uppercase inline-flex items-center gap-2 hover:shadow-glow-lime hover:scale-[1.03] transition-all mt-6"

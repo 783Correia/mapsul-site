@@ -291,28 +291,28 @@ export default function ContatoContent() {
                       icon: FaMapMarkerAlt,
                       label: "Endereço",
                       value:
-                        "Rua Buarque de Macedo, 189\nCentro, Lagoa Vermelha - RS",
+                        "Rua Buarque de Macedo, 189\nCentro, Passo Fundo - RS",
                       color: "bg-primary/10 text-primary",
                     },
                     {
                       icon: FaPhoneAlt,
                       label: "Telefone",
-                      value: "(54) 3358-1151",
-                      href: "tel:+555433581151",
+                      value: "(51) 3333-0000",
+                      href: "tel:+555133330000",
                       color: "bg-primary/10 text-primary",
                     },
                     {
                       icon: FaWhatsapp,
                       label: "WhatsApp",
-                      value: "(54) 99635-6819",
+                      value: "(51) 99000-0000",
                       href: getWhatsAppLink(),
                       color: "bg-[#25D366]/10 text-[#25D366]",
                     },
                     {
                       icon: FaInstagram,
                       label: "Instagram",
-                      value: "@mapsul_distribuidora",
-                      href: "https://instagram.com/mapsul_distribuidora",
+                      value: "@vetsulvet_distribuidora",
+                      href: "https://instagram.com/vetsulvet_distribuidora",
                       color: "bg-pink-50 text-pink-500",
                     },
                     {
@@ -370,7 +370,7 @@ export default function ContatoContent() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Localização MAPSUL Distribuidora"
+                  title="Localização VetSulVet Distribuidora"
                 />
               </div>
             </div>

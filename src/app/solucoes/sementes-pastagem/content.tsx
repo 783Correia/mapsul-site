@@ -121,7 +121,7 @@ export default function SementesPastagemContent() {
                   estabelecimento e desperdício de investimento.
                 </p>
                 <p>
-                  A MAPSUL trabalha com sementes de <strong className="text-dark">alta pureza
+                  A VetSulVet trabalha com sementes de <strong className="text-dark">alta pureza
                     e germinação comprovada</strong>, de fornecedores certificados como Biscayart
                   e outras marcas líderes, garantindo o melhor resultado no campo.
                 </p>

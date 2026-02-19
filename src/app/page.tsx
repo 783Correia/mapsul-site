@@ -136,7 +136,7 @@ function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-3"
           >
             <a
-              href={getWhatsAppLink("Olá! Gostaria de falar com um veterinário da MAPSUL.")}
+              href={getWhatsAppLink("Olá! Gostaria de falar com um veterinário da VetSulVet.")}
               target="_blank"
               className="group bg-lime text-forest-dark px-5 py-3 rounded-full font-bold text-sm md:text-base transition-all hover:scale-105 hover:bg-lime/90 flex items-center gap-2 shadow-xl shadow-lime/20"
             >
@@ -411,7 +411,7 @@ function ProdutosDestaque() {
       brand: "Boehringer Ingelheim",
       description:
         "O padrão ouro em controle parasitário. Formulação tixotrópica com Ivermectina 3,15%. Proteção por até 12 semanas contra berne e carrapatos, garantindo maior ganho de peso e pastos limpos.",
-      image: "https://mapsul.com.br/wp-content/uploads/2019/07/Ivomec-Gold-1.jpg",
+      image: "https://vetsulvet.com.br/wp-content/uploads/2019/07/Ivomec-Gold-1.jpg",
       badge: "Líder de Mercado",
     },
     {
@@ -419,7 +419,7 @@ function ProdutosDestaque() {
       brand: "Agrifirm",
       description:
         "Substituto de leite premium para bezerras. Digestão rápida, excelente desenvolvimento ruminal e crescimento juvenil acelerado. Tecnologia holandesa para sua recria.",
-      image: "https://mapsul.com.br/wp-content/uploads/2025/05/Sem-titulo-1-2.png",
+      image: "https://vetsulvet.com.br/wp-content/uploads/2025/05/Sem-titulo-1-2.png",
       badge: "Alta Performance",
     },
     {
@@ -532,7 +532,7 @@ function ProdutosDestaque() {
             </motion.div>
 
             <a
-              href={`https://wa.me/5554996356819?text=Olá! Tenho interesse no produto ${current.name} da ${current.brand}. Gostaria de saber preço e disponibilidade.`}
+              href={`https://wa.me/5551990000000?text=Olá! Tenho interesse no produto ${current.name} da ${current.brand}. Gostaria de saber preço e disponibilidade.`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-lime mt-8"
@@ -591,7 +591,7 @@ function Diferenciais() {
 
       <div className="container-main relative">
         <SectionHeading
-          tag="Por que a MAPSUL"
+          tag="Por que a VetSulVet"
           title="Diferenciais que fazem a diferença no campo"
           light
         />
@@ -728,17 +728,17 @@ function Depoimentos() {
     {
       name: "Carlos Mendes",
       role: "Pecuarista — Vacaria, RS",
-      text: "A MAPSUL sempre nos atendeu com agilidade e produtos de qualidade. A consultoria técnica faz toda a diferença na escolha dos melhores tratamentos para o rebanho.",
+      text: "A VetSulVet sempre nos atendeu com agilidade e produtos de qualidade. A consultoria técnica faz toda a diferença na escolha dos melhores tratamentos para o rebanho.",
     },
     {
       name: "Ana Paula Silva",
-      role: "Produtora de Leite — Lagoa Vermelha, RS",
-      text: "Trabalhamos com a MAPSUL há mais de 10 anos. A confiança na qualidade dos produtos e no atendimento da equipe é o que nos mantém parceiros.",
+      role: "Produtora de Leite — Passo Fundo, RS",
+      text: "Trabalhamos com a VetSulVet há mais de 10 anos. A confiança na qualidade dos produtos e no atendimento da equipe é o que nos mantém parceiros.",
     },
     {
       name: "Roberto Ferreira",
       role: "Fazenda Boa Vista — Passo Fundo, RS",
-      text: "As sementes que compramos pela MAPSUL transformaram nossas pastagens. O suporte técnico é excepcional e os resultados falam por si.",
+      text: "As sementes que compramos pela VetSulVet transformaram nossas pastagens. O suporte técnico é excepcional e os resultados falam por si.",
     },
   ];
 
@@ -749,7 +749,7 @@ function Depoimentos() {
   return (
     <section style={{ backgroundColor: "#0f1f0f" }} className="section-padding relative overflow-hidden">
       <div className="container-main">
-        <SectionHeading tag="Depoimentos de Pecuaristas" title="Quem confia na MAPSUL recomenda" light />
+        <SectionHeading tag="Depoimentos de Pecuaristas" title="Quem confia na VetSulVet recomenda" light />
 
         <div className="max-w-3xl mx-auto relative">
           <div className="glass-card p-10 md:p-14 relative overflow-hidden">

@@ -6,44 +6,44 @@ import { getWhatsAppLink } from "@/utils/whatsapp";
 const representantes = [
   {
     name: "Campos de Cima da Serra",
-    contact: "Equipe MAPSUL",
-    phone: "(54) 3358-1151",
-    email: "contato@mapsul.com.br",
-    cities: "Lagoa Vermelha, Vacaria, São José dos Ausentes, Bom Jesus, Esmeralda",
+    contact: "Equipe VetSulVet",
+    phone: "(51) 3333-0000",
+    email: "contato@vetsulvet.com.br",
+    cities: "Passo Fundo, Vacaria, São José dos Ausentes, Bom Jesus, Esmeralda",
   },
   {
     name: "Serra Gaúcha",
-    contact: "Equipe MAPSUL",
-    phone: "(54) 3358-1151",
-    email: "contato@mapsul.com.br",
+    contact: "Equipe VetSulVet",
+    phone: "(51) 3333-0000",
+    email: "contato@vetsulvet.com.br",
     cities: "Caxias do Sul, Farroupilha, Bento Gonçalves, Flores da Cunha",
   },
   {
     name: "Região Noroeste",
-    contact: "Equipe MAPSUL",
-    phone: "(54) 3358-1151",
-    email: "contato@mapsul.com.br",
+    contact: "Equipe VetSulVet",
+    phone: "(51) 3333-0000",
+    email: "contato@vetsulvet.com.br",
     cities: "Passo Fundo, Erechim, Marau, Carazinho, Getúlio Vargas",
   },
   {
     name: "Região Central",
-    contact: "Equipe MAPSUL",
-    phone: "(54) 3358-1151",
-    email: "contato@mapsul.com.br",
+    contact: "Equipe VetSulVet",
+    phone: "(51) 3333-0000",
+    email: "contato@vetsulvet.com.br",
     cities: "Santa Maria, Cruz Alta, Tupanciretã, Júlio de Castilhos",
   },
   {
     name: "Campanha Gaúcha",
-    contact: "Equipe MAPSUL",
-    phone: "(54) 3358-1151",
-    email: "contato@mapsul.com.br",
+    contact: "Equipe VetSulVet",
+    phone: "(51) 3333-0000",
+    email: "contato@vetsulvet.com.br",
     cities: "Pelotas, Bagé, Santana do Livramento, Dom Pedrito, Alegrete",
   },
   {
     name: "Região Metropolitana",
-    contact: "Equipe MAPSUL",
-    phone: "(54) 3358-1151",
-    email: "contato@mapsul.com.br",
+    contact: "Equipe VetSulVet",
+    phone: "(51) 3333-0000",
+    email: "contato@vetsulvet.com.br",
     cities: "Porto Alegre, Canoas, Viamão, Gravataí, São Leopoldo",
   },
 ];
@@ -135,13 +135,13 @@ export default function RepresentantesContent() {
               você ao representante mais próximo.
             </p>
             <a
-              href="https://wa.me/555433581151"
+              href="https://wa.me/555133330000"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-lime mt-8"
             >
               <FaWhatsapp className="text-lg" />
-              (54) 3358-1151
+              (51) 3333-0000
               <FaArrowRight className="text-xs" />
             </a>
           </div>
