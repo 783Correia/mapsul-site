@@ -1,15 +1,15 @@
 export const siteConfig = {
-    name: "VetSulVet Distribuidora",
-    description: "Produtos veterinários e nutrição animal no RS",
-    url: "https://vetsulvet.com.br",
-    whatsapp: "5551990000000",
+    name: "Jacó Locação",
+    description: "Locação de máquinas pesadas e equipamentos",
+    url: "https://jacolocacao.com.br",
+    whatsapp: "5511900000000",
     links: {
-        instagram: "https://instagram.com/vetsulvet_distribuidora",
-        facebook: "https://facebook.com/vetsulvet",
+        instagram: "https://instagram.com/jacolocacaomaquinas",
+        facebook: "https://facebook.com/jacolocacao",
     },
     contact: {
-        email: "contato@vetsulvet.com.br",
-        phone: "(51) 99000-0000",
-        address: "Passo Fundo, RS",
+        email: "contato@jacolocacao.com.br",
+        phone: "(11) 90000-0000",
+        address: "São Paulo, SP",
     },
 };

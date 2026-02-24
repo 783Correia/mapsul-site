@@ -4,18 +4,13 @@ import { motion } from "framer-motion";
 import { getWhatsAppLink } from "@/utils/whatsapp";
 import {
   FaShieldAlt,
-  FaSeedling,
   FaTrophy,
   FaUsers,
   FaHandshake,
   FaWhatsapp,
   FaMapMarkerAlt,
-  FaCalendarAlt,
-  FaDna,
   FaGraduationCap,
-  FaHome,
   FaStore,
-  FaAppleAlt,
 } from "react-icons/fa";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -28,85 +23,50 @@ const fadeUp = {
 
 const timeline = [
   {
-    year: "2006",
-    title: "Início da Jornada",
-    description:
-      "Primeiros passos no mercado de distribuição de produtos veterinários na região dos Campos de Cima da Serra.",
-  },
-  {
-    year: "2007",
-    title: "Fundação Oficial",
-    description:
-      "VetSulVet Distribuidora é formalmente constituída em Passo Fundo, RS, com foco em medicamentos veterinários.",
-  },
-  {
     year: "2010",
-    title: "Expansão Regional",
-    description:
-      "Ampliação do atendimento para toda a região norte do Rio Grande do Sul, conquistando novos produtores.",
-  },
-  {
-    year: "2013",
-    title: "Parceria Boehringer",
-    description:
-      "Consolidação como distribuidor da linha Boehringer Ingelheim, incluindo a linha hormonal para IATF.",
+    title: "Fundação",
+    description: "Início das atividades focadas em locação de equipamentos menores para construção civil.",
   },
   {
     year: "2015",
-    title: "Novas Marcas Líderes",
-    description:
-      "Incorporação de ATTO, Kersia e outras marcas líderes ao portfólio de distribuição.",
+    title: "Expansão da Frota",
+    description: "Aquisição das primeiras escavadeiras hidráulicas de grande porte das marcas Caterpillar e JCB.",
   },
   {
     year: "2018",
-    title: "Nutrição Animal",
-    description:
-      "Entrada no segmento de nutrição animal com parceria Agrifirm e distribuição do sistema Milk Bar.",
+    title: "Novas Instalações",
+    description: "Inauguração da nova sede com pátio amplo e oficina de manutenção especializada própria.",
   },
   {
-    year: "2020",
-    title: "Sementes de Pastagem",
-    description:
-      "Diversificação com sementes certificadas de pastagem, atendendo a demanda dos pecuaristas gaúchos.",
+    year: "2021",
+    title: "Parcerias Globais",
+    description: "Consolidação de parcerias com Bobcat e Case, renovando 100% da frota de retroescavadeiras.",
   },
   {
-    year: "2022",
-    title: "Cobertura Estadual",
-    description:
-      "Rede de ATCs atinge cobertura em todas as regiões do Rio Grande do Sul.",
-  },
-  {
-    year: "2025",
-    title: "19 Anos de Mercado",
-    description:
-      "Referência na distribuição de produtos pecuários no RS, com mais de 1000 produtores atendidos.",
+    year: "Hoje",
+    title: "Referência no Mercado",
+    description: "Atendendo dezenas de construtoras com agilidade, equipamentos revisados e suporte 24h.",
   },
 ];
 
 const equipe = [
-  { nome: "Consultor Técnico", regiao: "Campos de Cima da Serra", iniciais: "CS" },
-  { nome: "Consultor Técnico", regiao: "Serra Gaúcha", iniciais: "SG" },
-  { nome: "Consultor Técnico", regiao: "Noroeste Gaúcho", iniciais: "NG" },
-  { nome: "Consultor Técnico", regiao: "Região Central", iniciais: "RC" },
-  { nome: "Consultor Técnico", regiao: "Campanha Gaúcha", iniciais: "CG" },
-  { nome: "Consultor Técnico", regiao: "Região Metropolitana", iniciais: "RM" },
+  { nome: "Carlos Eduardo", regiao: "Consultor Técnico Comercial", iniciais: "CE" },
+  { nome: "Roberto Almeida", regiao: "Especialista em Frota", iniciais: "RA" },
+  { nome: "Fernanda Silva", regiao: "Gerente de Atendimento", iniciais: "FS" },
+  { nome: "João Paulo", regiao: "Engenheiro Mecânico", iniciais: "JP" },
 ];
 
 const valores = [
-  { icon: FaShieldAlt, label: "Ética" },
-  { icon: FaTrophy, label: "Credibilidade" },
-  { icon: FaUsers, label: "Transparência" },
-  { icon: FaSeedling, label: "Respeito ao Meio Ambiente" },
-  { icon: FaHandshake, label: "Valorização e Respeito às Pessoas" },
+  { icon: FaShieldAlt, label: "Segurança" },
+  { icon: FaTrophy, label: "Excelência" },
+  { icon: FaUsers, label: "Parceria" },
+  { icon: FaHandshake, label: "Compromisso com Prazos" },
 ];
 
 const galeria = [
-  { label: "Evento Criação de Bezerras", icon: FaAppleAlt, color: "from-amber-500/20 to-amber-900/40" },
-  { label: "Dia de Campo — IATF", icon: FaDna, color: "from-pink-500/20 to-pink-900/40" },
-  { label: "Capacitação Técnica", icon: FaGraduationCap, color: "from-blue-500/20 to-blue-900/40" },
-  { label: "Visita a Propriedade", icon: FaHome, color: "from-emerald-500/20 to-emerald-900/40" },
-  { label: "Feira Agropecuária", icon: FaStore, color: "from-green-500/20 to-green-900/40" },
-  { label: "Seminário Nutrição", icon: FaCalendarAlt, color: "from-cyan-500/20 to-cyan-900/40" },
+  { label: "Obras de Infraestrutura", icon: FaMapMarkerAlt, color: "from-amber-500/20 to-amber-900/40" },
+  { label: "Manutenção Preventiva", icon: FaStore, color: "from-blue-500/20 to-blue-900/40" },
+  { label: "Operações Pesadas", icon: FaGraduationCap, color: "from-emerald-500/20 to-emerald-900/40" },
 ];
 
 export default function SobreContent() {
@@ -125,10 +85,9 @@ export default function SobreContent() {
             <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
               Institucional
             </span>
-            <h1 className="text-display-sm text-white">Sobre a VetSulVet</h1>
+            <h1 className="text-display-sm text-white">Sobre a Jacó Locação</h1>
             <p className="text-white/60 text-lg mt-4 max-w-xl mx-auto">
-              Conheça nossa história, missão e os valores que nos guiam há 19
-              anos.
+              Conheça nossa história, missão e os valores que nos guiam para ser a maior locadora do Brasil.
             </p>
           </motion.div>
         </div>
@@ -143,23 +102,21 @@ export default function SobreContent() {
                 Nossa História
               </span>
               <h2 className="text-heading text-white">
-                19 Anos de Dedicação à Pecuária Gaúcha
+                Excelência em Locação de Máquinas Pesadas
               </h2>
               <div className="mt-8 space-y-4 text-white/60 leading-relaxed">
                 <p>
-                  Fundada em 2007 em Passo Fundo, a VetSulVet Distribuidora
-                  nasceu do compromisso de levar os melhores produtos e serviços
-                  para os pecuaristas do Rio Grande do Sul.
+                  A Jacó Locação nasceu do compromisso de levar os melhores equipamentos pesados e serviços
+                  para as construtoras e empreiteiras de todo o país.
                 </p>
                 <p>
-                  Ao longo de quase duas décadas, construímos parcerias sólidas
-                  com marcas líderes como Boehringer Ingelheim, ATTO, Milk Bar,
-                  Kersia, Agrifirm, Biscayart e Luxembourg.
+                  Ao longo dos anos, construímos parcerias sólidas
+                  com marcas mundiais como Caterpillar, Hyundai, JCB, Case e Bobcat,
+                  garantindo uma frota extremamente moderna.
                 </p>
                 <p>
-                  Hoje, atendemos mais de 1000 produtores em todo o estado, oferecendo
-                  produtos de qualidade, consultoria técnica especializada e
-                  acompanhamento contínuo para maximizar resultados no campo.
+                  Hoje, atendemos obras de todos os portes focando sempre em
+                  manutenção revisada, segurança operacional e soluções com agilidade e eficiência.
                 </p>
               </div>
             </motion.div>
@@ -237,19 +194,13 @@ export default function SobreContent() {
                 <div className="border-l-4 border-lime pl-6">
                   <h3 className="font-bold text-white text-lg mb-2">Missão</h3>
                   <p className="text-white/60 leading-relaxed">
-                    Atuar com responsabilidade e excelência na distribuição de
-                    produtos e na prestação de serviços, promovendo o
-                    conhecimento e inovação no Agronegócio.
+                    Oferecer máquinas pesadas modernas e seguras, aliados a um suporte técnico impecável, garantindo o sucesso das obras de nossos parceiros comerciais.
                   </p>
                 </div>
                 <div className="border-l-4 border-white/20 pl-6">
                   <h3 className="font-bold text-white text-lg mb-2">Visão</h3>
                   <p className="text-white/60 leading-relaxed">
-                    Ser referência na distribuição de produtos e consultoria
-                    técnica no Agronegócio, entregando inovação e
-                    conscientizando para o uso eficiente e sustentável dos
-                    produtos, prezando pela saúde e bem estar dos animais e das
-                    pessoas.
+                    Ser referência nacional em locação de equipamentos pesados, reconhecida pela qualidade da frota, agilidade no atendimento e compromisso inegociável com a segurança.
                   </p>
                 </div>
               </div>
@@ -332,8 +283,8 @@ export default function SobreContent() {
         <div className="container-main">
           <SectionHeading
             tag="Galeria"
-            title="Momentos VetSulVet"
-            description="Eventos, capacitações e visitas técnicas com nossos parceiros produtores."
+            title="Momentos Jacó Locação"
+            description="Equipamentos em ação nas obras e visitas técnicas com nossos parceiros comerciais."
             light
           />
 
@@ -362,70 +313,7 @@ export default function SobreContent() {
         </div>
       </section>
 
-      {/* Mapa de Atuação */}
-      <section className="bg-forest section-padding">
-        <div className="container-main">
-          <SectionHeading
-            tag="Cobertura"
-            title="Atuação em Todo o RS"
-            description="Nossos consultores atendem propriedades em todas as regiões do Rio Grande do Sul."
-            light
-          />
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div {...fadeUp}>
-              <div className="space-y-4">
-                {[
-                  { regiao: "Campos de Cima da Serra", cidades: "Vacaria, Bom Jesus, São José dos Ausentes" },
-                  { regiao: "Serra Gaúcha", cidades: "Caxias do Sul, Bento Gonçalves, Farroupilha" },
-                  { regiao: "Noroeste Gaúcho", cidades: "Ijuí, Santa Rosa, Três Passos" },
-                  { regiao: "Região Central", cidades: "Santa Maria, Cruz Alta, Soledade" },
-                  { regiao: "Campanha Gaúcha", cidades: "Bagé, Dom Pedrito, Alegrete" },
-                  { regiao: "Metropolitana / Litoral", cidades: "Porto Alegre, Viamão, Osório" },
-                ].map((item, i) => (
-                  <motion.div
-                    key={item.regiao}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.08 }}
-                    className="bg-white/[0.06] border border-white/[0.08] rounded-2xl p-5 hover:bg-white/[0.1] hover:-translate-y-0.5 transition-all duration-300"
-                  >
-                    <div className="flex items-center gap-3">
-                      <FaMapMarkerAlt className="text-lime shrink-0" />
-                      <div>
-                        <h3 className="font-bold text-white text-sm">{item.regiao}</h3>
-                        <p className="text-white/40 text-xs mt-0.5">{item.cidades}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              {...fadeUp}
-              className="bg-forest-dark rounded-3xl p-10 text-center aspect-square flex items-center justify-center"
-            >
-              <div>
-                <div className="text-[8rem] font-extrabold text-lime/20 leading-none">RS</div>
-                <p className="text-white/40 text-sm mt-4">Cobertura em todo o estado</p>
-                <div className="flex items-center justify-center gap-6 mt-8">
-                  <div className="text-center">
-                    <div className="text-3xl font-extrabold text-lime">6</div>
-                    <p className="text-white/30 text-xs">Regiões</p>
-                  </div>
-                  <div className="w-px h-10 bg-white/10" />
-                  <div className="text-center">
-                    <div className="text-3xl font-extrabold text-lime">1000+</div>
-                    <p className="text-white/30 text-xs">Produtores</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      {/* Mapa Removido */}
     </>
   );
 }

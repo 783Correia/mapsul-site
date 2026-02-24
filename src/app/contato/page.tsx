@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import ContatoContent from "./content";
 
 export const metadata: Metadata = {
-  title: "Contato | VetSulVet Distribuidora — Fale Conosco",
+  title: "Contato | Jacó Locação — Fale Conosco",
   description:
-    "Entre em contato com a VetSulVet Distribuidora. WhatsApp (51) 99000-0000, formulário de contato, localização em Passo Fundo/RS. Atendimento para pecuaristas de todo o RS.",
+    "Entre em contato com a Jacó Locação. WhatsApp, formulário de contato e localização. Atendimento para construtoras em todo o Brasil.",
   keywords:
-    "contato VetSulVet, WhatsApp VetSulVet, Passo Fundo RS, distribuidora veterinária contato, pecuária RS",
+    "contato jaco locacao, WhatsApp jaco locacao, locacao retroescavadeira contato, SP",
 };
 
 export default function Page() {

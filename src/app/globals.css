@@ -20,7 +20,7 @@ html.lenis body {
 }
 
 body {
-  color: #1A1A1A;
+  color: #1a1a2e;
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,38 +32,38 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #B4D12E;
+  background: #2C9E4B;
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c8e63a;
+  background: #257A3C;
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #B4D12E transparent;
+  scrollbar-color: #2C9E4B #f1f1f1;
 }
 
 ::selection {
-  background: #B4D12E;
-  color: #0A3B1E;
+  background: #2C9E4B;
+  color: #ffffff;
 }
 
 @layer components {
 
   /* ─── Buttons ─── */
   .btn-lime {
-    @apply bg-lime text-forest font-bold px-6 py-3 md:px-8 md:py-4 rounded-full hover:shadow-glow-lime transition-all duration-300 inline-flex items-center gap-2 text-xs md:text-sm tracking-wide uppercase hover:scale-[1.03] active:scale-[0.98];
+    @apply bg-primary text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-full hover:shadow-lg transition-all duration-300 inline-flex items-center gap-2 text-xs md:text-sm tracking-wide uppercase hover:scale-[1.03] active:scale-[0.98] hover:bg-primary-dark;
   }
 
   .btn-outline {
-    @apply border-2 border-white/30 text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-white hover:text-forest transition-all duration-300 inline-flex items-center gap-2 text-xs md:text-sm tracking-wide uppercase hover:scale-[1.03] active:scale-[0.98];
+    @apply border-2 border-gray-300 text-gray-700 font-bold px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 inline-flex items-center gap-2 text-xs md:text-sm tracking-wide uppercase hover:scale-[1.03] active:scale-[0.98];
   }
 
   .btn-dark {
@@ -71,10 +71,10 @@ body {
   }
 
   .btn-ghost {
-    @apply text-white/70 font-bold px-6 py-3 rounded-full hover:bg-white/10 hover:text-white transition-all duration-300 inline-flex items-center gap-2 text-sm tracking-wide;
+    @apply text-gray-600 font-bold px-6 py-3 rounded-full hover:bg-gray-100 hover:text-gray-900 transition-all duration-300 inline-flex items-center gap-2 text-sm tracking-wide;
   }
 
-  /* ─── Glass ─── */
+  /* ─── Glass (used on dark sections only) ─── */
   .glass {
     @apply bg-white/[0.07] backdrop-blur-xl border border-white/[0.12];
   }
@@ -88,7 +88,12 @@ body {
   }
 
   .glass-card-hover {
-    @apply hover:bg-white/[0.12] hover:border-white/[0.22] hover:shadow-glow-lime hover:-translate-y-1 transition-all duration-500;
+    @apply hover:bg-white/[0.12] hover:border-white/[0.22] hover:shadow-lg hover:-translate-y-1 transition-all duration-500;
+  }
+
+  /* ─── Cards (light theme) ─── */
+  .card-clean {
+    @apply bg-white rounded-3xl border border-gray-100 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300;
   }
 
   /* ─── Layout ─── */

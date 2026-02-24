@@ -17,23 +17,24 @@ export default function SectionHeading({
     <div className={`mb-16 ${align === "center" ? "text-center" : ""}`}>
       {tag && (
         <span
-          className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4"
+          className={`inline-block text-xs font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full mb-4 ${light
+              ? "text-lime bg-lime/10"
+              : "text-primary bg-primary/10"
+            }`}
         >
           {tag}
         </span>
       )}
       <h2
-        className={`text-heading text-balance ${
-          light ? "text-white" : "text-dark"
-        }`}
+        className={`text-heading text-balance ${light ? "text-white" : "text-gray-900"
+          }`}
       >
         {title}
       </h2>
       {description && (
         <p
-          className={`mt-4 text-lg max-w-2xl leading-relaxed ${
-            align === "center" ? "mx-auto" : ""
-          } ${light ? "text-white/60" : "text-gray-500"}`}
+          className={`mt-4 text-lg max-w-2xl leading-relaxed ${align === "center" ? "mx-auto" : ""
+            } ${light ? "text-white/60" : "text-gray-500"}`}
         >
           {description}
         </p>

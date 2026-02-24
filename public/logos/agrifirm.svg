@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" fill="none">
-  <g>
-    <path d="M30 10C20 10 12 18 12 28v24c0 10 8 18 18 18s18-8 18-18V38c6 0 12-4 14-10-2 8-8 14-16 14V28c0-10-8-18-16-18z" fill="#F5C518"/>
-    <path d="M40 10c10 0 18 8 18 18v24c0 10-8 18-18 18s-18-8-18-18V42c-6 0-12-4-14-10 2 8 8 14 16 14v6c0 10 8 18 16 18z" fill="#006D3C"/>
-  </g>
-  <text x="72" y="52" font-family="Arial, sans-serif" font-weight="bold" font-size="36" fill="#006D3C">agrifirm</text>
-</svg>

@@ -8,7 +8,6 @@ import {
   FaHandshake,
   FaAward,
   FaMapMarkedAlt,
-  FaHeadset,
   FaWhatsapp,
   FaArrowRight,
   FaArrowLeft,
@@ -16,28 +15,33 @@ import {
   FaQuoteLeft,
   FaChevronLeft,
   FaChevronRight,
-  FaDna,
-  FaAppleAlt,
-  FaShieldAlt,
-  FaBug,
-  FaSeedling,
-  FaHandSparkles,
+  FaHardHat,
+  FaTools,
+  FaTractor,
+  FaTruckMoving,
+  FaWrench,
+  FaCog,
 } from "react-icons/fa";
 import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import { AgrifirmLogo, BiscayartLogo, KersiaLogo, BoehringerLogo, MilkBarLogo } from "@/components/Logos";
+import Image from "next/image";
+
 /* ═══════════════════════════════════════════════
    HERO — Rutivo Style (Wide/Clean/Centered)
    ═══════════════════════════════════════════════ */
 const heroBrands = [
-  { name: "Agrifirm", component: AgrifirmLogo },
-  { name: "Biscayart", component: BiscayartLogo },
-  { name: "Kersia", component: KersiaLogo },
-  { name: "Boehringer Ingelheim", component: BoehringerLogo },
-  { name: "Milk Bar", component: MilkBarLogo },
-  { name: "ATTO", component: ({ className }: { className?: string }) => <span className={`font-extrabold text-forest tracking-tight text-2xl ${className || ""}`}>ATTO</span> },
-  { name: "Luxembourg", component: ({ className }: { className?: string }) => <span className={`font-extrabold text-forest tracking-tight text-xl ${className || ""}`}>Luxembourg</span> },
+  { name: "Bobcat", src: "/logos/LOGO BOBCAT.jpg" },
+  { name: "Case", src: "/logos/LOGO CASE.jpg" },
+  { name: "CAT", src: "/logos/LOGO CAT.png" },
+  { name: "Genie", src: "/logos/LOGO GENIE.jpg" },
+  { name: "Hyundai", src: "/logos/LOGO HYUNDAI INDUSTRIA.jpg" },
+  { name: "JCB", src: "/logos/LOGO JCB.jpg" },
+  { name: "JLG", src: "/logos/LOGO JLG.jpg" },
+  { name: "Dynapac", src: "/logos/dynapac.png" },
+  { name: "Jumil", src: "/logos/jumil logo.png" },
+  { name: "Logimatec", src: "/logos/logimatec.jpg" },
+  { name: "Skyjack", src: "/logos/skyjack LOGO.jpg" },
 ];
 const carouselBrands = [...heroBrands, ...heroBrands];
 
@@ -76,30 +80,26 @@ function Hero() {
             className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-5"
           >
             <div className="w-2 h-2 rounded-full bg-lime animate-pulse" />
-            <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-white">Distribuidora referência no RS desde 2007</span>
+            <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-white">Força e Confiabilidade para a Sua Obra</span>
           </motion.div>
 
-          {/* Headline — staggered words */}
-          <h1 className="text-[clamp(1.8rem,5vw,3.8rem)] font-bold text-white leading-[1.1] tracking-tight mb-4">
-            {["Produtos", "veterinários", "e"].map((word, i) => (
-              <motion.span
-                key={word}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
-                className="inline-block mr-[0.3em]"
-              >
-                {word}
-              </motion.span>
-            ))}
-            <br />
+          {/* Headline */}
+          <h1 className="text-[clamp(2rem,5vw,3.8rem)] font-bold text-white leading-[1.1] tracking-tight mb-4">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="block whitespace-nowrap"
+            >
+              Locação de máquinas pesadas
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
               className="text-lime inline-block relative"
             >
-              nutrição animal no RS.
+              e equipamentos.
               <motion.svg
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={{ pathLength: 1, opacity: 0.4 }}
@@ -128,7 +128,7 @@ function Hero() {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="text-xs md:text-base text-white/80 max-w-lg mx-auto leading-relaxed mb-6 font-normal px-2"
           >
-            Medicamentos, sementes de pastagem e suplementação para pecuaristas de todo o Rio Grande do Sul. Consultoria técnica especializada e entrega em todas as regiões.
+            Frota nova e atualizada. Locação de retroescavadeiras, escavadeiras hidráulicas, pás carregadeiras e plataformas elevatórias com suporte ágil e manutenção em dia.
           </motion.p>
 
           {/* CTA — buttons enter from below with spring */}
@@ -139,18 +139,18 @@ function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-3"
           >
             <a
-              href={getWhatsAppLink("Olá! Gostaria de falar com um veterinário da VetSulVet.")}
+              href={getWhatsAppLink("Olá! Gostaria de falar com um especialista sobre locação de máquinas.")}
               target="_blank"
-              className="group bg-lime text-forest-dark px-5 py-3 rounded-full font-bold text-sm md:text-base transition-all hover:scale-105 hover:bg-lime/90 flex items-center gap-2 shadow-xl shadow-lime/20"
+              className="group bg-lime text-forest border border-lime px-5 py-3 rounded-full font-bold text-sm md:text-base transition-all hover:scale-105 hover:bg-lime/90 flex items-center gap-2 shadow-xl shadow-lime/20 z-20 relative"
             >
-              Fale com nosso Veterinário
+              Fale com um Especialista
               <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
             </a>
             <Link
-              href="/produtos"
-              className="px-5 py-3 rounded-full font-bold text-sm md:text-base text-white border border-white/20 hover:bg-white/10 transition-all"
+              href="/frota"
+              className="px-5 py-3 rounded-full font-bold text-sm md:text-base text-white border border-white/20 hover:bg-white/10 transition-all z-20 relative"
             >
-              Ver todos os Produtos
+              Ver Nossa Frota
             </Link>
           </motion.div>
         </div>
@@ -182,13 +182,13 @@ function StatsBar() {
       >
         <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-8 flex flex-wrap md:flex-nowrap justify-between items-center gap-4 md:gap-8 shadow-2xl mx-auto max-w-5xl">
           {[
-            { target: 19, suffix: "+", label: "Anos de Experiência" },
-            { target: 1000, suffix: "+", label: "Produtores Atendidos" },
-            { target: 100, suffix: "%", label: "Cobertura no RS" },
-          ].map((stat, i) => (
-            <div key={i} className="flex-1 text-center md:text-left md:border-r last:border-0 border-gray-200 md:pr-8 last:pr-0">
+            { target: 15, suffix: "+", label: "Marcas Parceiras" },
+            { target: 100, suffix: "%", label: "Equipamentos Revisados" },
+            { target: 1000, suffix: "+", label: "Obras Atendidas" },
+          ].map((stat, index) => (
+            <div key={index} className="flex-1 text-center md:text-left md:border-r last:border-0 border-gray-200 md:pr-8 last:pr-0">
               <div className="text-xl md:text-2xl font-extrabold text-primary mb-0.5">
-                <AnimatedCounter target={stat.target} suffix={stat.suffix} duration={1800 + i * 400} />
+                <AnimatedCounter target={stat.target} suffix={stat.suffix} duration={1800 + index * 400} />
               </div>
               <div className="text-[10px] md:text-sm text-gray-500 font-medium uppercase tracking-wide">{stat.label}</div>
             </div>
@@ -201,7 +201,7 @@ function StatsBar() {
             <div className="flex animate-infinite-scroll w-max hover:[animation-play-state:paused] items-center">
               {carouselBrands.map((brand, index) => (
                 <div key={`${brand.name}-${index}`} className="flex items-center justify-center mx-8 shrink-0 opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
-                  <brand.component className="h-10 w-auto" />
+                  <Image src={brand.src} alt={brand.name} width={120} height={50} unoptimized className="h-10 w-auto object-contain" />
                 </div>
               ))}
             </div>
@@ -216,107 +216,100 @@ function StatsBar() {
 // Note: Removed the "Stats" function entirely as requested to avoid duplication.
 
 /* ═══════════════════════════════════════════════
-   SOLUÇÕES — Carrossel infinito (6 cards)
+   SOLUÇÕES — Carrossel infinito com fotos reais
    ═══════════════════════════════════════════════ */
-function SolucaoCard({ sol }: { sol: { type: string; title: string; subtitle: string; href: string; bg?: string; icon?: React.ElementType; iconColor?: string; tags?: string[] } }) {
-  const Icon = sol.icon;
-
-  /* ── Solid color card with tags ── */
-  if (sol.type === "tags") {
-    return (
-      <Link href={sol.href} className="block h-full group">
-        <div className="p-7 pt-8">
-          <h3 className="text-xl md:text-[28px] font-extrabold tracking-tight leading-tight" style={{ color: "#1a3c2a" }}>
-            {sol.title}
-          </h3>
-        </div>
-        {sol.tags && (
-          <div className="px-7 flex flex-wrap gap-2">
-            {sol.tags.map((tag) => (
-              <span key={tag} className="inline-block text-xs font-semibold px-4 py-2 rounded-full border" style={{ borderColor: "#1a3c2a", color: "#1a3c2a" }}>
-                {tag}
-              </span>
-            ))}
-          </div>
+function SolucaoCard({ sol }: { sol: { title: string; subtitle: string; href: string; image?: string; video?: string } }) {
+  return (
+    <Link href={sol.href} className="block h-full group">
+      <div className="absolute inset-0">
+        {sol.video ? (
+          <video
+            src={sol.video}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        ) : (
+          <Image
+            src={sol.image || ""}
+            alt={sol.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-700"
+            sizes="340px"
+            unoptimized
+          />
         )}
-      </Link>
-    );
-  }
-
-  /* ── Solid color card with icon ── */
-  if (sol.type === "icon") {
-    return (
-      <Link href={sol.href} className="block h-full group">
-        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-          {Icon && <Icon size={56} className={`${sol.iconColor || "text-forest"} mb-4 group-hover:scale-110 transition-transform duration-300`} />}
-          <h3 className="text-[22px] font-bold tracking-tight leading-tight" style={{ color: sol.bg === "#1a3c2a" ? "#fff" : "#1a3c2a" }}>
-            {sol.title}
-          </h3>
-          <p className="text-sm mt-1.5" style={{ color: sol.bg === "#1a3c2a" ? "rgba(255,255,255,0.6)" : "rgba(26,60,42,0.5)" }}>
-            {sol.subtitle}
-          </p>
-        </div>
-      </Link>
-    );
-  }
-
-  return null;
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+        <h3 className="text-xl md:text-2xl font-bold tracking-tight leading-tight drop-shadow-lg">
+          {sol.title}
+        </h3>
+        <p className="text-sm mt-1 text-white/80 drop-shadow">
+          {sol.subtitle}
+        </p>
+      </div>
+    </Link>
+  );
 }
 
 function Solucoes() {
   const cards = [
     {
-      type: "icon",
-      title: "Reprodução e IATF",
-      subtitle: "Boehringer Ingelheim",
-      href: "/solucoes/reproducao-iatf",
-      bg: "#1a3c2a",
-      icon: FaDna,
-      iconColor: "text-pink-400",
+      title: "Escavadeira Cat 320",
+      subtitle: "Padrão Caterpillar",
+      href: "/frota/cat-320",
+      image: "/frota/cat-320.jpg",
     },
     {
-      type: "icon",
-      title: "Nutrição Animal",
-      subtitle: "Milk Bar + Agrifirm",
-      href: "/solucoes/nutricao-animal",
-      bg: "#2d1b00",
-      icon: FaAppleAlt,
-      iconColor: "text-amber-400",
+      title: "Plataformas Tesoura",
+      subtitle: "Veja em ação",
+      href: "/frota",
+      video: "/frota/plataforma-tesoura-video.mp4",
     },
     {
-      type: "tags",
-      title: "Sanidade e\nVacinação",
-      subtitle: "",
-      href: "/solucoes/sanidade-vacinacao",
-      bg: "#e8f5e9",
-      tags: ["Ivomec® Gold", "J-VAC®", "Metacam®"],
+      title: "Mini Escavadeira 5,5t",
+      subtitle: "Compacta e Potente",
+      href: "/frota/mini-escavadeira-5-5t",
+      image: "/frota/mini-escavadeira-5.5t.jpg",
     },
     {
-      type: "icon",
-      title: "Controle de Pragas",
-      subtitle: "Amarillo",
-      href: "/solucoes/controle-pragas",
-      bg: "#fff8e1",
-      icon: FaBug,
-      iconColor: "text-yellow-700",
+      title: "Bobcat S-650",
+      subtitle: "Mini Carregadeira Cabinada",
+      href: "/frota/bobcat-s650",
+      image: "/frota/bobcat-s650.jpg",
     },
     {
-      type: "icon",
-      title: "Sementes de Pastagem",
-      subtitle: "Biscayart + ATTO",
-      href: "/solucoes/sementes-pastagem",
-      bg: "#1a3c2a",
-      icon: FaSeedling,
-      iconColor: "text-green-400",
+      title: "Plataforma Articulada 20m",
+      subtitle: "Diesel 4x4",
+      href: "/frota/plataforma-articulada-diesel-20m",
+      image: "/frota/plataforma-articulada-diesel-20m.jpg",
     },
     {
-      type: "icon",
-      title: "Higiene de Ordenha",
-      subtitle: "Soluções Kersia",
-      href: "/solucoes/higiene-ordenha",
-      bg: "#1a3c2a",
-      icon: FaHandSparkles,
-      iconColor: "text-lime",
+      title: "Plataforma Tesoura 14m",
+      subtitle: "Todo Terreno",
+      href: "/frota/plataforma-tesoura-14m-todo-terreno",
+      image: "/frota/plataforma-tesoura-14m-todo-terreno.jpg",
+    },
+    {
+      title: "Manipulador Telescópico 17m",
+      subtitle: "Alcance Máximo",
+      href: "/frota/manipulador-17m",
+      image: "/frota/manipulador-17m.jpg",
+    },
+    {
+      title: "Escavadeira Cat 313D2L",
+      subtitle: "13 Toneladas",
+      href: "/frota/cat-313d2l",
+      image: "/frota/cat-313d2l.jpg",
+    },
+    {
+      title: "Rolo Compactador 1,5t",
+      subtitle: "Asfalto e Terra",
+      href: "/frota/rolo-compactador-1-5t",
+      image: "/frota/rolo-compactador-1.5t.jpg",
     },
   ];
 
@@ -324,14 +317,13 @@ function Solucoes() {
   const allCards = [...cards, ...cards];
 
   return (
-    <section style={{ backgroundColor: "#0f1f0f" }} className="pt-10 md:pt-14 pb-20 md:pb-28 relative">
+    <section className="pt-10 md:pt-14 pb-20 md:pb-28 relative bg-white">
       <StatsBar />
       <div className="container-main relative pt-10 md:pt-14">
         <SectionHeading
-          tag="Soluções para Pecuária"
-          title="Medicamentos, nutrição e sementes para o seu rebanho"
-          description="Distribuímos as melhores marcas do mercado veterinário no RS: Boehringer Ingelheim, Agrifirm, Milk Bar, ATTO e mais."
-          light
+          tag="Frota de Máquinas Pesadas"
+          title="Equipamentos modernos para o sucesso da sua obra"
+          description="Oferecemos locação das melhores marcas do mercado mundial com suporte de especialistas."
         />
       </div>
 
@@ -343,11 +335,7 @@ function Solucoes() {
           {allCards.map((sol, i) => (
             <div
               key={`${sol.title}-${i}`}
-              className="relative overflow-hidden cursor-pointer shrink-0 w-[240px] md:w-[340px] h-[320px] md:h-[420px] mx-2 hover:scale-[1.02] transition-transform duration-300"
-              style={{
-                borderRadius: 20,
-                backgroundColor: sol.bg || "transparent",
-              }}
+              className="relative overflow-hidden cursor-pointer shrink-0 w-[240px] md:w-[340px] h-[320px] md:h-[420px] mx-2 hover:scale-[1.02] transition-transform duration-300 rounded-[20px]"
             >
               <SolucaoCard sol={sol} />
             </div>
@@ -362,8 +350,8 @@ function Solucoes() {
           viewport={{ once: true, margin: "-100px" }}
           className="text-center mt-12"
         >
-          <Link href="/produtos" className="btn-lime">
-            Explorar Catálogo Completo
+          <Link href="/frota" className="btn-lime">
+            Explorar Catálogo de Frota
             <FaArrowRight className="text-xs" />
           </Link>
         </motion.div>
@@ -379,49 +367,49 @@ function ProdutosDestaque() {
   const [active, setActive] = useState(0);
   const destaques = [
     {
-      name: "Ivomec® Gold",
-      brand: "Boehringer Ingelheim",
+      name: "Retroescavadeira Case 580N",
+      brand: "CASE",
       description:
-        "O padrão ouro em controle parasitário. Formulação tixotrópica com Ivermectina 3,15%. Proteção por até 12 semanas contra berne e carrapatos, garantindo maior ganho de peso e pastos limpos.",
-      icon: FaShieldAlt,
-      color: "from-emerald-900 to-forest-dark",
-      badge: "Líder de Mercado",
+        "Equipamento versátil com a força líder de mercado, proporcionando ciclos rápidos de carregamento e elevação de classe mundial. Excelente para espaços reduzidos.",
+      icon: FaTractor,
+      color: "from-orange-900 to-dark",
+      badge: "Mais Locada",
     },
     {
-      name: "Kalvolac Quick",
-      brand: "Agrifirm",
+      name: "Escavadeira Cat 320",
+      brand: "Caterpillar",
       description:
-        "Substituto de leite premium para bezerras. Digestão rápida, excelente desenvolvimento ruminal e crescimento juvenil acelerado. Tecnologia holandesa para sua recria.",
-      icon: FaAppleAlt,
-      color: "from-amber-900 to-forest-dark",
+        "O padrão para a nova geração de escavadeiras. Menor consumo de combustível e custos de manutenção reduzidos, garantindo produtividade máxima na sua obra.",
+      icon: FaTruckMoving,
+      color: "from-yellow-900 to-dark",
       badge: "Alta Performance",
     },
     {
-      name: "Milk Bar Individual",
-      brand: "Milk Bar",
+      name: "Plataforma Articulada Genie Z-45",
+      brand: "Genie",
       description:
-        "Alimentador individual com bico de fluxo controlado. Promove sucção lenta e natural, melhorando a digestão e reduzindo problemas respiratórios em bezerros.",
-      icon: FaAppleAlt,
-      color: "from-cyan-900 to-forest-dark",
-      badge: "Nutrição",
+        "Segurança superior para trabalhos em altura. Excelente envelope de trabalho e operação silenciosa. O equipamento ideal para manutenções industriais e prediais.",
+      icon: FaHardHat,
+      color: "from-sky-900 to-dark",
+      badge: "Trabalho Seguro",
     },
     {
-      name: "Dermisan",
-      brand: "Kersia",
+      name: "Pá Carregadeira Hyundai HL757",
+      brand: "Hyundai",
       description:
-        "Solução premium para higiene e proteção do úbere. Pré e pós-dipping de alta eficácia, garantindo qualidade do leite e saúde do rebanho.",
-      icon: FaHandSparkles,
-      color: "from-sky-900 to-forest-dark",
-      badge: "Higiene",
+        "Força e agilidade em um único equipamento. Cabine ergonômica e motor potente para enfrentar os terrenos mais desafiadores com estabilidade e confiança.",
+      icon: FaTools,
+      color: "from-green-900 to-dark",
+      badge: "Potência",
     },
     {
-      name: "Amarillo",
-      brand: "Luxembourg",
+      name: "Rolo Compactador Dynapac",
+      brand: "Dynapac",
       description:
-        "Armadilha adesiva ecológica para controle de moscas. Não tóxico, ideal para instalações pecuárias. Captura eficaz sem uso de venenos.",
-      icon: FaBug,
-      color: "from-yellow-900 to-forest-dark",
-      badge: "Sustentável",
+        "Compactação eficiente de solos e asfalto com tecnologia de amortecimento otimizada. Rendimento impecável para grandes áreas e obras rodoviárias.",
+      icon: FaCog,
+      color: "from-zinc-800 to-dark",
+      badge: "Eficiência",
     },
   ];
 
@@ -492,7 +480,7 @@ function ProdutosDestaque() {
 
           {/* Content — 40% (2 cols) */}
           <div className="lg:col-span-2">
-            <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-6">
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-6">
               Destaques
             </span>
 
@@ -512,7 +500,7 @@ function ProdutosDestaque() {
             </motion.div>
 
             <a
-              href={`https://wa.me/5551990000000?text=Olá! Tenho interesse no produto ${current.name} da ${current.brand}. Gostaria de saber preço e disponibilidade.`}
+              href={`https://wa.me/5511900000000?text=Olá! Tenho interesse na locação da máquina ${current.name} (${current.brand}). Gostaria de saber disponibilidade e valores.`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-lime mt-8"
@@ -526,7 +514,7 @@ function ProdutosDestaque() {
                 <button
                   key={i}
                   onClick={() => setActive(i)}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${active === i ? "bg-lime w-10" : "bg-gray-200 w-3"
+                  className={`h-1.5 rounded-full transition-all duration-500 ${active === i ? "bg-primary w-10" : "bg-gray-200 w-3"
                     }`}
                 />
               ))}
@@ -545,35 +533,32 @@ function Diferenciais() {
   const items = [
     {
       icon: FaHandshake,
-      title: "Consultoria Técnica Especializada",
-      description: "Nossos ATCs (Assessores Técnicos Comerciais) visitam sua propriedade para orientar sobre os melhores produtos e protocolos.",
+      title: "Consultoria de Frota",
+      description: "Ajudamos você a dimensionar os equipamentos certos para o seu tamanho de obra, sem desperdícios.",
     },
     {
       icon: FaAward,
-      title: "Marcas Premium",
-      description: "Distribuidor oficial das maiores marcas do mercado veterinário: Boehringer Ingelheim, Agrifirm, ATTO, Milk Bar e mais.",
+      title: "Marcas Oficiais",
+      description: "Frota composta pelas líderes mundiais de mercado: Caterpillar, JCB, Case, Bobcat e Hyundai.",
     },
     {
       icon: FaMapMarkedAlt,
-      title: "Cobertura Estadual",
-      description: "Atendemos pecuaristas em todas as regiões do Rio Grande do Sul, dos Campos de Cima da Serra à Campanha Gaúcha.",
+      title: "Entrega Ágil",
+      description: "Logística otimizada para entregar o maquinário no seu canteiro com o menor tempo possível.",
     },
     {
-      icon: FaHeadset,
-      title: "Suporte Pós-Venda",
-      description: "Acompanhamento técnico contínuo após a compra: monitoramento de resultados, ajuste de protocolos e suporte completo.",
+      icon: FaWrench,
+      title: "Suporte e Manutenção",
+      description: "Equipe de mecânicos dedicados e preventivas em dia para garantir que sua obra não pare um segundo.",
     },
   ];
 
   return (
-    <section style={{ backgroundColor: "#0f1f0f" }} className="section-padding relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-lime/[0.03] rounded-full blur-[150px]" />
-
+    <section className="section-padding relative overflow-hidden bg-gray-50">
       <div className="container-main relative">
         <SectionHeading
-          tag="Por que a VetSulVet"
-          title="Diferenciais que fazem a diferença no campo"
-          light
+          tag="Por que a Jacó Locação"
+          title="Diferenciais que garantem o andamento da sua obra"
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -584,19 +569,19 @@ function Diferenciais() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: i * 0.12, duration: 0.5, type: "spring", stiffness: 120 }}
-              className="glass-card glass-card-hover p-7 text-center group"
+              className="bg-white rounded-3xl border border-gray-100 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 p-7 text-center group"
             >
               <motion.div
                 whileHover={{ rotate: [0, -10, 10, 0], scale: 1.15 }}
                 transition={{ duration: 0.5 }}
-                className="w-14 h-14 glass rounded-2xl flex items-center justify-center mx-auto mb-5 text-lime group-hover:bg-lime group-hover:text-forest transition-all duration-400"
+                className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-5 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-400"
               >
                 <item.icon size={22} />
               </motion.div>
-              <h3 className="font-bold text-white text-lg mb-2 tracking-tight">
+              <h3 className="font-bold text-gray-900 text-lg mb-2 tracking-tight">
                 {item.title}
               </h3>
-              <p className="text-white/40 text-sm leading-relaxed">
+              <p className="text-gray-500 text-sm leading-relaxed">
                 {item.description}
               </p>
             </motion.div>
@@ -620,11 +605,7 @@ function MissaoVisaoValores() {
   ];
 
   return (
-    <section style={{ backgroundColor: "#0f1f0f" }} className="section-padding relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-lime/[0.04] rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/[0.06] rounded-full blur-[150px]" />
-
+    <section className="section-padding relative overflow-hidden bg-white">
       <div className="container-main relative">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
@@ -633,10 +614,10 @@ function MissaoVisaoValores() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-lime bg-lime/10 px-4 py-1.5 rounded-full mb-4">
+              <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-4">
                 Institucional
               </span>
-              <h2 className="text-heading text-white">
+              <h2 className="text-heading text-gray-900">
                 Missão, Visão & Valores
               </h2>
             </motion.div>
@@ -648,20 +629,16 @@ function MissaoVisaoValores() {
               transition={{ delay: 0.1 }}
               className="mt-10 space-y-8"
             >
-              <div className="border-l-4 border-lime pl-6">
-                <h3 className="font-bold text-white text-lg mb-2">Missão</h3>
-                <p className="text-white/50 leading-relaxed">
-                  Atuar com responsabilidade e excelência na distribuição de
-                  produtos e na prestação de serviços, promovendo o conhecimento
-                  e inovação no Agronegócio.
+              <div className="border-l-4 border-primary pl-6">
+                <h3 className="font-bold text-gray-900 text-lg mb-2">Missão</h3>
+                <p className="text-gray-500 leading-relaxed">
+                  Oferecer máquinas pesadas modernas e seguras, aliados a um suporte técnico impecável, garantindo o sucesso das obras de nossos parceiros comerciais.
                 </p>
               </div>
-              <div className="border-l-4 border-white/20 pl-6">
-                <h3 className="font-bold text-white text-lg mb-2">Visão</h3>
-                <p className="text-white/50 leading-relaxed">
-                  Ser referência na distribuição de produtos e consultoria
-                  técnica no Agronegócio, entregando inovação e conscientizando
-                  para o uso eficiente e sustentável dos produtos.
+              <div className="border-l-4 border-gray-200 pl-6">
+                <h3 className="font-bold text-gray-900 text-lg mb-2">Visão</h3>
+                <p className="text-gray-500 leading-relaxed">
+                  Ser referência nacional em locação de equipamentos pesados, reconhecida pela qualidade da frota, agilidade no atendimento e compromisso inegociável com a segurança.
                 </p>
               </div>
             </motion.div>
@@ -672,9 +649,9 @@ function MissaoVisaoValores() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
-            className="glass-card p-10"
+            className="bg-gray-50 rounded-3xl border border-gray-100 p-10"
           >
-            <h3 className="font-bold text-white text-lg mb-8">Nossos Valores</h3>
+            <h3 className="font-bold text-gray-900 text-lg mb-8">Nossos Valores</h3>
             <div className="space-y-3">
               {valores.map((v, i) => (
                 <motion.div
@@ -683,12 +660,12 @@ function MissaoVisaoValores() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ delay: 0.3 + i * 0.08, duration: 0.4 }}
-                  className="flex items-center gap-4 bg-white/[0.06] border border-white/[0.08] rounded-2xl p-4 hover:bg-white/[0.1] hover:-translate-y-0.5 transition-all duration-300"
+                  className="flex items-center gap-4 bg-white border border-gray-100 rounded-2xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  <div className="w-10 h-10 bg-lime/15 rounded-xl flex items-center justify-center text-lime font-extrabold text-sm shrink-0">
+                  <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary font-extrabold text-sm shrink-0">
                     {String(i + 1).padStart(2, "0")}
                   </div>
-                  <span className="font-medium text-white">{v}</span>
+                  <span className="font-medium text-gray-800">{v}</span>
                 </motion.div>
               ))}
             </div>
@@ -707,18 +684,18 @@ function Depoimentos() {
   const depoimentos = [
     {
       name: "Carlos Mendes",
-      role: "Pecuarista — Vacaria, RS",
-      text: "A VetSulVet sempre nos atendeu com agilidade e produtos de qualidade. A consultoria técnica faz toda a diferença na escolha dos melhores tratamentos para o rebanho.",
+      role: "Engenheiro — Construtora Alfa",
+      text: "A Jacó Locação sempre nos atendeu com agilidade e máquinas impecáveis. A consultoria deles faz toda a diferença para dimensionarmos corretamente as obras.",
     },
     {
       name: "Ana Paula Silva",
-      role: "Produtora de Leite — Passo Fundo, RS",
-      text: "Trabalhamos com a VetSulVet há mais de 10 anos. A confiança na qualidade dos produtos e no atendimento da equipe é o que nos mantém parceiros.",
+      role: "Gerente de Engenharia — Via Rápida",
+      text: "Trabalhamos com a Jacó Locação há mais de 5 anos. A confiança na qualidade da frota e no rápido atendimento técnico é o que nos mantém parceiros.",
     },
     {
       name: "Roberto Ferreira",
-      role: "Fazenda Boa Vista — Passo Fundo, RS",
-      text: "As sementes que compramos pela VetSulVet transformaram nossas pastagens. O suporte técnico é excepcional e os resultados falam por si.",
+      role: "Encarregado de Obras — Beta Construções",
+      text: "As escavadeiras e equipamentos em perfeito estado transformaram nossa produtividade. O suporte deles é excepcional.",
     },
   ];
 
@@ -727,13 +704,13 @@ function Depoimentos() {
     setActive((a) => (a - 1 + depoimentos.length) % depoimentos.length);
 
   return (
-    <section style={{ backgroundColor: "#0f1f0f" }} className="section-padding relative overflow-hidden">
+    <section className="section-padding relative overflow-hidden bg-gray-50">
       <div className="container-main">
-        <SectionHeading tag="Depoimentos de Pecuaristas" title="Quem confia na VetSulVet recomenda" light />
+        <SectionHeading tag="Depoimentos de Parceiros" title="Quem constrói com a Jacó recomenda" />
 
         <div className="max-w-3xl mx-auto relative">
-          <div className="glass-card p-10 md:p-14 relative overflow-hidden">
-            <FaQuoteLeft className="text-lime/10 text-6xl absolute top-6 left-6" />
+          <div className="bg-white rounded-3xl border border-gray-100 shadow-card p-10 md:p-14 relative overflow-hidden">
+            <FaQuoteLeft className="text-primary/10 text-6xl absolute top-6 left-6" />
 
             <motion.div
               key={active}
@@ -743,7 +720,7 @@ function Depoimentos() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="relative"
             >
-              <p className="text-white/70 text-lg md:text-xl leading-relaxed italic">
+              <p className="text-gray-600 text-lg md:text-xl leading-relaxed italic">
                 &quot;{depoimentos[active].text}&quot;
               </p>
               <div className="mt-8 flex items-center gap-4">
@@ -752,17 +729,17 @@ function Depoimentos() {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                  className="w-12 h-12 bg-lime rounded-full flex items-center justify-center text-forest font-extrabold"
+                  className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-extrabold"
                 >
                   {depoimentos[active].name[0]}
                 </motion.div>
                 <div>
-                  <p className="font-bold text-white">{depoimentos[active].name}</p>
-                  <p className="text-white/40 text-sm">{depoimentos[active].role}</p>
+                  <p className="font-bold text-gray-900">{depoimentos[active].name}</p>
+                  <p className="text-gray-400 text-sm">{depoimentos[active].role}</p>
                 </div>
                 <div className="ml-auto flex gap-1">
                   {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} className="text-lime text-xs" />
+                    <FaStar key={i} className="text-yellow-400 text-xs" />
                   ))}
                 </div>
               </div>
@@ -772,7 +749,7 @@ function Depoimentos() {
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={prev}
-              className="w-11 h-11 bg-white/[0.08] border border-white/[0.1] rounded-full flex items-center justify-center text-white/60 hover:bg-lime hover:text-forest hover:border-lime transition-all hover:scale-105"
+              className="w-11 h-11 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white hover:border-primary transition-all hover:scale-105"
             >
               <FaChevronLeft size={12} />
             </button>
@@ -781,14 +758,14 @@ function Depoimentos() {
                 <button
                   key={i}
                   onClick={() => setActive(i)}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${active === i ? "bg-lime w-8" : "bg-white/20 w-2"
+                  className={`h-1.5 rounded-full transition-all duration-500 ${active === i ? "bg-primary w-8" : "bg-gray-300 w-2"
                     }`}
                 />
               ))}
             </div>
             <button
               onClick={next}
-              className="w-11 h-11 bg-white/[0.08] border border-white/[0.1] rounded-full flex items-center justify-center text-white/60 hover:bg-lime hover:text-forest hover:border-lime transition-all hover:scale-105"
+              className="w-11 h-11 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white hover:border-primary transition-all hover:scale-105"
             >
               <FaChevronRight size={12} />
             </button>

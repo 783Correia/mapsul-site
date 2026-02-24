@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" fill="none">
-  <g transform="translate(10,10)">
-    <path d="M25 0L50 25L25 50L0 25Z" stroke="#999" stroke-width="3" fill="none"/>
-    <circle cx="25" cy="25" r="8" stroke="#999" stroke-width="2" fill="none"/>
-    <circle cx="25" cy="25" r="3" fill="#999"/>
-  </g>
-  <text x="72" y="38" font-family="Arial, sans-serif" font-weight="bold" font-size="30" fill="#999" letter-spacing="3">BISCAYART</text>
-  <text x="72" y="58" font-family="Arial, sans-serif" font-size="14" fill="#aaa" letter-spacing="6">SEMILLAS</text>
-</svg>

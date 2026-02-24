@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://vetsulvet.com.br/sitemap.xml",
+    sitemap: "https://jacolocacao.com.br/sitemap.xml",
   };
 }

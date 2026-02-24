@@ -10,20 +10,20 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#0D5C2F",
-          dark: "#094A25",
-          light: "#0E6B36",
+          DEFAULT: "#2C9E4B",
+          dark: "#0A5034",
+          light: "#68C274",
         },
         forest: {
-          DEFAULT: "#0A3B1E",
-          dark: "#072D16",
-          light: "#0C4523",
+          DEFAULT: "#111111",
+          dark: "#000000",
+          light: "#1a1a1a",
         },
         lime: {
-          DEFAULT: "#B4D12E",
-          dark: "#9AB826",
-          light: "#C4E048",
-          muted: "#B4D12E20",
+          DEFAULT: "#35A152",
+          dark: "#257A3C",
+          light: "#4AD26E",
+          muted: "#35A15220",
         },
         orange: {
           DEFAULT: "#F47920",

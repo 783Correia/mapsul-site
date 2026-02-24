@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import SobreContent from "./content";
 
 export const metadata: Metadata = {
-  title: "Sobre a VetSulVet | 19 Anos de Dedicação à Pecuária Gaúcha",
+  title: "Sobre a Jacó Locação | Referência Nacional em Máquinas Pesadas",
   description:
-    "Conheça a história, missão, visão e valores da VetSulVet Distribuidora. 19 anos distribuindo produtos veterinários, nutrição animal e sementes de pastagem no RS.",
+    "Conheça a história e a missão da Jacó Locação. Oferecendo as melhores máquinas pesadas para aluguel e um suporte técnico exemplar para o sucesso das suas obras.",
   keywords:
-    "sobre VetSulVet, história VetSulVet, distribuidora veterinária RS, Passo Fundo, pecuária gaúcha, equipe VetSulVet",
+    "sobre jaco locacao, história jaco locacao, locadora maquinas pesadas, SP",
 };
 
 export default function Page() {

@@ -43,8 +43,8 @@ export default function ContatoContent() {
       `WhatsApp: ${formData.whatsapp}`,
       formData.email ? `E-mail: ${formData.email}` : "",
       formData.cidade ? `Cidade/Região: ${formData.cidade}` : "",
-      formData.tipoCriacao ? `Tipo de Criação: ${formData.tipoCriacao}` : "",
-      formData.areaInteresse ? `Área de Interesse: ${formData.areaInteresse}` : "",
+      formData.tipoCriacao ? `Tipo de Obra: ${formData.tipoCriacao}` : "",
+      formData.areaInteresse ? `Equipamento(s) de Interesse: ${formData.areaInteresse}` : "",
       formData.message ? `\nMensagem: ${formData.message}` : "",
     ]
       .filter(Boolean)
@@ -187,10 +187,10 @@ export default function ContatoContent() {
                       </div>
                     </div>
 
-                    {/* Tipo Criação + Área Interesse */}
+                    {/* Tipo Obra + Equipamento Interesse */}
                     <div className="grid sm:grid-cols-2 gap-5">
                       <div>
-                        <label className={labelClass}>Tipo de Criação *</label>
+                        <label className={labelClass}>Tipo de Obra *</label>
                         <select
                           required
                           value={formData.tipoCriacao}
@@ -203,15 +203,16 @@ export default function ContatoContent() {
                           className={inputClass}
                         >
                           <option value="">Selecione...</option>
-                          <option value="Corte">Corte</option>
-                          <option value="Leite">Leite</option>
-                          <option value="Mista">Mista</option>
+                          <option value="Construção Civil">Construção Civil</option>
+                          <option value="Terraplanagem">Terraplanagem</option>
+                          <option value="Pavimentação">Pavimentação</option>
+                          <option value="Saneamento">Saneamento</option>
                           <option value="Outro">Outro</option>
                         </select>
                       </div>
                       <div>
                         <label className={labelClass}>
-                          Área de Interesse *
+                          Equipamento de Interesse *
                         </label>
                         <select
                           required
@@ -225,21 +226,11 @@ export default function ContatoContent() {
                           className={inputClass}
                         >
                           <option value="">Selecione...</option>
-                          <option value="Reprodução e IATF">
-                            Reprodução e IATF
-                          </option>
-                          <option value="Nutrição Animal">
-                            Nutrição Animal
-                          </option>
-                          <option value="Sanidade e Vacinação">
-                            Sanidade e Vacinação
-                          </option>
-                          <option value="Controle de Pragas">
-                            Controle de Pragas
-                          </option>
-                          <option value="Sementes de Pastagem">
-                            Sementes de Pastagem
-                          </option>
+                          <option value="Retroescavadeira">Retroescavadeira</option>
+                          <option value="Escavadeira Hidráulica">Escavadeira Hidráulica</option>
+                          <option value="Pá Carregadeira">Pá Carregadeira</option>
+                          <option value="Plataforma Elevatória">Plataforma Elevatória</option>
+                          <option value="Rolo Compactador">Rolo Compactador</option>
                           <option value="Outro">Outro</option>
                         </select>
                       </div>
@@ -291,28 +282,28 @@ export default function ContatoContent() {
                       icon: FaMapMarkerAlt,
                       label: "Endereço",
                       value:
-                        "Rua Buarque de Macedo, 189\nCentro, Passo Fundo - RS",
+                        "Sua Localização\nSão Paulo - SP",
                       color: "bg-primary/10 text-primary",
                     },
                     {
                       icon: FaPhoneAlt,
                       label: "Telefone",
-                      value: "(51) 3333-0000",
-                      href: "tel:+555133330000",
+                      value: "(11) 90000-0000",
+                      href: "tel:+5511900000000",
                       color: "bg-primary/10 text-primary",
                     },
                     {
                       icon: FaWhatsapp,
                       label: "WhatsApp",
-                      value: "(51) 99000-0000",
+                      value: "(11) 90000-0000",
                       href: getWhatsAppLink(),
                       color: "bg-[#25D366]/10 text-[#25D366]",
                     },
                     {
                       icon: FaInstagram,
                       label: "Instagram",
-                      value: "@vetsulvet_distribuidora",
-                      href: "https://instagram.com/vetsulvet_distribuidora",
+                      value: "@jacolocacaomaquinas",
+                      href: "https://instagram.com/jacolocacaomaquinas",
                       color: "bg-pink-50 text-pink-500",
                     },
                     {

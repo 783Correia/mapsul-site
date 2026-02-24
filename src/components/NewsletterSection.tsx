@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FaPaperPlane, FaSeedling, FaHorse } from "react-icons/fa";
+import { FaPaperPlane, FaHardHat, FaTractor } from "react-icons/fa";
 
 export default function NewsletterSection() {
     const [email, setEmail] = useState("");
@@ -32,12 +32,12 @@ export default function NewsletterSection() {
                             <div className="absolute -inset-3 bg-lime/15 rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div className="aspect-[3/4] rounded-[2rem] overflow-hidden relative shadow-xl ring-1 ring-black/[0.04] bg-gradient-to-br from-green-100 to-emerald-50 flex flex-col items-center justify-center gap-3">
                                 <div className="w-16 h-16 rounded-2xl bg-lime/20 flex items-center justify-center">
-                                    <FaSeedling className="text-forest text-2xl" />
+                                    <FaHardHat className="text-forest text-2xl" />
                                 </div>
-                                <span className="text-forest/40 text-xs font-bold uppercase tracking-wider">Pastagem</span>
+                                <span className="text-forest/40 text-xs font-bold uppercase tracking-wider">Obras</span>
                             </div>
                         </div>
-                        <p className="text-[11px] text-gray-400 text-center tracking-wide uppercase font-medium">Pastagem sustentável</p>
+                        <p className="text-[11px] text-gray-400 text-center tracking-wide uppercase font-medium">Obras de Infraestrutura</p>
                     </div>
 
                     {/* Center Content */}
@@ -45,16 +45,16 @@ export default function NewsletterSection() {
                         {/* Trust badge */}
                         <div className="inline-flex items-center gap-2 bg-forest/[0.06] rounded-full px-5 py-2 mb-8">
                             <div className="w-1.5 h-1.5 bg-lime rounded-full"></div>
-                            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-forest/70">Desde 2007 · Passo Fundo, RS</span>
+                            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-forest/70">Desde 2010 · São Paulo, SP</span>
                         </div>
 
                         <h2 className="text-[2.5rem] md:text-[3.2rem] leading-[1.05] font-bold text-dark tracking-tight">
-                            Inovação e confiança<br />
-                            <span className="text-forest">para o campo.</span>
+                            Força e confiabilidade<br />
+                            <span className="text-forest">para sua obra.</span>
                         </h2>
 
                         <p className="text-gray-500 mt-6 max-w-md mx-auto leading-relaxed">
-                            Receba novidades, dicas técnicas e ofertas exclusivas diretamente no seu e-mail.
+                            Receba novidades, dicas técnicas e ofertas exclusivas de locação diretamente no seu e-mail.
                         </p>
 
                         {subscribed ? (
@@ -102,12 +102,12 @@ export default function NewsletterSection() {
                             <div className="absolute -inset-3 bg-forest/10 rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div className="aspect-[3/4] rounded-[2rem] overflow-hidden relative shadow-xl ring-1 ring-black/[0.04] bg-gradient-to-br from-amber-50 to-orange-50 flex flex-col items-center justify-center gap-3">
                                 <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center">
-                                    <FaHorse className="text-amber-700 text-2xl" />
+                                    <FaTractor className="text-amber-700 text-2xl" />
                                 </div>
-                                <span className="text-amber-700/40 text-xs font-bold uppercase tracking-wider">Pecuária</span>
+                                <span className="text-amber-700/40 text-xs font-bold uppercase tracking-wider">Operações</span>
                             </div>
                         </div>
-                        <p className="text-[11px] text-gray-400 text-center tracking-wide uppercase font-medium">Pecuária gaúcha</p>
+                        <p className="text-[11px] text-gray-400 text-center tracking-wide uppercase font-medium">Operações Pesadas</p>
                     </div>
 
                 </div>
